@@ -10,6 +10,7 @@ LLM cagrisinda siniflandirilir.
 
 import json
 import sqlite3
+import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from typing import Callable, TypedDict
@@ -17,6 +18,19 @@ from typing import Callable, TypedDict
 from review_evidence.search import keyword_search
 
 BATCH_SIZE = 20
+MAX_RETRIES = 3
+RETRY_DELAY_SECONDS = 12
+
+SENTIMENT_MAP = {
+    "positive": "positive", "olumlu": "positive",
+    "negative": "negative", "olumsuz": "negative",
+    "unclear": "unclear", "belirsiz": "unclear",
+}
+
+
+def _normalize_sentiment(value: str) -> str:
+    """LLM bazen Turkce (olumlu/olumsuz) bazen Ingilizce doner, tekillestirir."""
+    return SENTIMENT_MAP.get(str(value).strip().lower(), "unclear")
 
 
 class Classification(TypedDict):
@@ -31,9 +45,10 @@ def _chunk(items: list, size: int) -> list[list]:
     return [items[i : i + size] for i in range(0, len(items), size)]
 
 
-def gemini_batch_classifier(client, model_name: str = "gemini-flash-latest") -> BatchClassifierFn:
+def gemini_batch_classifier(client, model_name: str = "gemini-flash-lite-latest") -> BatchClassifierFn:
     """Verilen Gemini client'ini kullanan, birden fazla yorumu tek cagrida
-    siniflandiran bir fonksiyon doner."""
+    siniflandiran bir fonksiyon doner. Rate limit (429) hatasinda otomatik
+    olarak birkac kez yeniden dener."""
 
     def classify_batch(question: str, review_texts: list[str]) -> list[Classification]:
         if not review_texts:
@@ -52,25 +67,40 @@ def gemini_batch_classifier(client, model_name: str = "gemini-flash-latest") -> 
             "sirasi yorum sirasiyla ayni olsun, baska hicbir sey yazma:\n"
             + example
         )
-        try:
-            response = client.models.generate_content(model=model_name, contents=prompt)
-            text = (response.text or "").strip()
-            text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
-            data = json.loads(text)
-            results = []
-            for i in range(len(review_texts)):
-                if i < len(data) and isinstance(data[i], dict):
-                    results.append(
-                        {
-                            "relevant": bool(data[i].get("relevant", False)),
-                            "sentiment": data[i].get("sentiment", "unclear"),
-                        }
+
+        last_error = None
+        for attempt in range(MAX_RETRIES):
+            try:
+                response = client.models.generate_content(model=model_name, contents=prompt)
+                text = (response.text or "").strip()
+                text = text.removeprefix("```json").removeprefix("```").removesuffix("```").strip()
+                data = json.loads(text)
+                results = []
+                for i in range(len(review_texts)):
+                    if i < len(data) and isinstance(data[i], dict):
+                        results.append(
+                            {
+                                "relevant": bool(data[i].get("relevant", False)),
+                                "sentiment": _normalize_sentiment(data[i].get("sentiment", "unclear")),
+                            }
+                        )
+                    else:
+                        results.append({"relevant": False, "sentiment": "unclear"})
+                return results
+            except Exception as exc:
+                last_error = exc
+                is_rate_limit = "429" in str(exc) or "RESOURCE_EXHAUSTED" in str(exc)
+                if is_rate_limit and attempt < MAX_RETRIES - 1:
+                    print(
+                        f"[consensus] rate limit, {RETRY_DELAY_SECONDS}s bekleyip "
+                        f"tekrar deneniyor (deneme {attempt + 1}/{MAX_RETRIES})"
                     )
-                else:
-                    results.append({"relevant": False, "sentiment": "unclear"})
-            return results
-        except Exception:
-            return [{"relevant": False, "sentiment": "unclear"} for _ in review_texts]
+                    time.sleep(RETRY_DELAY_SECONDS)
+                    continue
+                break
+
+        print(f"[consensus] siniflandirma basarisiz oldu: {last_error}")
+        return [{"relevant": False, "sentiment": "unclear"} for _ in review_texts]
 
     return classify_batch
 
@@ -91,7 +121,7 @@ def build_consensus(
         return list(zip(batch, classify_batch(question, texts)))
 
     relevant_reviews = []
-    with ThreadPoolExecutor(max_workers=5) as pool:
+    with ThreadPoolExecutor(max_workers=3) as pool:
         for batch_results in pool.map(run_batch, batches):
             for row, result in batch_results:
                 if result["relevant"]:

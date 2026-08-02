@@ -4,6 +4,7 @@ import sqlite3
 from typing import Iterator
 
 from fastapi import Depends, FastAPI, HTTPException
+from fastapi.responses import FileResponse
 from google import genai
 
 from review_evidence.config import DB_PATH, GEMINI_API_KEY
@@ -22,6 +23,12 @@ def get_conn() -> Iterator[sqlite3.Connection]:
         yield conn
     finally:
         conn.close()
+
+
+@app.get("/", include_in_schema=False)
+def index() -> FileResponse:
+    """Basit web arayuzunu servis eder."""
+    return FileResponse("static/index.html")
 
 
 @app.get("/health")

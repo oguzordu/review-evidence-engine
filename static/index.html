@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<title>Review Evidence Engine</title>
+<style>
+  :root {
+    --bg: #0f1115;
+    --panel: #161a21;
+    --border: #262b35;
+    --text: #e6e9ef;
+    --muted: #8b93a3;
+    --accent: #4f8cff;
+    --positive: #2fbf71;
+    --negative: #ef5350;
+    --unclear: #8b93a3;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    padding: 32px 16px;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; }
+  h1 { font-size: 22px; margin: 0 0 4px; }
+  .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
+  .card {
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
+  select, input {
+    width: 100%;
+    padding: 10px 12px;
+    background: #0d0f13;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--text);
+    font-size: 14px;
+    margin-bottom: 14px;
+  }
+  button {
+    width: 100%;
+    padding: 12px;
+    background: var(--accent);
+    border: none;
+    border-radius: 8px;
+    color: white;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  button:disabled { opacity: 0.5; cursor: default; }
+  .status { color: var(--muted); font-size: 13px; margin-top: 10px; min-height: 18px; }
+  .stats-row { display: flex; gap: 10px; margin-bottom: 16px; }
+  .stat {
+    flex: 1;
+    background: var(--panel);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+    text-align: center;
+  }
+  .stat .n { font-size: 24px; font-weight: 700; }
+  .stat .l { font-size: 12px; color: var(--muted); margin-top: 2px; }
+  .stat.pos .n { color: var(--positive); }
+  .stat.neg .n { color: var(--negative); }
+  .stat.unc .n { color: var(--unclear); }
+  .conflict-banner {
+    background: rgba(239, 83, 80, 0.12);
+    border: 1px solid rgba(239, 83, 80, 0.4);
+    color: #ff8a80;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .no-conflict-banner {
+    background: rgba(47, 191, 113, 0.12);
+    border: 1px solid rgba(47, 191, 113, 0.4);
+    color: #7fe3ac;
+    border-radius: 8px;
+    padding: 10px 14px;
+    font-size: 13px;
+    margin-bottom: 16px;
+  }
+  .citation {
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 12px 14px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+  .badge {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 2px 8px;
+    border-radius: 999px;
+    margin-bottom: 6px;
+  }
+  .badge.positive { background: rgba(47, 191, 113, 0.15); color: var(--positive); }
+  .badge.negative { background: rgba(239, 83, 80, 0.15); color: var(--negative); }
+  .badge.unclear { background: rgba(139, 147, 163, 0.15); color: var(--unclear); }
+  .spinner {
+    display: inline-block;
+    width: 14px; height: 14px;
+    border: 2px solid var(--border);
+    border-top-color: var(--accent);
+    border-radius: 50%;
+    animation: spin 0.8s linear infinite;
+    vertical-align: middle;
+    margin-right: 6px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .empty { color: var(--muted); font-size: 13px; text-align: center; padding: 20px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <h1>Review Evidence Engine</h1>
+  <div class="subtitle">Örnekleme değil sayım — ilgili yorumların tamamı değerlendirilir.</div>
+
+  <div class="card">
+    <label for="product">Ürün</label>
+    <select id="product">
+      <option value="p1">p1</option>
+      <option value="p2">p2</option>
+      <option value="p3">p3</option>
+      <option value="p4">p4</option>
+      <option value="p5">p5</option>
+    </select>
+    <label for="question">Soru</label>
+    <input id="question" type="text" placeholder="örn: kargo hızlı mıydı" value="ürün kaliteli mi">
+    <button id="ask">Sor</button>
+    <div class="status" id="status"></div>
+  </div>
+
+  <div id="results"></div>
+</div>
+
+<script>
+const askBtn = document.getElementById("ask");
+const statusEl = document.getElementById("status");
+const resultsEl = document.getElementById("results");
+
+askBtn.addEventListener("click", async () => {
+  const product = document.getElementById("product").value;
+  const question = document.getElementById("question").value.trim();
+  if (!question) {
+    statusEl.textContent = "Bir soru yaz.";
+    return;
+  }
+
+  askBtn.disabled = true;
+  statusEl.innerHTML = '<span class="spinner"></span>Yorumlar taranıyor, sınıflandırılıyor... (10-20 saniye sürebilir)';
+  resultsEl.innerHTML = "";
+
+  try {
+    const url = `/products/${encodeURIComponent(product)}/ask?question=${encodeURIComponent(question)}`;
+    const resp = await fetch(url);
+    const data = await resp.json();
+
+    if (!resp.ok) {
+      statusEl.textContent = "Hata: " + (data.detail || resp.status);
+      askBtn.disabled = false;
+      return;
+    }
+
+    statusEl.textContent = "";
+    renderResults(data);
+  } catch (err) {
+    statusEl.textContent = "Bağlantı hatası: " + err.message;
+  } finally {
+    askBtn.disabled = false;
+  }
+});
+
+function renderResults(data) {
+  let html = "";
+
+  html += `<div class="stats-row">
+    <div class="stat"><div class="n">${data.candidates_checked}</div><div class="l">aday tarandı</div></div>
+    <div class="stat"><div class="n">${data.relevant_count}</div><div class="l">ilgili yorum</div></div>
+  </div>`;
+
+  html += `<div class="stats-row">
+    <div class="stat pos"><div class="n">${data.positive_count}</div><div class="l">olumlu</div></div>
+    <div class="stat neg"><div class="n">${data.negative_count}</div><div class="l">olumsuz</div></div>
+    <div class="stat unc"><div class="n">${data.unclear_count}</div><div class="l">belirsiz</div></div>
+  </div>`;
+
+  if (data.relevant_count === 0) {
+    html += `<div class="empty">Bu ürün için soruyla ilgili yorum bulunamadı.</div>`;
+    resultsEl.innerHTML = html;
+    return;
+  }
+
+  if (data.conflict) {
+    html += `<div class="conflict-banner">⚠ Yorumlar hemfikir değil — hem olumlu hem olumsuz görüş var, taraf tutulmuyor.</div>`;
+  } else {
+    html += `<div class="no-conflict-banner">✓ Yorumlar büyük ölçüde hemfikir.</div>`;
+  }
+
+  html += `<div class="card"><label>Kaynak yorumlar (${data.citations.length})</label>`;
+  for (const c of data.citations) {
+    const sentLabel = c.sentiment === "positive" ? "OLUMLU" : c.sentiment === "negative" ? "OLUMSUZ" : "BELİRSİZ";
+    html += `<div class="citation">
+      <span class="badge ${c.sentiment}">${sentLabel}</span><br>
+      ${escapeHtml(c.text)}
+    </div>`;
+  }
+  html += `</div>`;
+
+  resultsEl.innerHTML = html;
+}
+
+function escapeHtml(str) {
+  const div = document.createElement("div");
+  div.textContent = str;
+  return div.innerHTML;
+}
+</script>
+</body>
+</html>

@@ -1,5 +1,15 @@
-from review_evidence.consensus import build_consensus
+from review_evidence.consensus import _normalize_sentiment, build_consensus
 from review_evidence.db import connect, init_schema
+
+
+def test_normalize_sentiment_accepts_turkish_and_english():
+    assert _normalize_sentiment("positive") == "positive"
+    assert _normalize_sentiment("olumlu") == "positive"
+    assert _normalize_sentiment("negative") == "negative"
+    assert _normalize_sentiment("olumsuz") == "negative"
+    assert _normalize_sentiment("belirsiz") == "unclear"
+    assert _normalize_sentiment("garip_bir_deger") == "unclear"
+    assert _normalize_sentiment("Olumlu") == "positive"
 
 
 def _seed(conn, rows):
