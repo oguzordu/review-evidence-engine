@@ -197,7 +197,16 @@ function renderResults(data) {
   </div>`;
 
   if (data.relevant_count === 0) {
-    html += `<div class="empty">Bu ürün için soruyla ilgili yorum bulunamadı.</div>`;
+    html += `<div class="empty">
+      <strong>Bu bir hata değil.</strong> Sistem ${data.candidates_checked} aday yorumu
+      okudu (soru kelimeleriyle geniş eşleşme yaptığı için sayı yüksek çıkabilir),
+      ama hiçbirinin soruyla <em>gerçekten</em> ilgili olmadığına karar verdi —
+      örneğin ürünle alakasız bir özellik sorulmuş olabilir (bir fön makinesine
+      "pil iyi mi" sormak gibi). Bu ürün grubu, gerçek bir e-ticaret veri setinden
+      alınan karışık yorumlardan oluşuyor, tek bir ürün kategorisi değil.<br><br>
+      Genel geçer örnek sorular: <em>"ürün kaliteli mi"</em>, <em>"kargo nasıldı"</em>,
+      <em>"tavsiye eder misiniz"</em>.
+    </div>`;
     resultsEl.innerHTML = html;
     return;
   }
