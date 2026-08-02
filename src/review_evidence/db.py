@@ -1,3 +1,8 @@
+"""SQLite baglantisi ve sema yonetimi.
+
+Bu modul HTTP katmanini bilmez.
+"""
+
 import sqlite3
 from pathlib import Path
 
@@ -11,6 +16,16 @@ CREATE TABLE IF NOT EXISTS reviews (
 );
 
 CREATE INDEX IF NOT EXISTS idx_reviews_product ON reviews (product_id);
+
+CREATE VIRTUAL TABLE IF NOT EXISTS reviews_fts USING fts5(
+    clean_text,
+    content="reviews",
+    content_rowid="id"
+);
+
+CREATE TRIGGER IF NOT EXISTS reviews_ai AFTER INSERT ON reviews BEGIN
+    INSERT INTO reviews_fts(rowid, clean_text) VALUES (new.id, new.clean_text);
+END;
 """
 
 
