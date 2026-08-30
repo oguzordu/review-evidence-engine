@@ -1,5 +1,7 @@
 # Review Evidence Engine
 
+[![CI](https://github.com/oguzordu/review-evidence-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/oguzordu/review-evidence-engine/actions/workflows/ci.yml)
+
 ## Türkçe
 
 Ürün yorumları üzerinde **örnekleme değil sayım** yapan, her cevabını
@@ -21,8 +23,14 @@ kesitine bakıp genel tabloyu yanlış yansıttığı raporlanmıştır.
 Bu servis ilgili yorumların **tamamını** tek tek değerlendirir, örnekleme
 yapmaz:
 
-1. Anahtar kelime araması (PostgreSQL'in `turkish` tam metin araması) ile geniş bir aday küme bulunur —
-   amaç isabet değil kapsama.
+1. Hibrit aramayla geniş bir aday küme bulunur — amaç isabet değil kapsama.
+   PostgreSQL'in `turkish` tam metin araması (`ts_rank` ile alaka sırasına
+   dizilir) ile lokal çok dilli embedding modelinin
+   (`paraphrase-multilingual-MiniLM-L12-v2`) benzerlik araması, Reciprocal
+   Rank Fusion (RRF) ile birleştirilir. Böylece sözlüksel eşleşmenin
+   kaçırdığı ("berbat", "rezalet" gibi) yorumlar da girer. Embedding modeli
+   yüklenemezse sistem otomatik olarak yalnızca anahtar kelime aramasına
+   düşer.
 2. Aday yorumlar gruplar hâlinde (paralel, toplu istekle) bir LLM'e
    (Gemini) gönderilip ilgili/ilgisiz ve olumlu/olumsuz olarak
    sınıflandırılır.
@@ -99,6 +107,14 @@ docker compose up -d --build
 
 Sonra `http://localhost:8000` adresinden erişilebilir.
 
+İlk çalıştırmada embedding modeli (~120 MB) indirilir ve önbelleğe alınır.
+pgvector sonradan eklendiği için, zaten yüklü yorumlara embedding üretmek
+gerekirse:
+
+```powershell
+python scripts/backfill_embeddings.py
+```
+
 ### Veri yükleme
 
 ```powershell
@@ -131,7 +147,6 @@ gizleyip yanlış güven verirdi.
 
 ### Gelecek geliştirmeler
 
-- Anlamsal arama (embedding) ile hibrit arama, sadece anahtar kelime değil
 - Zaman bazlı eğilim değişimi tespiti (ürün/parti değişikliği sinyali)
 - Baseline (düz LLM özeti) ile karşılaştırmalı ölçüm seti
 
@@ -159,8 +174,13 @@ fraction of the available reviews, misrepresenting the overall picture.
 This service evaluates **every** relevant review individually instead of
 sampling a handful:
 
-1. Keyword search (PostgreSQL's `turkish` full-text search) casts a wide net for candidates — the goal
-   is coverage, not precision.
+1. Hybrid search casts a wide net for candidates — the goal is coverage, not
+   precision. PostgreSQL's `turkish` full-text search (ranked by `ts_rank`) is
+   fused with a local multilingual embedding model
+   (`paraphrase-multilingual-MiniLM-L12-v2`) via Reciprocal Rank Fusion (RRF),
+   so reviews that lexical matching misses ("berbat", "rezalet") are still
+   picked up. If the embedding model fails to load, the system falls back to
+   keyword-only search.
 2. Candidates are sent to an LLM (Gemini) in parallel batches and
    classified as relevant/irrelevant and positive/negative.
 3. Results are counted, conflicts are reported honestly, every number comes
@@ -266,6 +286,5 @@ differences (e.g. `?` vs `%s`, FTS5 vs `tsvector`) behind false confidence.
 
 ### Future work
 
-- Hybrid search (keyword + embeddings), not keyword-only
 - Time-based sentiment shift detection (product/batch change signal)
 - Comparative measurement against a plain-LLM-summary baseline
