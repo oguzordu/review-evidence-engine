@@ -10,10 +10,17 @@ from google import genai
 from review_evidence.config import DATABASE_URL, GEMINI_API_KEY
 from review_evidence.consensus import build_consensus, gemini_batch_classifier
 from review_evidence.db import connect
+from review_evidence.embedding import sentence_transformer_encoder
 
 app = FastAPI(title="Review Evidence Engine")
 
 _client = genai.Client(api_key=GEMINI_API_KEY) if GEMINI_API_KEY else None
+
+try:
+    _encode = sentence_transformer_encoder()
+except Exception as exc:  # model yok / indirilemedi -> arama keyword-only calisir
+    print(f"[main] embedding modeli yuklenemedi, arama keyword-only: {exc}")
+    _encode = None
 
 
 def get_conn() -> Iterator[psycopg.Connection]:
@@ -70,4 +77,4 @@ def ask(
         raise HTTPException(status_code=503, detail="GEMINI_API_KEY tanimli degil")
 
     classify_batch = gemini_batch_classifier(_client)
-    return build_consensus(conn, product_id, question, classify_batch)
+    return build_consensus(conn, product_id, question, classify_batch, encode=_encode)
