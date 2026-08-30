@@ -1,4 +1,6 @@
-from review_evidence.search import keyword_search
+import pytest
+
+from review_evidence.search import _rrf_fuse, keyword_search
 
 
 def _seed(conn, rows):
@@ -48,3 +50,38 @@ def test_keyword_search_returns_empty_for_no_match(db_conn):
     results = keyword_search(db_conn, "p1", "pil")
 
     assert results == []
+
+
+def test_rrf_fuse_ranks_items_appearing_in_both_lists_higher():
+    list_a = [{"id": 1}, {"id": 2}, {"id": 3}]
+    list_b = [{"id": 3}, {"id": 2}, {"id": 9}]
+
+    fused = _rrf_fuse([list_a, list_b])
+
+    top_two = {row["id"] for row in fused[:2]}
+    assert top_two == {2, 3}
+    assert {row["id"] for row in fused} == {1, 2, 3, 9}
+
+
+def test_rrf_fuse_handles_empty_list():
+    only = [{"id": 5}, {"id": 6}]
+
+    fused = _rrf_fuse([only, []])
+
+    assert [row["id"] for row in fused] == [5, 6]
+
+
+def test_rrf_fuse_preserves_first_seen_row_payload():
+    fused = _rrf_fuse([[{"id": 1, "raw_text": "a"}], [{"id": 1, "raw_text": "b"}]])
+
+    assert fused[0]["raw_text"] == "a"
+
+
+def test_keyword_search_orders_by_relevance(db_conn):
+    rows = [("p1", f"pil dayanikli urun {i}") for i in range(30)]
+    rows.append(("p1", "pil pil pil cok kotu hemen bitiyor"))
+    _seed(db_conn, rows)
+
+    results = keyword_search(db_conn, "p1", "pil kotu", limit=5)
+
+    assert "kotu" in results[0]["raw_text"]
