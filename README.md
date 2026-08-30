@@ -1,5 +1,7 @@
 # Review Evidence Engine
 
+[![CI](https://github.com/oguzordu/review-evidence-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/oguzordu/review-evidence-engine/actions/workflows/ci.yml)
+
 ## Türkçe
 
 Ürün yorumları üzerinde **örnekleme değil sayım** yapan, her cevabını
