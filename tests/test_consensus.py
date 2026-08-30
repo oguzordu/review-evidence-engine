@@ -80,6 +80,32 @@ def test_build_consensus_includes_citations(db_conn):
     assert result["citations"][0]["text"] == "pil cok iyi"
 
 
+def test_build_consensus_reports_keyword_only_mode_without_encoder(db_conn):
+    _seed(db_conn, [("p1", "pil cok iyi")])
+    classify_batch = _fake_batch_classifier(
+        {"pil cok iyi": {"relevant": True, "sentiment": "positive"}}
+    )
+
+    result = build_consensus(db_conn, "p1", "pil", classify_batch)
+
+    assert result["search_mode"] == "keyword_only"
+
+
+def test_build_consensus_reports_hybrid_mode_with_encoder(db_conn):
+    _seed(db_conn, [("p1", "pil cok iyi")])
+    classify_batch = _fake_batch_classifier(
+        {"pil cok iyi": {"relevant": True, "sentiment": "positive"}}
+    )
+
+    def fake_encode(texts):
+        return [[0.0] * 384 for _ in texts]
+
+    result = build_consensus(db_conn, "p1", "pil", classify_batch, encode=fake_encode)
+
+    assert result["search_mode"] == "hybrid"
+    assert result["relevant_count"] == 1
+
+
 def test_build_consensus_chunks_large_candidate_sets(db_conn):
     _seed(db_conn, [("p1", f"pil yorumu {i}") for i in range(45)])
     calls = []

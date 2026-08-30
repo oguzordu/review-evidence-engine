@@ -15,7 +15,8 @@ from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
 from typing import Callable, TypedDict
 
-from review_evidence.search import keyword_search
+from review_evidence.embedding import EncoderFn
+from review_evidence.search import hybrid_search
 
 BATCH_SIZE = 20
 MAX_RETRIES = 3
@@ -110,9 +111,10 @@ def build_consensus(
     product_id: str,
     question: str,
     classify_batch: BatchClassifierFn,
+    encode: EncoderFn | None = None,
 ) -> dict:
     """Bir urun+soru icin sayim tabanli mutabakat raporu uretir."""
-    candidates = keyword_search(conn, product_id, question)
+    candidates = hybrid_search(conn, product_id, question, encode)
 
     batches = _chunk(candidates, BATCH_SIZE)
 
@@ -142,6 +144,7 @@ def build_consensus(
     return {
         "question": question,
         "product_id": product_id,
+        "search_mode": "hybrid" if encode is not None else "keyword_only",
         "candidates_checked": len(candidates),
         "relevant_count": len(relevant_reviews),
         "positive_count": positive,
