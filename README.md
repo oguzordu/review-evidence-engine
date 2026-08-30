@@ -50,6 +50,15 @@ GET /products/p2/ask?question=urun kaliteli mi
    conflict: true  (goruslar celisiyor, sistem taraf tutmuyor)
 ```
 
+### Ölçüm
+
+Sayım yönteminin klasik RAG'a karşı farkı kontrollü bir sentetik set üzerinde
+ölçüldü: [docs/benchmark-results.md](docs/benchmark-results.md). Kısaca — bilinen
+sentiment dağılımına sahip bir sette, klasik RAG (K=8, tek LLM özeti) ilgili
+yorumların çoğunu hiç görmediği için olumsuz sayısını sistematik olarak düşük
+raporluyor; sayım yöntemi aynı sette hatasız sayıyor. Ölçümü tekrar üretmek için:
+`python scripts/run_benchmark.py`.
+
 ### Veri kaynağı ve dürüst bir not
 
 Kullanılan veri seti (`fthbrmnby/turkish_product_reviews`, HuggingFace,
@@ -138,9 +147,11 @@ docker compose up -d db
 .venv\Scripts\python.exe -m pytest -v
 ```
 
-23 test — metin/mantık testleri sahte (mock/injectable) bir sınıflandırıcıyla
-çalışır (gerçek API çağrısı gerektirmez), veritabanı testleri ise **gerçek
-PostgreSQL'e** karşı çalışır (Docker'ın ayakta olması gerekir). Bilinçli bir
+48 test — metin/mantık testleri sahte (mock/injectable) bir sınıflandırıcı ve
+sahte encoder'la çalışır (gerçek API çağrısı ve model indirmesi gerektirmez),
+veritabanı testleri ise **ayrı bir test veritabanına** karşı çalışır (Docker'ın
+ayakta olması gerekir; testler çalışan uygulamanın verisine dokunmaz).
+`pytest -m slow` gerçek embedding modelini yükleyen 3 testi de çalıştırır. Bilinçli bir
 tercih: SQLite ile test edip production'da PostgreSQL kullanmak, ikisi
 arasındaki sözdizimi farklarını (örn. `?` vs `%s`, FTS5 vs `tsvector`)
 gizleyip yanlış güven verirdi.
@@ -148,7 +159,6 @@ gizleyip yanlış güven verirdi.
 ### Gelecek geliştirmeler
 
 - Zaman bazlı eğilim değişimi tespiti (ürün/parti değişikliği sinyali)
-- Baseline (düz LLM özeti) ile karşılaştırmalı ölçüm seti
 
 ---
 
@@ -198,6 +208,15 @@ GET /products/p2/ask?question=urun kaliteli mi
 
    conflict: true  (opinions disagree, the system doesn't pick a side)
 ```
+
+### Measurement
+
+The counting method was measured against classic RAG on a controlled synthetic
+set: [docs/benchmark-results.md](docs/benchmark-results.md). In short — on a set
+with a known sentiment distribution, classic RAG (K=8, single LLM summary) never
+sees most of the relevant reviews and so systematically under-reports the
+negative count; the counting method gets the counts exactly right on the same
+set. To reproduce: `python scripts/run_benchmark.py`.
 
 ### Data source — an honest note
 
@@ -278,13 +297,14 @@ docker compose up -d db
 .venv\Scripts\python.exe -m pytest -v
 ```
 
-23 tests — text/logic tests run against an injectable fake classifier (no
-live API calls needed), database tests run against a **real PostgreSQL**
-instance (requires Docker running). Deliberate choice: testing against
+48 tests — text/logic tests run against an injectable fake classifier and a
+fake encoder (no live API calls or model downloads needed), database tests run
+against a **separate test database** (requires Docker running; tests never touch
+the running app's data). `pytest -m slow` also runs the 3 tests that load the
+real embedding model. Deliberate choice: testing against
 SQLite while running PostgreSQL in production would hide real syntax
 differences (e.g. `?` vs `%s`, FTS5 vs `tsvector`) behind false confidence.
 
 ### Future work
 
 - Time-based sentiment shift detection (product/batch change signal)
-- Comparative measurement against a plain-LLM-summary baseline
