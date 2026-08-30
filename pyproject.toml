@@ -9,6 +9,8 @@ dependencies = [
     "google-genai>=1.0",
     "python-dotenv>=1.0",
     "psycopg[binary]>=3.1",
+    "pgvector>=0.3",
+    "sentence-transformers>=3.0",
 ]
 
 [project.optional-dependencies]
@@ -27,3 +29,7 @@ where = ["src"]
 [tool.pytest.ini_options]
 pythonpath = ["src"]
 testpaths = ["tests"]
+addopts = ["-m", "not slow"]
+markers = [
+    "slow: gercek embedding modelini yukler; varsayilan kosuda atlanir",
+]
