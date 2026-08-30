@@ -1,4 +1,4 @@
-from review_evidence.config import DATABASE_URL
+from review_evidence.config import TEST_DATABASE_URL as DATABASE_URL
 from review_evidence.db import connect, init_schema
 
 
