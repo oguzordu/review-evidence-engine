@@ -1,8 +1,9 @@
 .venv/
 __pycache__/
 *.pyc
-data/*
-!data/benchmark.json
+/data/*
+!/data/benchmark.json
+scripts/data/
 *.db
 .pytest_cache/
 .env
