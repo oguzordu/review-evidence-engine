@@ -1,11 +1,13 @@
-"""Anahtar kelime tabanli aday bulma (baseline arama).
+"""Aday yorum bulma: anahtar kelime (ts_rank) + embedding (cosine) hibrit.
 
-Amac isabet degil kapsama: ilgili olabilecek yorumlari genis tutarak getirir.
-Siniflama/sayim islemi bu modulun disinda (consensus.py) yapilir.
+Amac isabet degil kapsama: ilgili olabilecek yorumlari genis tutarak getirir,
+ama alaka sirasina gore. Siniflama/sayim islemi bu modulun disinda
+(consensus.py) yapilir.
 """
 
 import psycopg
 
+from review_evidence.embedding import EncoderFn
 from review_evidence.text import normalize
 
 KEYWORD_K = 100
@@ -62,3 +64,49 @@ def keyword_search(
             (product_id, tsquery_str, tsquery_str, limit),
         )
         return cur.fetchall()
+
+
+def vector_search(
+    conn: psycopg.Connection,
+    product_id: str,
+    query_embedding: list[float],
+    limit: int = VECTOR_K,
+) -> list[dict]:
+    """Embedding benzerligine (cosine) gore en yakin yorumlari getirir.
+    embedding'i olmayan satirlar haric."""
+    with conn.cursor() as cur:
+        cur.execute(
+            """
+            SELECT id, raw_text, created_at
+            FROM reviews
+            WHERE product_id = %s
+              AND embedding IS NOT NULL
+            ORDER BY embedding <=> %s::vector
+            LIMIT %s
+            """,
+            (product_id, query_embedding, limit),
+        )
+        return cur.fetchall()
+
+
+def hybrid_search(
+    conn: psycopg.Connection,
+    product_id: str,
+    query: str,
+    encode: EncoderFn | None = None,
+    k_each: int = KEYWORD_K,
+    limit: int = CANDIDATE_LIMIT,
+) -> list[dict]:
+    """Anahtar kelime (ts_rank) ve embedding (cosine) aramalarini RRF ile
+    birlestirir. encode None ise sadece anahtar kelime aramasi calisir
+    (model yuklenememis durumdaki fallback)."""
+    keyword_rows = keyword_search(conn, product_id, query, limit=k_each)
+
+    if encode is None:
+        return keyword_rows[:limit]
+
+    query_embedding = encode([query])[0]
+    vector_rows = vector_search(conn, product_id, query_embedding, limit=k_each)
+
+    fused = _rrf_fuse([keyword_rows, vector_rows])
+    return fused[:limit]
