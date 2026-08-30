@@ -21,7 +21,7 @@ kesitine bakıp genel tabloyu yanlış yansıttığı raporlanmıştır.
 Bu servis ilgili yorumların **tamamını** tek tek değerlendirir, örnekleme
 yapmaz:
 
-1. Anahtar kelime araması (SQLite FTS5) ile geniş bir aday küme bulunur —
+1. Anahtar kelime araması (PostgreSQL'in `turkish` tam metin araması) ile geniş bir aday küme bulunur —
    amaç isabet değil kapsama.
 2. Aday yorumlar gruplar hâlinde (paralel, toplu istekle) bir LLM'e
    (Gemini) gönderilip ilgili/ilgisiz ve olumlu/olumsuz olarak
@@ -57,7 +57,7 @@ metniyle göstermek için.
 ```
 [fetch_dataset.py] -> [data/sample_reviews.json] -> [ingest.load_reviews]
                                                           |
-                                                    [SQLite + FTS5]
+                                                 [PostgreSQL + turkish FTS]
                                                           |
                               [search.keyword_search] -> aday yorumlar
                                                           |
@@ -68,8 +68,8 @@ metniyle göstermek için.
 
 ### Kullanılan teknolojiler
 
-Python, FastAPI, SQLite (FTS5 tam metin arama), Google Gemini API
-(`gemini-flash-latest`, ücretsiz katman), `ThreadPoolExecutor` ile paralel
+Python, FastAPI, PostgreSQL (yerleşik `turkish` tam metin arama), Google Gemini API
+(`gemini-flash-lite-latest`, ücretsiz katman), `ThreadPoolExecutor` ile paralel
 toplu sınıflandırma.
 
 ### Kurulum
@@ -83,16 +83,33 @@ py -m venv .venv
 adresinden ücretsiz alınabilir. `.env.example` dosyasını `.env` olarak
 kopyalayıp anahtarını gir.
 
+Veritabanı olarak **PostgreSQL** kullanılıyor (Türkçe tam metin arama için
+yerleşik `turkish` dil yapılandırmasıyla). Yerel geliştirme için Docker
+Compose ile ayağa kaldırılır:
+
+```powershell
+docker compose up -d db
+```
+
+### Docker ile tamamı (uygulama + veritabanı)
+
+```powershell
+docker compose up -d --build
+```
+
+Sonra `http://localhost:8000` adresinden erişilebilir.
+
 ### Veri yükleme
 
 ```powershell
 .venv\Scripts\python.exe scripts\fetch_dataset.py
-.venv\Scripts\python.exe -c "from pathlib import Path; from review_evidence.db import connect, init_schema; from review_evidence.ingest import load_reviews; from review_evidence.config import DB_PATH; conn = connect(DB_PATH); init_schema(conn); print(load_reviews(conn, Path('data/sample_reviews.json')))"
+.venv\Scripts\python.exe -c "from pathlib import Path; from review_evidence.db import connect, init_schema; from review_evidence.ingest import load_reviews; from review_evidence.config import DATABASE_URL; conn = connect(DATABASE_URL); init_schema(conn); print(load_reviews(conn, Path('data/sample_reviews.json')))"
 ```
 
-### Çalıştırma
+### Çalıştırma (Docker'sız, sadece veritabanı konteynerle)
 
 ```powershell
+docker compose up -d db
 .venv\Scripts\python.exe -m uvicorn review_evidence.main:app --reload
 ```
 
@@ -101,15 +118,19 @@ API dokümanı: http://127.0.0.1:8000/docs
 ### Test
 
 ```powershell
+docker compose up -d db
 .venv\Scripts\python.exe -m pytest -v
 ```
 
-20 test, hepsi LLM çağrısını sahte (mock/injectable) bir sınıflandırıcıyla
-test ediyor — gerçek API çağrısı gerektirmiyor, hızlı ve ücretsiz.
+23 test — metin/mantık testleri sahte (mock/injectable) bir sınıflandırıcıyla
+çalışır (gerçek API çağrısı gerektirmez), veritabanı testleri ise **gerçek
+PostgreSQL'e** karşı çalışır (Docker'ın ayakta olması gerekir). Bilinçli bir
+tercih: SQLite ile test edip production'da PostgreSQL kullanmak, ikisi
+arasındaki sözdizimi farklarını (örn. `?` vs `%s`, FTS5 vs `tsvector`)
+gizleyip yanlış güven verirdi.
 
 ### Gelecek geliştirmeler
 
-- Docker + PostgreSQL'e taşıma
 - Anlamsal arama (embedding) ile hibrit arama, sadece anahtar kelime değil
 - Zaman bazlı eğilim değişimi tespiti (ürün/parti değişikliği sinyali)
 - Baseline (düz LLM özeti) ile karşılaştırmalı ölçüm seti
@@ -138,7 +159,7 @@ fraction of the available reviews, misrepresenting the overall picture.
 This service evaluates **every** relevant review individually instead of
 sampling a handful:
 
-1. Keyword search (SQLite FTS5) casts a wide net for candidates — the goal
+1. Keyword search (PostgreSQL's `turkish` full-text search) casts a wide net for candidates — the goal
    is coverage, not precision.
 2. Candidates are sent to an LLM (Gemini) in parallel batches and
    classified as relevant/irrelevant and positive/negative.
@@ -173,7 +194,7 @@ real, large-scale Turkish review text.
 ```
 [fetch_dataset.py] -> [data/sample_reviews.json] -> [ingest.load_reviews]
                                                           |
-                                                    [SQLite + FTS5]
+                                                 [PostgreSQL + turkish FTS]
                                                           |
                               [search.keyword_search] -> candidate reviews
                                                           |
@@ -184,9 +205,9 @@ real, large-scale Turkish review text.
 
 ### Tech stack
 
-Python, FastAPI, SQLite (FTS5 full-text search), Google Gemini API
-(`gemini-flash-latest`, free tier), `ThreadPoolExecutor` for parallel batch
-classification.
+Python, FastAPI, PostgreSQL (built-in `turkish` full-text search
+configuration), Google Gemini API (`gemini-flash-lite-latest`, free tier),
+`ThreadPoolExecutor` for parallel batch classification, Docker Compose.
 
 ### Setup
 
@@ -199,16 +220,32 @@ Requires `GEMINI_API_KEY` — get one free at
 [aistudio.google.com/apikey](https://aistudio.google.com/apikey). Copy
 `.env.example` to `.env` and add your key.
 
+Uses **PostgreSQL** (with the built-in `turkish` text search config). Start
+it locally with Docker Compose:
+
+```powershell
+docker compose up -d db
+```
+
+### Full stack with Docker
+
+```powershell
+docker compose up -d --build
+```
+
+Then it's available at `http://localhost:8000`.
+
 ### Loading data
 
 ```powershell
 .venv\Scripts\python.exe scripts\fetch_dataset.py
-.venv\Scripts\python.exe -c "from pathlib import Path; from review_evidence.db import connect, init_schema; from review_evidence.ingest import load_reviews; from review_evidence.config import DB_PATH; conn = connect(DB_PATH); init_schema(conn); print(load_reviews(conn, Path('data/sample_reviews.json')))"
+.venv\Scripts\python.exe -c "from pathlib import Path; from review_evidence.db import connect, init_schema; from review_evidence.ingest import load_reviews; from review_evidence.config import DATABASE_URL; conn = connect(DATABASE_URL); init_schema(conn); print(load_reviews(conn, Path('data/sample_reviews.json')))"
 ```
 
-### Run
+### Run (without Docker, just the DB container)
 
 ```powershell
+docker compose up -d db
 .venv\Scripts\python.exe -m uvicorn review_evidence.main:app --reload
 ```
 
@@ -217,15 +254,18 @@ API docs: http://127.0.0.1:8000/docs
 ### Test
 
 ```powershell
+docker compose up -d db
 .venv\Scripts\python.exe -m pytest -v
 ```
 
-20 tests, all exercising the LLM-calling code through an injectable fake
-classifier — no live API calls needed, fast and free to run.
+23 tests — text/logic tests run against an injectable fake classifier (no
+live API calls needed), database tests run against a **real PostgreSQL**
+instance (requires Docker running). Deliberate choice: testing against
+SQLite while running PostgreSQL in production would hide real syntax
+differences (e.g. `?` vs `%s`, FTS5 vs `tsvector`) behind false confidence.
 
 ### Future work
 
-- Docker + migrate to PostgreSQL
 - Hybrid search (keyword + embeddings), not keyword-only
 - Time-based sentiment shift detection (product/batch change signal)
 - Comparative measurement against a plain-LLM-summary baseline

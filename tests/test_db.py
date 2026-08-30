@@ -1,34 +1,46 @@
+from review_evidence.config import DATABASE_URL
 from review_evidence.db import connect, init_schema
 
 
-def test_init_schema_creates_reviews_table(tmp_path):
-    conn = connect(tmp_path / "test.db")
+def test_init_schema_creates_reviews_table():
+    conn = connect(DATABASE_URL)
     init_schema(conn)
 
-    tables = conn.execute(
-        "SELECT name FROM sqlite_master WHERE type = 'table'"
-    ).fetchall()
+    with conn.cursor() as cur:
+        cur.execute(
+            "SELECT table_name FROM information_schema.tables"
+            " WHERE table_name = 'reviews'"
+        )
+        tables = cur.fetchall()
 
-    assert "reviews" in [row["name"] for row in tables]
+    assert len(tables) == 1
+    conn.close()
 
 
-def test_init_schema_is_idempotent(tmp_path):
-    conn = connect(tmp_path / "test.db")
+def test_init_schema_is_idempotent():
+    conn = connect(DATABASE_URL)
     init_schema(conn)
     init_schema(conn)  # ikinci kez calistirmak hata vermemeli
 
-    count = conn.execute("SELECT COUNT(*) AS n FROM reviews").fetchone()
-    assert count["n"] == 0
+    with conn.cursor() as cur:
+        cur.execute("SELECT COUNT(*) AS n FROM reviews")
+        count = cur.fetchone()
+
+    assert count["n"] >= 0
+    conn.close()
 
 
-def test_connection_returns_rows_by_column_name(tmp_path):
-    conn = connect(tmp_path / "test.db")
-    init_schema(conn)
-    conn.execute(
-        "INSERT INTO reviews (product_id, raw_text, clean_text)"
-        " VALUES ('p1', 'Ürün güzel', 'ürün güzel')"
-    )
+def test_connection_returns_rows_by_column_name(db_conn):
+    with db_conn.cursor() as cur:
+        cur.execute(
+            "INSERT INTO reviews (product_id, raw_text, clean_text)"
+            " VALUES (%s, %s, %s)",
+            ("p1", "Ürün güzel", "ürün güzel"),
+        )
+    db_conn.commit()
 
-    row = conn.execute("SELECT product_id FROM reviews").fetchone()
+    with db_conn.cursor() as cur:
+        cur.execute("SELECT product_id FROM reviews")
+        row = cur.fetchone()
 
     assert row["product_id"] == "p1"

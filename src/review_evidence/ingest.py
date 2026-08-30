@@ -1,13 +1,14 @@
 """Veri setinden veritabanina yukleme."""
 
 import json
-import sqlite3
 from pathlib import Path
+
+import psycopg
 
 from review_evidence.text import normalize
 
 
-def load_reviews(conn: sqlite3.Connection, path: Path) -> int:
+def load_reviews(conn: psycopg.Connection, path: Path) -> int:
     """JSON dosyasindaki yorumlari veritabanina yukler.
 
     Metni bos veya eksik olan kayitlar atlanir. Eklenen satir sayisini doner.
@@ -28,10 +29,11 @@ def load_reviews(conn: sqlite3.Connection, path: Path) -> int:
             )
         )
 
-    conn.executemany(
-        "INSERT INTO reviews (product_id, raw_text, clean_text, created_at)"
-        " VALUES (?, ?, ?, ?)",
-        rows,
-    )
+    with conn.cursor() as cur:
+        cur.executemany(
+            "INSERT INTO reviews (product_id, raw_text, clean_text, created_at)"
+            " VALUES (%s, %s, %s, %s)",
+            rows,
+        )
     conn.commit()
     return len(rows)

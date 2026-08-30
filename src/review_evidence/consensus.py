@@ -9,7 +9,7 @@ LLM cagrisinda siniflandirilir.
 """
 
 import json
-import sqlite3
+import psycopg
 import time
 from collections import Counter
 from concurrent.futures import ThreadPoolExecutor
@@ -106,7 +106,7 @@ def gemini_batch_classifier(client, model_name: str = "gemini-flash-lite-latest"
 
 
 def build_consensus(
-    conn: sqlite3.Connection,
+    conn: psycopg.Connection,
     product_id: str,
     question: str,
     classify_batch: BatchClassifierFn,
