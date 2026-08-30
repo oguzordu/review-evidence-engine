@@ -53,3 +53,20 @@ def test_list_reviews_returns_empty_for_unknown_product(db_conn):
 
     assert response.status_code == 200
     assert response.json()["count"] == 0
+
+
+def test_ask_returns_503_without_gemini_key(db_conn, monkeypatch):
+    import review_evidence.main as main_module
+
+    monkeypatch.setattr(main_module, "_client", None)
+
+    def override_get_conn():
+        yield db_conn
+
+    app.dependency_overrides[get_conn] = override_get_conn
+    try:
+        response = client.get("/products/p1/ask", params={"question": "pil nasil"})
+    finally:
+        app.dependency_overrides.clear()
+
+    assert response.status_code == 503
