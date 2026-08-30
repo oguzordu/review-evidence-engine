@@ -44,3 +44,31 @@ def test_connection_returns_rows_by_column_name(db_conn):
         row = cur.fetchone()
 
     assert row["product_id"] == "p1"
+
+
+def test_init_schema_adds_embedding_column(db_conn):
+    with db_conn.cursor() as cur:
+        cur.execute(
+            "SELECT data_type, udt_name FROM information_schema.columns"
+            " WHERE table_name = 'reviews' AND column_name = 'embedding'"
+        )
+        row = cur.fetchone()
+
+    assert row is not None
+    assert row["udt_name"] == "vector"
+
+
+def test_vector_roundtrips_as_python_list(db_conn):
+    with db_conn.cursor() as cur:
+        cur.execute(
+            "INSERT INTO reviews (product_id, raw_text, clean_text, embedding)"
+            " VALUES (%s, %s, %s, %s)",
+            ("p1", "x", "x", [0.1] * 384),
+        )
+    db_conn.commit()
+
+    with db_conn.cursor() as cur:
+        cur.execute("SELECT embedding FROM reviews")
+        row = cur.fetchone()
+
+    assert len(row["embedding"].to_list()) == 384
