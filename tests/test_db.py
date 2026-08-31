@@ -72,3 +72,14 @@ def test_vector_roundtrips_as_python_list(db_conn):
         row = cur.fetchone()
 
     assert len(row["embedding"].to_list()) == 384
+
+
+def test_init_schema_creates_usage_log(db_conn):
+    with db_conn.cursor() as cur:
+        cur.execute(
+            "SELECT column_name FROM information_schema.columns"
+            " WHERE table_name = 'usage_log' ORDER BY column_name"
+        )
+        cols = [r["column_name"] for r in cur.fetchall()]
+
+    assert cols == ["created_at", "day", "id", "ip"]
