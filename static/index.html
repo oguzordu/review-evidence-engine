@@ -2,173 +2,295 @@
 <html lang="tr">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Review Evidence Engine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
   :root {
-    --bg: #0f1115;
-    --panel: #161a21;
-    --border: #262b35;
-    --text: #e6e9ef;
-    --muted: #8b93a3;
-    --accent: #4f8cff;
-    --positive: #2fbf71;
-    --negative: #ef5350;
-    --unclear: #8b93a3;
+    --bg: #f6f6f3;
+    --surface: #ffffff;
+    --border: #e7e5df;
+    --border-strong: #d8d5cc;
+    --ink: #1f1e1b;
+    --muted: #6c6a62;
+    --faint: #97948b;
+    --accent: #157a5c;
+    --accent-soft: #e5f1eb;
+    --pos: #157a5c;
+    --neg: #b5473c;
+    --neu: #9a978d;
+    --shadow: 0 1px 2px rgba(31,30,27,.04), 0 8px 24px rgba(31,30,27,.05);
+    --radius: 14px;
   }
-  * { box-sizing: border-box; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0;
-    font-family: -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
+    font-family: "Inter", -apple-system, "Segoe UI", Roboto, sans-serif;
     background: var(--bg);
-    color: var(--text);
-    padding: 32px 16px;
+    color: var(--ink);
+    line-height: 1.55;
+    font-size: 15px;
+    padding: 40px 20px 80px;
   }
-  .wrap { max-width: 720px; margin: 0 auto; }
-  h1 { font-size: 22px; margin: 0 0 4px; }
-  .subtitle { color: var(--muted); font-size: 14px; margin-bottom: 24px; }
-  .card {
-    background: var(--panel);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 20px;
-    margin-bottom: 16px;
+  .wrap { max-width: 620px; margin: 0 auto; }
+
+  header { margin-bottom: 28px; }
+  header h1 {
+    font-size: 19px;
+    font-weight: 600;
+    letter-spacing: -0.01em;
   }
-  label { display: block; font-size: 13px; color: var(--muted); margin-bottom: 6px; }
-  select, input {
-    width: 100%;
-    padding: 10px 12px;
-    background: #0d0f13;
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    color: var(--text);
+  header p {
+    color: var(--muted);
     font-size: 14px;
-    margin-bottom: 14px;
+    margin-top: 3px;
   }
-  button {
+
+  .panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+  }
+
+  .field-label {
+    display: block;
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--faint);
+    margin-bottom: 8px;
+  }
+  .row { display: flex; gap: 10px; align-items: center; margin-bottom: 18px; }
+  .row:last-of-type { margin-bottom: 0; }
+
+  select, .q-input {
+    font: inherit;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--border-strong);
+    border-radius: 10px;
+    padding: 11px 12px;
     width: 100%;
-    padding: 12px;
+    outline: none;
+    transition: border-color .15s;
+  }
+  select { max-width: 130px; -webkit-appearance: none; appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg width='10' height='6' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l4 4 4-4' stroke='%236c6a62' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+    background-repeat: no-repeat; background-position: right 12px center; padding-right: 30px; }
+  .q-input:focus, select:focus { border-color: var(--accent); }
+
+  .chips { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 18px; }
+  .chip {
+    font: inherit;
+    font-size: 13px;
+    color: var(--muted);
+    background: var(--bg);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 13px;
+    cursor: pointer;
+    transition: all .15s;
+  }
+  .chip:hover { color: var(--accent); border-color: var(--accent); background: var(--accent-soft); }
+
+  .ask-btn {
+    font: inherit;
+    font-weight: 600;
+    font-size: 15px;
+    color: #fff;
     background: var(--accent);
     border: none;
-    border-radius: 8px;
-    color: white;
-    font-size: 15px;
-    font-weight: 600;
-    cursor: pointer;
-  }
-  button:disabled { opacity: 0.5; cursor: default; }
-  .status { color: var(--muted); font-size: 13px; margin-top: 10px; min-height: 18px; }
-  .stats-row { display: flex; gap: 10px; margin-bottom: 16px; }
-  .stat {
-    flex: 1;
-    background: var(--panel);
-    border: 1px solid var(--border);
     border-radius: 10px;
-    padding: 14px;
-    text-align: center;
-  }
-  .stat .n { font-size: 24px; font-weight: 700; }
-  .stat .l { font-size: 12px; color: var(--muted); margin-top: 2px; }
-  .stat.pos .n { color: var(--positive); }
-  .stat.neg .n { color: var(--negative); }
-  .stat.unc .n { color: var(--unclear); }
-  .conflict-banner {
-    background: rgba(239, 83, 80, 0.12);
-    border: 1px solid rgba(239, 83, 80, 0.4);
-    color: #ff8a80;
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-    margin-bottom: 16px;
-  }
-  .no-conflict-banner {
-    background: rgba(47, 191, 113, 0.12);
-    border: 1px solid rgba(47, 191, 113, 0.4);
-    color: #7fe3ac;
-    border-radius: 8px;
-    padding: 10px 14px;
-    font-size: 13px;
-    margin-bottom: 16px;
-  }
-  .citation {
-    border: 1px solid var(--border);
-    border-radius: 8px;
-    padding: 12px 14px;
-    margin-bottom: 8px;
-    font-size: 14px;
-    line-height: 1.5;
-  }
-  .badge {
-    display: inline-block;
-    font-size: 11px;
-    font-weight: 700;
-    padding: 2px 8px;
-    border-radius: 999px;
-    margin-bottom: 6px;
-  }
-  .badge.positive { background: rgba(47, 191, 113, 0.15); color: var(--positive); }
-  .badge.negative { background: rgba(239, 83, 80, 0.15); color: var(--negative); }
-  .badge.unclear { background: rgba(139, 147, 163, 0.15); color: var(--unclear); }
-  .spinner {
-    display: inline-block;
-    width: 14px; height: 14px;
-    border: 2px solid var(--border);
-    border-top-color: var(--accent);
-    border-radius: 50%;
-    animation: spin 0.8s linear infinite;
-    vertical-align: middle;
-    margin-right: 6px;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  .empty { color: var(--muted); font-size: 13px; text-align: center; padding: 20px; }
-  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
-  .chip {
-    background: #0d0f13;
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 6px 12px;
-    font-size: 13px;
-    color: var(--text);
+    padding: 12px 20px;
     cursor: pointer;
-    width: auto;
+    white-space: nowrap;
+    transition: opacity .15s;
   }
-  .chip:hover { border-color: var(--accent); }
-  .source-banner {
-    border-radius: 8px;
-    padding: 8px 12px;
-    font-size: 12px;
+  .ask-btn:disabled { opacity: .45; cursor: default; }
+
+  .hint { font-size: 12.5px; color: var(--faint); margin-top: 14px; }
+  .status { font-size: 13.5px; color: var(--muted); margin-top: 14px; min-height: 20px; }
+  .dot-pulse::after {
+    content: "";
+    animation: dots 1.4s steps(4, end) infinite;
+  }
+  @keyframes dots { 0% { content: ""; } 25% { content: "."; } 50% { content: ".."; } 75% { content: "..."; } }
+
+  /* --- results --- */
+  .results { margin-top: 22px; display: none; }
+  .results.show { display: block; }
+
+  .verdict {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
     margin-bottom: 14px;
   }
-  .source-banner.precomputed { background: rgba(139,147,163,0.12); color: var(--muted); border: 1px solid var(--border); }
-  .source-banner.live { background: rgba(47,191,113,0.12); color: #7fe3ac; border: 1px solid rgba(47,191,113,0.4); }
-  .source-banner.limited { background: rgba(255,193,7,0.12); color: #ffd479; border: 1px solid rgba(255,193,7,0.4); }
+  .source-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    font-size: 11.5px;
+    font-weight: 600;
+    letter-spacing: .02em;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 16px;
+  }
+  .source-pill.precomputed { background: #f0efe9; color: var(--muted); }
+  .source-pill.live { background: var(--accent-soft); color: var(--accent); }
+  .source-pill.limited { background: #fbf1e3; color: #9a6a1f; }
+  .source-pill .tick { width: 6px; height: 6px; border-radius: 50%; background: currentColor; }
+
+  .headline {
+    font-size: 15px;
+    color: var(--muted);
+    margin-bottom: 16px;
+  }
+  .headline b { color: var(--ink); font-weight: 600; }
+
+  .bars { display: grid; gap: 9px; margin-bottom: 4px; }
+  .bar-row { display: grid; grid-template-columns: 64px 1fr 34px; align-items: center; gap: 10px; font-size: 13px; }
+  .bar-row .lbl { color: var(--muted); }
+  .bar-track { height: 8px; background: #efeee8; border-radius: 999px; overflow: hidden; }
+  .bar-fill { height: 100%; border-radius: 999px; transition: width .5s cubic-bezier(.2,.7,.3,1); }
+  .bar-fill.pos { background: var(--pos); }
+  .bar-fill.neg { background: var(--neg); }
+  .bar-fill.neu { background: var(--neu); }
+  .bar-row .val { text-align: right; font-variant-numeric: tabular-nums; color: var(--ink); font-weight: 500; }
+
+  .conflict-note {
+    margin-top: 16px;
+    padding-top: 14px;
+    border-top: 1px solid var(--border);
+    font-size: 13px;
+    color: var(--muted);
+  }
+  .conflict-note .flag { color: var(--neg); font-weight: 600; }
+  .conflict-note .ok { color: var(--accent); font-weight: 600; }
+
+  .cites-head {
+    font-size: 12px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    color: var(--faint);
+    margin: 4px 2px 10px;
+  }
+  .cite {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 13px 15px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    color: #37352f;
+  }
+  .cite .tag {
+    display: inline-block;
+    font-size: 10.5px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    padding: 1px 6px;
+    border-radius: 4px;
+    margin-right: 7px;
+    vertical-align: 1.5px;
+  }
+  .cite .tag.positive { background: var(--accent-soft); color: var(--accent); }
+  .cite .tag.negative { background: #f7e7e5; color: var(--neg); }
+  .cite .tag.unclear { background: #f0efe9; color: var(--neu); }
+
+  .more-btn {
+    font: inherit;
+    font-size: 13px;
+    color: var(--accent);
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 8px 2px;
+    font-weight: 500;
+  }
+  .more-btn:hover { text-decoration: underline; }
+
+  .empty {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 22px;
+    font-size: 14px;
+    color: var(--muted);
+  }
+  .empty b { color: var(--ink); }
+
+  footer {
+    margin-top: 40px;
+    font-size: 12.5px;
+    color: var(--faint);
+    line-height: 1.65;
+  }
+  footer a { color: var(--muted); }
+
+  @media (max-width: 460px) {
+    body { padding: 28px 14px 60px; }
+    .row { flex-wrap: wrap; }
+    select { max-width: none; }
+    .ask-btn { width: 100%; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <h1>Review Evidence Engine</h1>
-  <div class="subtitle">Örnekleme değil sayım — ilgili yorumların tamamı değerlendirilir.</div>
+  <header>
+    <h1>Review Evidence Engine</h1>
+    <p>Örnekleme değil sayım — bir soruya ilgili yorumların tamamı tek tek bakılarak cevap verilir.</p>
+  </header>
 
-  <div class="card">
-    <label for="product">Ürün</label>
-    <select id="product">
-      <option value="p1">p1</option>
-      <option value="p2">p2</option>
-      <option value="p3">p3</option>
-      <option value="p4">p4</option>
-      <option value="p5">p5</option>
-    </select>
-    <label>Hazır sorular</label>
+  <div class="panel">
+    <div class="row">
+      <div>
+        <label class="field-label" for="product">Ürün</label>
+        <select id="product">
+          <option value="p1">p1</option>
+          <option value="p2">p2</option>
+          <option value="p3">p3</option>
+          <option value="p4">p4</option>
+          <option value="p5">p5</option>
+        </select>
+      </div>
+    </div>
+
+    <label class="field-label">Hazır sorular</label>
     <div class="chips" id="chips"></div>
-    <label for="question">Soru</label>
-    <input id="question" type="text" placeholder="örn: kargo hızlı mıydı" value="ürün kaliteli mi">
-    <button id="ask">Sor</button>
+
+    <label class="field-label" for="question">Soru</label>
+    <div class="row">
+      <input id="question" class="q-input" type="text" placeholder="ürün kaliteli mi" value="ürün kaliteli mi" autocomplete="off">
+      <button id="ask" class="ask-btn">Sor</button>
+    </div>
+
     <div class="status" id="status"></div>
-    <div class="status" id="budget-note" style="font-size:12px">
-      Canlı sorgu günde ~15 çağrıyla sınırlı (Gemini ücretsiz kota). Hazır sorular anında yanıtlanır, kota harcamaz.
+    <div class="hint">
+      Hazır sorular anında yanıtlanır. Serbest sorular canlı çalışır; Gemini ücretsiz
+      kotası için günde ~15 çağrı ile sınırlıdır.
     </div>
   </div>
 
-  <div id="results"></div>
+  <div class="results" id="results"></div>
+
+  <footer>
+    Veri: <a href="https://huggingface.co/datasets/fthbrmnby/turkish_product_reviews" target="_blank" rel="noopener">turkish_product_reviews</a>
+    (HuggingFace) setinden 1000 gerçek Türkçe yorum, 5 sentetik ürün grubuna bölünmüş —
+    veri setinde gerçek ürün ayrımı yok, bu bilinçli bir sınır.
+    Kod: <a href="https://github.com/oguzordu/review-evidence-engine" target="_blank" rel="noopener">github.com/oguzordu/review-evidence-engine</a>
+  </footer>
 </div>
 
 <script>
@@ -179,7 +301,7 @@ const productEl = document.getElementById("product");
 const questionEl = document.getElementById("question");
 const chipsEl = document.getElementById("chips");
 
-// build_demo_qa.py'deki QUESTIONS ile ayni tutulmali
+// scripts/build_demo_qa.py QUESTIONS ile aynı tutulmalı
 const DEMO_QUESTIONS = {
   p1: ["ürün kaliteli mi", "kargo hızlı geldi mi"],
   p2: ["ürün beklentiyi karşılıyor mu", "tavsiye edilir mi"],
@@ -189,31 +311,33 @@ const DEMO_QUESTIONS = {
 };
 
 function renderChips() {
-  const qs = DEMO_QUESTIONS[productEl.value] || [];
   chipsEl.innerHTML = "";
-  for (const q of qs) {
+  for (const q of DEMO_QUESTIONS[productEl.value] || []) {
     const b = document.createElement("button");
     b.className = "chip";
     b.type = "button";
     b.textContent = q;
-    b.addEventListener("click", () => { questionEl.value = q; askBtn.click(); });
+    b.addEventListener("click", () => { questionEl.value = q; ask(); });
     chipsEl.appendChild(b);
   }
 }
 productEl.addEventListener("change", renderChips);
 renderChips();
 
-askBtn.addEventListener("click", async () => {
-  const product = document.getElementById("product").value;
-  const question = document.getElementById("question").value.trim();
-  if (!question) {
-    statusEl.textContent = "Bir soru yaz.";
-    return;
-  }
+askBtn.addEventListener("click", ask);
+questionEl.addEventListener("keydown", (e) => { if (e.key === "Enter") ask(); });
 
+let busy = false;
+async function ask() {
+  if (busy) return;
+  const product = productEl.value;
+  const question = questionEl.value.trim();
+  if (!question) { statusEl.textContent = "Önce bir soru yaz."; return; }
+
+  busy = true;
   askBtn.disabled = true;
-  statusEl.innerHTML = '<span class="spinner"></span>Yorumlar taranıyor, sınıflandırılıyor... (10-20 saniye sürebilir)';
-  resultsEl.innerHTML = "";
+  resultsEl.className = "results";
+  statusEl.innerHTML = '<span class="dot-pulse">Yorumlar taranıyor ve tek tek sınıflandırılıyor</span>';
 
   try {
     const url = `/products/${encodeURIComponent(product)}/ask?question=${encodeURIComponent(question)}`;
@@ -221,88 +345,109 @@ askBtn.addEventListener("click", async () => {
     const data = await resp.json();
 
     if (!resp.ok) {
-      statusEl.textContent = "Hata: " + (data.detail || resp.status);
-      askBtn.disabled = false;
+      statusEl.textContent = "Hata: " + (data.detail || ("HTTP " + resp.status));
       return;
     }
-
     statusEl.textContent = "";
-    renderResults(data);
+    render(data);
   } catch (err) {
     statusEl.textContent = "Bağlantı hatası: " + err.message;
   } finally {
+    busy = false;
     askBtn.disabled = false;
   }
-});
+}
 
-function renderResults(data) {
+function esc(s) {
+  const d = document.createElement("div");
+  d.textContent = s;
+  return d.innerHTML;
+}
+
+const SOURCE_LABEL = {
+  precomputed: ["precomputed", "Hazır sonuç — önceden hesaplandı"],
+  live: ["live", "Canlı — az önce hesaplandı"],
+  budget_exhausted: ["limited", "Günlük canlı kota doldu — hazır bir örnek"],
+  ip_limit: ["limited", "Bu cihazın günlük hakkı doldu — hazır bir örnek"],
+  no_api_key: ["limited", "Canlı sorgu kapalı — hazır bir örnek"],
+};
+
+function render(d) {
   let html = "";
 
-  if (data.source === "precomputed") {
-    html += `<div class="source-banner precomputed">Hazır sonuç — önceden hesaplandı, kota harcamadı.</div>`;
-  } else if (data.source === "live") {
-    html += `<div class="source-banner live">Canlı — az önce Gemini ile hesaplandı.</div>`;
-  } else if (data.source === "budget_exhausted" || data.source === "ip_limit") {
-    html += `<div class="source-banner limited">Günlük canlı kota doldu — bu ürün için hazır bir örnek gösteriliyor.</div>`;
-  } else if (data.source === "no_api_key") {
-    html += `<div class="source-banner limited">Canlı sorgu şu an kapalı — hazır bir örnek gösteriliyor.</div>`;
+  if (d.source && SOURCE_LABEL[d.source]) {
+    const [cls, txt] = SOURCE_LABEL[d.source];
+    html += `<div class="source-pill ${cls}"><span class="tick"></span>${txt}</div>`;
   }
 
-  if (data.candidates_checked === undefined) {
-    html += `<div class="empty">Bu ürün için hazır sonuç bulunamadı. Yukarıdaki hazır sorulardan birini dene.</div>`;
-    resultsEl.innerHTML = html;
+  if (d.candidates_checked === undefined) {
+    resultsEl.innerHTML = html + `<div class="empty">Bu ürün için hazır sonuç yok. Yukarıdaki hazır sorulardan birini dene.</div>`;
+    resultsEl.className = "results show";
     return;
   }
 
-  html += `<div class="stats-row">
-    <div class="stat"><div class="n">${data.candidates_checked}</div><div class="l">aday tarandı</div></div>
-    <div class="stat"><div class="n">${data.relevant_count}</div><div class="l">ilgili yorum</div></div>
-  </div>`;
+  const rel = d.relevant_count, pos = d.positive_count, neg = d.negative_count, unc = d.unclear_count;
+  const max = Math.max(pos, neg, unc, 1);
 
-  html += `<div class="stats-row">
-    <div class="stat pos"><div class="n">${data.positive_count}</div><div class="l">olumlu</div></div>
-    <div class="stat neg"><div class="n">${data.negative_count}</div><div class="l">olumsuz</div></div>
-    <div class="stat unc"><div class="n">${data.unclear_count}</div><div class="l">belirsiz</div></div>
-  </div>`;
+  html += `<div class="verdict">`;
+  html += `<div class="headline">${d.candidates_checked} aday yorum tarandı, <b>${rel} tanesi</b> soruyla gerçekten ilgili bulundu.</div>`;
 
-  if (data.relevant_count === 0) {
-    html += `<div class="empty">
-      <strong>Bu bir hata değil.</strong> Sistem ${data.candidates_checked} aday yorumu
-      okudu (soru kelimeleriyle geniş eşleşme yaptığı için sayı yüksek çıkabilir),
-      ama hiçbirinin soruyla <em>gerçekten</em> ilgili olmadığına karar verdi —
-      örneğin ürünle alakasız bir özellik sorulmuş olabilir (bir fön makinesine
-      "pil iyi mi" sormak gibi). Bu ürün grubu, gerçek bir e-ticaret veri setinden
-      alınan karışık yorumlardan oluşuyor, tek bir ürün kategorisi değil.<br><br>
-      Genel geçer örnek sorular: <em>"ürün kaliteli mi"</em>, <em>"kargo nasıldı"</em>,
-      <em>"tavsiye eder misiniz"</em>.
-    </div>`;
-    resultsEl.innerHTML = html;
-    return;
-  }
+  html += `<div class="bars">`;
+  html += barRow("Olumlu", pos, max, "pos");
+  html += barRow("Olumsuz", neg, max, "neg");
+  html += barRow("Belirsiz", unc, max, "neu");
+  html += `</div>`;
 
-  if (data.conflict) {
-    html += `<div class="conflict-banner">⚠ Yorumlar hemfikir değil — hem olumlu hem olumsuz görüş var, taraf tutulmuyor.</div>`;
-  } else {
-    html += `<div class="no-conflict-banner">✓ Yorumlar büyük ölçüde hemfikir.</div>`;
-  }
-
-  html += `<div class="card"><label>Kaynak yorumlar (${data.citations.length})</label>`;
-  for (const c of data.citations) {
-    const sentLabel = c.sentiment === "positive" ? "OLUMLU" : c.sentiment === "negative" ? "OLUMSUZ" : "BELİRSİZ";
-    html += `<div class="citation">
-      <span class="badge ${c.sentiment}">${sentLabel}</span><br>
-      ${escapeHtml(c.text)}
-    </div>`;
+  if (rel > 0) {
+    html += d.conflict
+      ? `<div class="conflict-note"><span class="flag">Görüşler çelişiyor</span> — hem olumlu hem olumsuz yorum var, sistem taraf tutmuyor.</div>`
+      : `<div class="conflict-note"><span class="ok">Yorumlar büyük ölçüde hemfikir.</span></div>`;
   }
   html += `</div>`;
 
+  if (rel === 0) {
+    html += `<div class="empty"><b>Bu bir hata değil.</b> Sistem ${d.candidates_checked} aday yorumu okudu ama
+      hiçbirinin soruyla doğrudan ilgili olmadığına karar verdi. Bu ürün grubu gerçek bir e-ticaret
+      setinden alınan karışık yorumlardan oluşuyor, tek kategori değil — alakasız bir özellik sormuş olabilirsin.</div>`;
+    resultsEl.innerHTML = html;
+    resultsEl.className = "results show";
+    return;
+  }
+
+  const cites = d.citations || [];
+  if (cites.length) {
+    html += `<div class="cites-head">Kaynak yorumlar${d.citations_truncated ? ` (ilk ${cites.length})` : ` (${cites.length})`}</div>`;
+    html += `<div id="cite-list">`;
+    cites.forEach((c, i) => {
+      const label = c.sentiment === "positive" ? "OLUMLU" : c.sentiment === "negative" ? "OLUMSUZ" : "BELİRSİZ";
+      const hidden = i >= 6 ? ' style="display:none"' : "";
+      html += `<div class="cite" data-i="${i}"${hidden}><span class="tag ${c.sentiment}">${label}</span>${esc(c.text)}</div>`;
+    });
+    html += `</div>`;
+    if (cites.length > 6) {
+      html += `<button class="more-btn" id="more">+ ${cites.length - 6} yorum daha göster</button>`;
+    }
+  }
+
   resultsEl.innerHTML = html;
+  resultsEl.className = "results show";
+
+  const more = document.getElementById("more");
+  if (more) {
+    more.addEventListener("click", () => {
+      resultsEl.querySelectorAll(".cite[style]").forEach(el => el.style.display = "");
+      more.remove();
+    });
+  }
 }
 
-function escapeHtml(str) {
-  const div = document.createElement("div");
-  div.textContent = str;
-  return div.innerHTML;
+function barRow(label, val, max, cls) {
+  const pct = Math.round((val / max) * 100);
+  return `<div class="bar-row">
+    <span class="lbl">${label}</span>
+    <span class="bar-track"><span class="bar-fill ${cls}" style="width:${val ? Math.max(pct, 4) : 0}%"></span></span>
+    <span class="val">${val}</span>
+  </div>`;
 }
 </script>
 </body>
