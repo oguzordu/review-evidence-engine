@@ -15,3 +15,8 @@ updates:
     directory: "/"
     schedule:
       interval: weekly
+    ignore:
+      # python base image sabit tutulur; major/minor yukseltmeleri elle yapilir
+      # (torch / sentence-transformers wheel uyumu icin)
+      - dependency-name: python
+        update-types: ["version-update:semver-major", "version-update:semver-minor"]
