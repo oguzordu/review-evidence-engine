@@ -217,7 +217,7 @@ askBtn.addEventListener("click", async () => {
 
   try {
     const url = `/products/${encodeURIComponent(product)}/ask?question=${encodeURIComponent(question)}`;
-    const resp = await fetch(url);
+    const resp = await fetch(url, { cache: "no-store" });
     const data = await resp.json();
 
     if (!resp.ok) {
