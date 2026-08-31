@@ -61,6 +61,8 @@ raporluyor; sayım yöntemi aynı sette hatasız sayıyor. Ölçümü tekrar ür
 
 ### Canlı
 
+**<https://92-4-163-43.sslip.io>**
+
 Oracle Cloud Always Free ARM VM'de, Docker + Caddy (otomatik HTTPS) ile canlı;
 `main`'e her push GitHub Actions ile otomatik deploy edilir. Kurulum: [docs/deploy.md](docs/deploy.md).
 
@@ -230,6 +232,8 @@ negative count; the counting method gets the counts exactly right on the same
 set. To reproduce: `python scripts/run_benchmark.py`.
 
 ### Live
+
+**<https://92-4-163-43.sslip.io>**
 
 Runs live on an Oracle Cloud Always Free ARM VM with Docker + Caddy (automatic
 HTTPS); every push to `main` auto-deploys via GitHub Actions. Setup: [docs/deploy.md](docs/deploy.md).
