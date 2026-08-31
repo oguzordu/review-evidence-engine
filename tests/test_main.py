@@ -70,3 +70,53 @@ def test_ask_returns_503_without_gemini_key(db_conn, monkeypatch):
         app.dependency_overrides.clear()
 
     assert response.status_code == 503
+
+
+def test_ask_serves_precomputed_in_demo_mode(db_conn, monkeypatch):
+    import review_evidence.main as m
+
+    monkeypatch.setattr(m, "DEMO_MODE", True)
+    monkeypatch.setattr(
+        m, "_demo_qa", {"p1": {"ürün kaliteli mi": {"relevant_count": 7, "positive_count": 7}}}
+    )
+    monkeypatch.setattr(m, "_client", object())
+
+    def boom(*a, **k):
+        raise AssertionError("LLM cagrilmamaliydi")
+
+    monkeypatch.setattr(m, "build_consensus", boom)
+
+    def override():
+        yield db_conn
+
+    m.app.dependency_overrides[m.get_conn] = override
+    try:
+        r = client.get("/products/p1/ask", params={"question": "ÜRÜN kaliteli mi"})
+    finally:
+        m.app.dependency_overrides.clear()
+
+    assert r.status_code == 200
+    body = r.json()
+    assert body["source"] == "precomputed"
+    assert body["relevant_count"] == 7
+
+
+def test_ask_reports_budget_exhausted_in_demo_mode(db_conn, monkeypatch):
+    import review_evidence.main as m
+
+    monkeypatch.setattr(m, "DEMO_MODE", True)
+    monkeypatch.setattr(m, "_demo_qa", {"p1": {"x": {"relevant_count": 1}}})
+    monkeypatch.setattr(m, "_client", object())
+    monkeypatch.setattr(m, "DAILY_LIVE_BUDGET", 0)
+
+    def override():
+        yield db_conn
+
+    m.app.dependency_overrides[m.get_conn] = override
+    try:
+        r = client.get("/products/p1/ask", params={"question": "canli bir soru"})
+    finally:
+        m.app.dependency_overrides.clear()
+
+    assert r.status_code == 200
+    assert r.json()["source"] == "budget_exhausted"

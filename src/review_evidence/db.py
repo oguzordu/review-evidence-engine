@@ -27,6 +27,15 @@ CREATE INDEX IF NOT EXISTS idx_reviews_fts
 
 CREATE INDEX IF NOT EXISTS idx_reviews_embedding
     ON reviews USING hnsw (embedding vector_cosine_ops);
+
+CREATE TABLE IF NOT EXISTS usage_log (
+    id         SERIAL PRIMARY KEY,
+    day        DATE NOT NULL DEFAULT CURRENT_DATE,
+    ip         TEXT NOT NULL,
+    created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+);
+
+CREATE INDEX IF NOT EXISTS idx_usage_log_day ON usage_log (day);
 """
 
 

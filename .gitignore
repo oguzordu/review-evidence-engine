@@ -3,7 +3,9 @@ __pycache__/
 *.pyc
 /data/*
 !/data/benchmark.json
+!/data/demo_qa.json
 scripts/data/
+.env.prod
 *.db
 .pytest_cache/
 .env
