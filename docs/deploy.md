@@ -111,6 +111,9 @@ GitHub repo → **Settings → Secrets and variables → Actions → New reposit
 | `DEPLOY_USER` | `ubuntu` |
 | `DEPLOY_SSH_KEY` | private key'in **tam içeriği** (`-----BEGIN ... END-----` dahil) |
 
+Sonra **Settings → Secrets and variables → Actions → Variables** sekmesi →
+`DEPLOY_ENABLED` = `true` (bu olmadan deploy workflow'u atlanır, kırmızı X çıkmaz).
+
 Bundan sonra `main`'e her push → CI yeşilse `.github/workflows/deploy.yml`
 otomatik SSH ile `git pull` + `up -d --build` yapar.
 
