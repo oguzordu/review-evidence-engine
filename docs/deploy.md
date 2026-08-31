@@ -132,9 +132,12 @@ docker compose version
 ```bash
 git clone https://github.com/oguzordu/review-evidence-engine.git
 cd review-evidence-engine
-cp .env.prod.example .env.prod
-nano .env.prod
+cp .env.prod.example .env
+nano .env
 ```
+
+> ⚠️ Dosya adı **`.env`** olmalı (`.env.prod` değil) — `docker compose` otomatik
+> olarak sadece `.env` adını okur.
 
 `nano` açılınca 3 satırı doldur:
 
@@ -174,6 +177,9 @@ Bittiğinde `docker compose -f docker-compose.prod.yml ps` → 3 servis
 ---
 
 ## 8. Şemayı kur ve veriyi yükle (tek seferlik)
+
+> Bu adım bir kez yapılır. `pgdata` volume'u kalıcı olduğu için sonraki
+> deploy'larda veri silinmez, tekrar yüklemene gerek yok.
 
 ```bash
 # 1) tablolar + pgvector + usage_log

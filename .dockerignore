@@ -1,0 +1,12 @@
+.venv/
+__pycache__/
+*.pyc
+.git/
+.github/
+tests/
+docs/
+*.md
+data/reviews.db
+data/sample_reviews.json
+.env
+.env.prod
