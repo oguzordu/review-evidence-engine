@@ -20,9 +20,11 @@ jobs:
           host: ${{ secrets.DEPLOY_HOST }}
           username: ${{ secrets.DEPLOY_USER }}
           key: ${{ secrets.DEPLOY_SSH_KEY }}
+          command_timeout: 30m
           script: |
             cd ~/review-evidence-engine
             git pull --ff-only
             docker compose -f docker-compose.prod.yml up -d --build
             docker compose -f docker-compose.prod.yml exec -T app \
               python -c "from review_evidence.db import connect, init_schema; from review_evidence.config import DATABASE_URL; init_schema(connect(DATABASE_URL))"
+            docker image prune -f
