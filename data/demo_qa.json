@@ -1,0 +1,3416 @@
+{
+  "generated_at": "2026-08-31",
+  "model": "gemini-flash-lite-latest",
+  "items": [
+    {
+      "product_id": "p1",
+      "question": "ürün kaliteli mi",
+      "answer": {
+        "question": "ürün kaliteli mi",
+        "product_id": "p1",
+        "search_mode": "hybrid",
+        "candidates_checked": 124,
+        "relevant_count": 118,
+        "positive_count": 114,
+        "negative_count": 1,
+        "unclear_count": 3,
+        "conflict": true,
+        "citations": [
+          {
+            "id": 169,
+            "text": "ürünü buradan aldım kaliteli ve güzel kullanışlı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 114,
+            "text": "ürün kaliteli kullanışlı fiyatı çok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 118,
+            "text": "ürün elime ulaştığında inceledim uygun fiyatlı kaliteli bir ürün arıyorsanız, ürün tavsiye niteliğindedir. güçlü hava çıkışı var ve sıcaklık kademesi gayet güzel kuaförlerin kullandığı fön makineleri kadar değil belki ama ona yakın bir ürün. ev için gayet ideal, daha fazla para ödemeye gerek yok. şık bir ürün..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 132,
+            "text": "ürün güçlü, kaliteli ve uygun fiyatlı. hepsiburada.coma bakmadan almayın.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 63,
+            "text": "ürün gayet güzel, kullanışlı. fiyatı da uygun fakat plastik kısmı yani dış kasası biraz dandik çok kaliteli göründüğüne bakmayın :)",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 74,
+            "text": "başarılı hizmet,  kaliteli ve beklenen ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 106,
+            "text": "bu fiyata bu ürün gayet uygun ürünü elinize aldıgınızda kalitesiz hisi veriyor malzemesinden dolayi onun dışında her seyi iyi hizi fani soguk hava vermesinde bir sıkıntı yok alinir.",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 130,
+            "text": "ürün güzel ekonomik ve kaliteli teşekkür eder tüm çalışmalarınızda özellikle müsteri memnuniyetinin öncelikli olması dilegi ile. başarılar.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 53,
+            "text": "fiyatına göre kaliteli bir ürün tavsiye ederim. hem soğutması hem iyon sistemi var.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 99,
+            "text": "ürün gerçekten güzel hem fiyatı hem kalitesi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 2,
+            "text": "ürün kaliteli ve çok kullanışlı kargo ya verilmesi ve elime çabuk ulaşması da gayet başarılı idi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 39,
+            "text": "fiyatına göre ideal bir ürün. kısa bir süredir kullanıyorum işinizi görebilecek seviyede bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 93,
+            "text": "fiyatına göre hem kaliteli hem de uygun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 101,
+            "text": "ürünün malzemesi çok kaliteli değil fakat bir saç kurutma makinesinden daha fazlasını beklemek anlamsız. sıcaklığı güzel, üfleme gücü de yeterli. saçları kabartmıyor. ürün başlığı ile birlikte geliyor. tavsiye ederim.",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 152,
+            "text": "öncelikle hb teşekkür ederim ürünleri mi sağlam bir şekilde paketleyip gönderdiği için aldığım bütün ürünlerden memnunum dışardaki alışveriş yerindeki ürünleri bu fiyata ve bu kaliteye almak mümkün değil çoook mutluyum ve ayrıca ürünlerin garantili olması mutlu ediyor ben memnun kaldım arzum saç kurutma makinesi den tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 76,
+            "text": "gayet güzel ve hızlı teslimat için teşekürlerrrr. fiyatına göre başarılı bir ürün tavsiye edebilirim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 183,
+            "text": "bu fiyata bu kalite kaçmaz. gayet kullanışlı hoş bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 134,
+            "text": "yorumlara bakarak ürünü almıştım doğruda yapmışım..fiyatının uygun olması sizi yanıltmasın gayet iyi bir ürün.üründen de hepsiburada.com dan da çok memnunum.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 150,
+            "text": "çok güzel almaya değer bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 172,
+            "text": "gayet güzel bir ürün fiayatıda heryere göre uygun teşekkürler hb..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 192,
+            "text": "bu fiyata daha kalitesiz ürünler satılıyorken, bu kalitede bir ürünü uygun fiyata almak, insanı gerçekten çok mutlu ediyor. üründen de oldukça memnun kaldım. tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 17,
+            "text": "ürün orjinal ve çok kullanışlı. i̇htiyacı olanlara tavsiye ederim tereddütsüz alabilirsiniz. gayet uygun ekonomik ve ürün eksiksiz geldi. hızlı kargo için teşekkür ederim hb.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 47,
+            "text": "fiyata göre iyi bir ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 88,
+            "text": "hem ürün hemde promasyon ürünü olmasına rağmen iki de mükemmel; tahmin ettiğimden çok kısa süre teslimatı yapıldığı için teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 181,
+            "text": "harika bir ürün. hem fiyatı uygun hemde kaliteli. kuaförlerin bile kullanabileceği kalitede. i̇yonizer olması sayesinde saçlarınızı kuruturken elektriklenmemesini sağlıyor. tereddütsüz alabilirsiniz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 81,
+            "text": "ürün fiyatına göre çok iyi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 73,
+            "text": "emeği geçen herkeze teşekkürler,güzel bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 179,
+            "text": "fiyata göre aşırı iyi ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 102,
+            "text": "fiyatına göre gayet kaliteli, en düşük ayarı bile saçlarını kurutmaya yetiyor. başlıkları düzgün takarsanız kolay giriyor. ben üründen çok memnunum tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 140,
+            "text": "üründen de, alışveriş yaptığım bu siteden de oldukça memnunum.fiyatı ve ürünün kalitesi de gayet iyi, alanlar da memnun kalacaktır.hızlı ve sorunsuz şekilde elinize ulaşması da ayrıca mutlu edici. teşekkürler hepsiburada.com :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 185,
+            "text": "cok güzel ve kullanışlı bir ürün tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 24,
+            "text": "gayet güzel ürün teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 144,
+            "text": "harika bi ürün tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 15,
+            "text": "fiyatına göre güzel bür ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 142,
+            "text": "ürün aynı resimde göründüğü gibi. fiyat ve kalite açısından gayet güzel ve kullanışlı.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 78,
+            "text": "hem kaliteli hem de şu anda piyasadaki en uygun fiyata sahip. tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 84,
+            "text": "güzel bir ürün kullanışlı kremde hediye olması iyi olmuş",
+            "sentiment": "positive"
+          },
+          {
+            "id": 123,
+            "text": "bu fiyata bu kalite oldukca iyi sogutma özelliği de en son işiniz bitince iyi birsey inşallah garantide urun gibi kaliteli olur teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 175,
+            "text": "ürünü yeni aldım gayet iyi ve kullanışlı tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 55,
+            "text": "ürünün kalitesi fiyatına göre iyi olduğu söylenebilir, fazla gürültüsü yapmaz, iyonlu özelliğine sahiptir.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 35,
+            "text": "ürün gayet hızlı teslim edildi, ev için oldukça yeterli bir ürün. teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 108,
+            "text": "fiyat performans olarak çok güzel bir ürün. tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 59,
+            "text": "ürün çok iyi herkeze tavsiye ederim bu fiyata daha iyi si yok..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 139,
+            "text": "gayet güzel bir ürün, muadillerine göre hem fiyatı uygun hemde aynı kalite. çok para vermenize gerek yok. 3 yıl da garanti vermiş, daha ne olsun.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 98,
+            "text": "ürün fiyatına göre çok iyi tavsiye ederin hızlı kargo",
+            "sentiment": "positive"
+          },
+          {
+            "id": 136,
+            "text": "kargo hızı ürün kalitesi yerinde. aldık kullanıyoruz memnunuz. küçük ev aletlerinde arzumun kalitesi tartışılmaz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 168,
+            "text": "tasarımı gayet şık, profesyonel kullanıma uygun bir ürün..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 100,
+            "text": "çok sesli ama başarılı bi ürün tavsiye ederim :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 36,
+            "text": "fiyatına göre güzel ürün tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 58,
+            "text": "fiyatına göre çok güzel bir ürün, hiç düşünmeden alın derim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 95,
+            "text": "ürünün fiyatına göre performansı çok iyi ve 2 gün içinde elime ulaştı teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 120,
+            "text": "bu fiyata bu kalitede bir ürünü sundugu için hb ye teşekkür ederim cumartesi sipariş ettim pazartesi elimdeydi hızlı kargosuda en büyük hizmetlerinden biri.bu marka bi kalite bu fiyat baska hiç bir yerde bu-la-maz-si-nizzzz !!!",
+            "sentiment": "positive"
+          },
+          {
+            "id": 147,
+            "text": "ürün gayet güzel kuvvetli bir makina.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 105,
+            "text": "hızlı gönderi güzel ürün teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 3,
+            "text": "fiyat-performans karşılaştırması yaptığınızda gayet iyi bir ürün. en önemlisi ısınma yapmıyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 122,
+            "text": "ürün fiyatına göre iyi ama cok sıcak uflemiyor gonderim korgo hızlı teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 38,
+            "text": "parasına göre güzel bir ürün. tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 94,
+            "text": "piyasanın yarı fiyatına.e satışın %30 ucuzuna hepsi buradadan aldin.ertesi gun elime ulasti.plastik yuseyi cok kaliteli degil acikcası ama kuruma performansı ve sacları dolastırmayan elektriklendirmeyen iyonlu hava sistemi cok iyi.garantisi bitene kadar kullansan bile deger.arzum yani sonucta isim iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 174,
+            "text": "fiyatına göre güzel bir ürün. çalışırken titreme yada tuttuğunuz yerden dışarı hava kaçırmıyor. hepsiburadaya teşekkür ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 51,
+            "text": "fiyatına göre ürün gayet güzel, peformansı yeterli. hız ve sıcaklık ayrının ayrı ayrı yapılması güzel bir özellik.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 124,
+            "text": "güzel ve kaliteli. hızlı kargo teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 107,
+            "text": "ürün fan hızı ve ısı olarak gayet iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 14,
+            "text": "ürün fiyat performans olarak karşılığını veriyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 200,
+            "text": "hızlı teslimat güvenilir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 131,
+            "text": "güzel ürün, idare eder, günlük işlerinizi karşılar, çok çok birşey beklemeyin",
+            "sentiment": "positive"
+          },
+          {
+            "id": 178,
+            "text": "ürün oldukça güzel fiyatına göre özellikle ben çok beğendim tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 163,
+            "text": "bu fiyat aralığındaki en iyi cihaz.kullandım gayet başarılı sonuç aldım.arzum olması extra bir kalite.bunu bir kere daha kanıtladı bana göre.kargo hızlı ürün mükemmel.her şey çok güzel.teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 29,
+            "text": "biraz gürültülü çalışması dışında bir problemi yok. fiyatına göre güzel bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 154,
+            "text": "ürün umduğumdan ve beklediğimden daha güzel çıktı herkese tavsiye ederimm.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 156,
+            "text": "ürün başlıkların girişleri hariç çok iyi. kullanımı ve gücü gayet iyi. ancak makinanın ucuna takılan aparatlarını takıp çıkarmada çok zorlanıyorum. belki şans benimki bilemem ama onun dışında güzel bir makina",
+            "sentiment": "positive"
+          },
+          {
+            "id": 67,
+            "text": "başarılı bir ürün tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 30,
+            "text": "güzel ürün memnunuz indirimli almıstım.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 57,
+            "text": "ürün fiyatına göre gayet güzel ancak kargo biraz daha hızlı olabilir teşekkürler....",
+            "sentiment": "positive"
+          },
+          {
+            "id": 28,
+            "text": "gayet kullanışlı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 16,
+            "text": "kargo hemen geldi . ürün fiyatına göre çok iyi i̇şimizi görüyor. kullanışlı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 188,
+            "text": "gücü çok iyi. isı ve hız ayarlaması da ideal. çeyizim için aldım. umarım uzuuuun yıllar kullanırım. bu fiyata bu ürün kaçmazzzzz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 191,
+            "text": "2000 watt bir ürün arıyordum ki, sitede bu ürünü gördüm. hem 2200 watt hem de ion teknolojili bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 22,
+            "text": "gayet iyi bir ürün kablosu biraz kısa ama kullanışlı tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 133,
+            "text": "ürün ikinci gün elime ulaştı ve ürün görsellerde olduğu gibi ne söylendiyse o geldi güzel ürün hızlı gönderi teşekkürler hepsiburda",
+            "sentiment": "positive"
+          },
+          {
+            "id": 64,
+            "text": "bu fiyata alınabilecek iyi bir ürün, iyidir iyi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 160,
+            "text": "güzel kaliteli ve büyük. malzemesi kesinlikle kaliteli. fiyatı derseniz zaten uygun... ayrıca en son hızda evi bile kurulayabilirsiniz. ayrıca iyon meselesi nedir bilmiyorum. kablosu 1 metreden uzun. kullanışlı uçları var... yani alınabilir. uzun ömürlü kullanılabilir.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 52,
+            "text": "ürünü cumartesi sipariş verdim salı günü elimde oldu elime gayet hızlı ulaştı ürün de bu fiyata fazlasıyla iyi memnun kaldım ben alcak olan çok düşünmesin çok uzun saçlar için bişey demiyorum işe yarar yaramaz bilmem",
+            "sentiment": "positive"
+          },
+          {
+            "id": 19,
+            "text": "fiyat kalite konusunda gayet iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 79,
+            "text": "kargo elime hemen ulaştı, beklentiyi karşılayan bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 80,
+            "text": "ürünü aldıktan sonra 3 günde felan elime ulaştı. performans fiyatına göre iyi, o yuzden fazla birşey beklememek lazım tabi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 85,
+            "text": "ürün beklediğim gibi çıktı. hb ekibine teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 89,
+            "text": "daha öncede arzum kullandım 4-5 sene sürdü içine saç kaçtığını tahmin ediyorum cızırdadı içini açtım kırıldı tamir edilmesin diye özen göstermişler ama yine arzum aldım başka markalara pek güvenmiyorum hem fiyat wat ve özellik bakımından hepsi var çok şey beklemeyeceksiniz bu fiyata ama iş görüyor kurutuyor çok çok çabuk değil ama kurutuyor ve saçları kabartmıyor zaten benim saçım kabarmaz ama iyonizer herhalde bozulsa da üzülmem diyeceğiniz bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 90,
+            "text": "tam bir fiyat perf ürünü.  hava akımı baya kuvvetli...tavsiye ederim...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 128,
+            "text": "çok kullanışlı ve de kuvvetli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 92,
+            "text": "kaliteli makine 4 gündür kullanıyorum memnunum.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 113,
+            "text": "zaman olarak elime çok cabuk gecti gercekten ürün cok hoşuma gitti tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 5,
+            "text": "fiyat ve performans olarak gayet iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 125,
+            "text": "ürünü hediye olarak aldım arkadaşıma ve çok memnun kaldı. benimde ihtiyacım olduğundan bir tanede ben sipariş verdim. 2. gün elime ulaştı. teşekkürler hb.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 141,
+            "text": "ben ürünü çok sevdim. hız ve sıcaklık kademeleri yeterli, son dereceye getirmenize gerek bile kalmıyor. ayrıca yanında difüzörünün olması da çok iyi :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 146,
+            "text": "birçok ürün inceleyip yorumlara bakarak aldım .yurtiçi kargoyla ertesi gün teslim edildi. ince telli saçlarımı elektriklenmeden rahatça kurutabildim iyon teknolojisi bu olsa gerek . benim gibi bileği zayıf olanlar için ideal hafiflikte ve kurutma hızı iyi , eski makinamla daha fazla zaman kaybediyormuşum. eğer profesyonel bir kullanım ihtiyacınız yoksa rahatlıkla alabilirsiniz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 171,
+            "text": "güzel  makina  kullanışlı pratik hoş",
+            "sentiment": "positive"
+          },
+          {
+            "id": 37,
+            "text": "fiyatina göre iyi ama dugmeleri ve baska yerleri plastik ve cok adi ve kalitesiz oldugu belli oluyor.",
+            "sentiment": "negative"
+          },
+          {
+            "id": 159,
+            "text": "ortalama bir ürün ve bu fiyata başka hiçbir yerde yok",
+            "sentiment": "positive"
+          },
+          {
+            "id": 162,
+            "text": "ürünü eşim için aldım.o memnun kaldı gerisi benim için teferuat",
+            "sentiment": "positive"
+          },
+          {
+            "id": 72,
+            "text": "hem uygun hem güzel, alınabilir..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 158,
+            "text": "bu fiyata bu kalite çok iyi bence",
+            "sentiment": "positive"
+          },
+          {
+            "id": 170,
+            "text": "sipariş elime kargodan dolayı çok geç ulaştı. ancak ürün fiyatına göre gayet başarılı. tavsiye edilir :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 187,
+            "text": "gücü 2200 watt çok iyi. isı ve hız ayarlaması da çok kullanışlı. bir de i̇yon teknolojisi var. difüzör ve dar kurutma başlığı ile, sahip olduğu bu özelliklerin yanında, böyle uygun bir fiyata böyle bir ürüne sahip olmak bizi çok memnun etti. teşekkürler hepsi̇burada.com...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 193,
+            "text": "ürün çok hızlı elime ulaştı, performansı da çok süpermiş. tutuşu çok rahat, kendi kendime çok kolay fön yapabiliyorum. herkese tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 40,
+            "text": "fiyatına göre performansı fena değil ....",
+            "sentiment": "positive"
+          },
+          {
+            "id": 12,
+            "text": "daha pahalısınıda aldım ama bu ürünün sıcaklıgını ve üflemesini vermedi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 50,
+            "text": "gercekten iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 26,
+            "text": "çok çabuk geldi. ürün cok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 7,
+            "text": "arzum super fön. daha oncede farkli markasini kullandim diger markalardan uzun sure fazla kullandigim bir urun . tekrar tercih ettim bunu motoru gucluymus son ayarada  titreme yapsada  sicaklik super  . begenerek aldigim tek urun  ama  urun geldiginde arka tel korumasi icine gocmus muhim degil kalitesi onemli. tesekkurler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 60,
+            "text": "urun yeterince kaliteli vaadettiklerini yapıyor. aldigimdan beri plastik kokusu gecmedi onun dişinde kullanışlı ve güçlü.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 68,
+            "text": "sıcak ve soğuk olması güzel fiyatına göre güzel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 77,
+            "text": "bu fiyata bu kalite çok iyi düşünen varsa tavsiye ederim ben 1 aydır kullanıyorum çok memnunum arzuma teşekkürler..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 42,
+            "text": "oldukça yeterli,güçlü soğuk hava düğmesi,diffüzör ve ekipmanlar şık,kaliteli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 45,
+            "text": "ürün design şekil gayet güzel ama ağzına konular o parçaları yerleştirmek sıkıntı oldu.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 49,
+            "text": "güzel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 46,
+            "text": "güzel görünümlü ergonomik ve güçlü. tavsiye edilir",
+            "sentiment": "positive"
+          },
+          {
+            "id": 97,
+            "text": "kargo çok hızlı fiyatı ve kalitesi güzel daha önce 10 sene arzum kullandım bana göre tek dez anvatajı plastik malzemeden yapılmış olması çabuk ısınıyor umarım ileride sorun çıkarmaz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 173,
+            "text": "fiyatına göre çok iyi tavsiye ederim",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "p1",
+      "question": "kargo hızlı geldi mi",
+      "answer": {
+        "question": "kargo hızlı geldi mi",
+        "product_id": "p1",
+        "search_mode": "hybrid",
+        "candidates_checked": 104,
+        "relevant_count": 48,
+        "positive_count": 46,
+        "negative_count": 2,
+        "unclear_count": 0,
+        "conflict": true,
+        "citations": [
+          {
+            "id": 119,
+            "text": "mükemmel hızlı kargo kaçıran üzülür.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 98,
+            "text": "ürün fiyatına göre çok iyi tavsiye ederin hızlı kargo",
+            "sentiment": "positive"
+          },
+          {
+            "id": 57,
+            "text": "ürün fiyatına göre gayet güzel ancak kargo biraz daha hızlı olabilir teşekkürler....",
+            "sentiment": "negative"
+          },
+          {
+            "id": 197,
+            "text": "uygun fiyat, hızlı kargo",
+            "sentiment": "positive"
+          },
+          {
+            "id": 16,
+            "text": "kargo hemen geldi . ürün fiyatına göre çok iyi i̇şimizi görüyor. kullanışlı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 97,
+            "text": "kargo çok hızlı fiyatı ve kalitesi güzel daha önce 10 sene arzum kullandım bana göre tek dez anvatajı plastik malzemeden yapılmış olması çabuk ısınıyor umarım ileride sorun çıkarmaz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 124,
+            "text": "güzel ve kaliteli. hızlı kargo teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 116,
+            "text": "guzel, kullanisli ancak sesi felaket onun disinda fiyat bazinda bakarsaniz basarili urun. hepsiburada hizli kargo tskler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 26,
+            "text": "çok çabuk geldi. ürün cok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 91,
+            "text": "yeterli seviyede bir makine. hızlı gönderi için teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 120,
+            "text": "bu fiyata bu kalitede bir ürünü sundugu için hb ye teşekkür ederim cumartesi sipariş ettim pazartesi elimdeydi hızlı kargosuda en büyük hizmetlerinden biri.bu marka bi kalite bu fiyat baska hiç bir yerde bu-la-maz-si-nizzzz !!!",
+            "sentiment": "positive"
+          },
+          {
+            "id": 96,
+            "text": "saç kurutma makinası gayet güzel. hızlı kargodan dolayı teşekkürler..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 200,
+            "text": "hızlı teslimat güvenilir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 2,
+            "text": "ürün kaliteli ve çok kullanışlı kargo ya verilmesi ve elime çabuk ulaşması da gayet başarılı idi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 17,
+            "text": "ürün orjinal ve çok kullanışlı. i̇htiyacı olanlara tavsiye ederim tereddütsüz alabilirsiniz. gayet uygun ekonomik ve ürün eksiksiz geldi. hızlı kargo için teşekkür ederim hb.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 133,
+            "text": "ürün ikinci gün elime ulaştı ve ürün görsellerde olduğu gibi ne söylendiyse o geldi güzel ürün hızlı gönderi teşekkürler hepsiburda",
+            "sentiment": "positive"
+          },
+          {
+            "id": 136,
+            "text": "kargo hızı ürün kalitesi yerinde. aldık kullanıyoruz memnunuz. küçük ev aletlerinde arzumun kalitesi tartışılmaz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 79,
+            "text": "kargo elime hemen ulaştı, beklentiyi karşılayan bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 105,
+            "text": "hızlı gönderi güzel ürün teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 170,
+            "text": "sipariş elime kargodan dolayı çok geç ulaştı. ancak ürün fiyatına göre gayet başarılı. tavsiye edilir :)",
+            "sentiment": "negative"
+          },
+          {
+            "id": 70,
+            "text": "hizli kargo güzel paketleme sorunsuz alişveri̇ş performansini bi̇lmi̇yorum çeyi̇z i̇çi̇n aldim makul fi̇yat teşekkürederi̇m hepsi̇burada.com",
+            "sentiment": "positive"
+          },
+          {
+            "id": 33,
+            "text": "kargom oldukca hizli geldi, ve fon de cok guzel, cok guclu ufluyor",
+            "sentiment": "positive"
+          },
+          {
+            "id": 163,
+            "text": "bu fiyat aralığındaki en iyi cihaz.kullandım gayet başarılı sonuç aldım.arzum olması extra bir kalite.bunu bir kere daha kanıtladı bana göre.kargo hızlı ürün mükemmel.her şey çok güzel.teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 35,
+            "text": "ürün gayet hızlı teslim edildi, ev için oldukça yeterli bir ürün. teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 122,
+            "text": "ürün fiyatına göre iyi ama cok sıcak uflemiyor gonderim korgo hızlı teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 52,
+            "text": "ürünü cumartesi sipariş verdim salı günü elimde oldu elime gayet hızlı ulaştı ürün de bu fiyata fazlasıyla iyi memnun kaldım ben alcak olan çok düşünmesin çok uzun saçlar için bişey demiyorum işe yarar yaramaz bilmem",
+            "sentiment": "positive"
+          },
+          {
+            "id": 71,
+            "text": "i̇lgili satıcı,hızlı gönderim güzel makine .teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 75,
+            "text": "hızlı servis, sağlam ambalaj memnun kaldım öneririm.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 23,
+            "text": "kargom 2 3 güne elime ulaştı kampanyalı olduğu için çeyizime aldım. çok paralar verip aynı işi gören makinaları almak ne kadar mantıklı bilemiyorum. ama şunu unutmamak gerek uygun fiyatla kaliteyi bulmak istiyorsan bu site tam size göre",
+            "sentiment": "positive"
+          },
+          {
+            "id": 76,
+            "text": "gayet güzel ve hızlı teslimat için teşekürlerrrr. fiyatına göre başarılı bir ürün tavsiye edebilirim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 10,
+            "text": "gayet iyi bi kac gun icinde geldi hizmet cok iyi teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 196,
+            "text": "zamanında geldi ürün yaklaşık 2 aydır kullanıyoruz. herhangi bir sızdırma yapmıyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 193,
+            "text": "ürün çok hızlı elime ulaştı, performansı da çok süpermiş. tutuşu çok rahat, kendi kendime çok kolay fön yapabiliyorum. herkese tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 54,
+            "text": "fiyat/performans oranı çok iyi. zaman'ında elime ulaştı ilk kullanımda farklı bir ses geldi içinde parçası kırıldı sandım ama hava aldığı yerde takılıp sökülen filtre gibi bir kapağı var o gevşemiş yerine takınca düzeldi. teşekkürler hepsiburada..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 82,
+            "text": "ürün güzel ve çok hizlı geldi resimle bire bir aynısı ama her üründe aynı özeni göstermenizi rica ederim tşk.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 117,
+            "text": "fiyatına göre çok iyi. kısa sürede elimize ulaştığı için de hb teşekürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 65,
+            "text": "kullanmadim ama gayet i̇yi̇ görünüyor ve çok kisa sürede geldi̇ i̇nanilir gi̇bi̇ deği̇l",
+            "sentiment": "positive"
+          },
+          {
+            "id": 140,
+            "text": "üründen de, alışveriş yaptığım bu siteden de oldukça memnunum.fiyatı ve ürünün kalitesi de gayet iyi, alanlar da memnun kalacaktır.hızlı ve sorunsuz şekilde elinize ulaşması da ayrıca mutlu edici. teşekkürler hepsiburada.com :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 138,
+            "text": "hepsi burada hizina diyecek yok ayri kutuya koyup göndermeleiri ayrica güzel.makinada fiyatina göre  güzel . sadece ucu biraz dar ama fazlasiyla iş görüyor. . tavsiye ederim..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 146,
+            "text": "birçok ürün inceleyip yorumlara bakarak aldım .yurtiçi kargoyla ertesi gün teslim edildi. ince telli saçlarımı elektriklenmeden rahatça kurutabildim iyon teknolojisi bu olsa gerek . benim gibi bileği zayıf olanlar için ideal hafiflikte ve kurutma hızı iyi , eski makinamla daha fazla zaman kaybediyormuşum. eğer profesyonel bir kullanım ihtiyacınız yoksa rahatlıkla alabilirsiniz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 80,
+            "text": "ürünü aldıktan sonra 3 günde felan elime ulaştı. performans fiyatına göre iyi, o yuzden fazla birşey beklememek lazım tabi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 126,
+            "text": "makine kısa sürede gönderildi.beklediğim gibi performansı da gayet iyi. tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 112,
+            "text": "(1 gün sonra elimde olması daha da güzel)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 95,
+            "text": "ürünün fiyatına göre performansı çok iyi ve 2 gün içinde elime ulaştı teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 27,
+            "text": "2 gün içinde elimde oldu",
+            "sentiment": "positive"
+          },
+          {
+            "id": 94,
+            "text": "piyasanın yarı fiyatına.e satışın %30 ucuzuna hepsi buradadan aldin.ertesi gun elime ulasti.plastik yuseyi cok kaliteli degil acikcası ama kuruma performansı ve sacları dolastırmayan elektriklendirmeyen iyonlu hava sistemi cok iyi.garantisi bitene kadar kullansan bile deger.arzum yani sonucta isim iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 165,
+            "text": "urun 2 günde elime geçti gayet güzel ve kullanışlı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 125,
+            "text": "ürünü hediye olarak aldım arkadaşıma ve çok memnun kaldı. benimde ihtiyacım olduğundan bir tanede ben sipariş verdim. 2. gün elime ulaştı. teşekkürler hb.",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "p2",
+      "question": "ürün beklentiyi karşılıyor mu",
+      "answer": {
+        "question": "ürün beklentiyi karşılıyor mu",
+        "product_id": "p2",
+        "search_mode": "hybrid",
+        "candidates_checked": 108,
+        "relevant_count": 38,
+        "positive_count": 38,
+        "negative_count": 0,
+        "unclear_count": 0,
+        "conflict": false,
+        "citations": [
+          {
+            "id": 302,
+            "text": "üründe, gönderimide  beklentilerimi karşıladı. teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 345,
+            "text": "çok kaliteli bir ürün, kesinlikle tavsiye ediyorum. teslimat süper, ürün pazar günü elime ulaştı.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 382,
+            "text": "kaliteli bir ürün. hızlı ve sorunsuz bir şekilde ürün teslim edilmistir. tesekkurler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 333,
+            "text": "ürün her zaman kullandıgım ürün,aynı kampanya tekrar olursa yine alırım:)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 241,
+            "text": "1,5 yaşındaki kızım için şimdiye kadar çeşitli marketlerden bez alıyorduk. fakat bir gün nette dolaşırken rastgele bu ürünü gördüm. fiyat olarak ise bizim aldıklarımızdan daha uygun olduğunu gördüm ve sipariş verdim. ürünü teslim alasiya kadar tereddüt lerim olsada ürün elime hızlı bir şekilde geçti. bundan sonra bütün bezler hepsiburada dan. ))",
+            "sentiment": "positive"
+          },
+          {
+            "id": 358,
+            "text": "ürün gayet güzel başka bez kullanıldığınad pişik olma ihtimali artıyor ancak bu ürünün sızdırmama oranı çok daha fazla. hb.com'da piyasanın en iyi fiyatıyla satılıyor tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 293,
+            "text": "eksiksiz ve sorunsuz ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 226,
+            "text": "ürün iyi abi :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 321,
+            "text": "ürün fiyat olarak uygun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 233,
+            "text": "siparişim hızlı geldi ... ürün zaten en iyisi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 221,
+            "text": "herşey  çok güzel ürün kaliteli zaten rskr hb",
+            "sentiment": "positive"
+          },
+          {
+            "id": 248,
+            "text": "ürünün kargoya verilmesi çok kısa sürdü. kullandığımız bir ürün zaten, fiyatı çok uygun.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 304,
+            "text": "çok iyi bir ürün gönül rahatlığı ile kullanıyoruz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 238,
+            "text": "uygun fiyat, klasik ürün :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 204,
+            "text": "i̇yi ürün, ??",
+            "sentiment": "positive"
+          },
+          {
+            "id": 234,
+            "text": "marketlerde aldığımız ürünler . sahteymis . bu ürün onların yanında süper. çok beğendim. kaliteli.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 344,
+            "text": "uygun fiyat güzel ürün .",
+            "sentiment": "positive"
+          },
+          {
+            "id": 361,
+            "text": "çok hızlı bir gönderim oldu. kalitesi tartışılmaz ürünün zatem.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 296,
+            "text": "ürün güzel ama kargo bedava olsa daha iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 203,
+            "text": "çok iyi ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 211,
+            "text": "sürekli̇ kullandiğim ürün onun marketlerdeki̇ fi̇yatini cok i̇yi̇ bi̇li̇yorum dişariya göre fiyati çok uygun ve 2 i̇ş gününde tesli̇m daha ne olsun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 290,
+            "text": "eskiden daha kaliteli idi.fakat yine de piyasadaki en iyi ürün diyebilirim.kargo da bedava olursa tadından yenmez.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 390,
+            "text": "ürün orijinal ve kaliteli.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 326,
+            "text": "ürün kaliteli, planlanan teslim tarihinden önce kargo gönderildi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 256,
+            "text": "kaliteli ürün ve hızlı kargo için teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 336,
+            "text": "güzel hesaplı ürün, hızlı kargo",
+            "sentiment": "positive"
+          },
+          {
+            "id": 308,
+            "text": "güzel ürün tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 260,
+            "text": "her yönüyle mükemmel bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 298,
+            "text": "iyi ürün hızlı gönderi kargo bedava çok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 274,
+            "text": "ürünün kutusunun içinde 3 adet ayrı ayrı paketlenmiş halde 42'lik bezler var. kalitesi çok iyi. 1.5 yıldır kullanıyoruz. pişik ve benzeri hiç bir problem yaşamadık. tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 292,
+            "text": "üründen çok memnun olduk",
+            "sentiment": "positive"
+          },
+          {
+            "id": 272,
+            "text": "59.90 lık kampanyadan almıstım..şuan ayısı 74 e satılıyor..çok uygun almısım.keske bi kaç paket fazladan alsaydım diyorum.ürünü anlatmaya zayen gerek yok kalitesi belli firma hemen yolladı..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 285,
+            "text": "uygun fiyat,hızlı kargo hizmetiyle süper ...tavsiye ediyorum .bebeğim doğduğundan itibaren kullandığım bu ürünü bu fiyata bize ulaştıran hepsi buradaya teşekkürler .",
+            "sentiment": "positive"
+          },
+          {
+            "id": 215,
+            "text": "kullandığım bir ürün.hepsi buradanın fiyat avantajlarıda iyi.2 gün içinde elimde olmasıda avantaj.tavsiye ederim........",
+            "sentiment": "positive"
+          },
+          {
+            "id": 357,
+            "text": "çok memnun kaldık, kalitesi belli olan ürünü en iyi fiyata alabileceğiniz site hepaiburadaya teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 369,
+            "text": "uzun süredir bu ürünü kullanıyoruz çok kaliteli pişik yapmıyor uzun süre beklese dahi sızdırma yapmıyor teşekkürler hepsiburada...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 360,
+            "text": "bundan ucuzunu bulamazssınız ürün çok kaliteli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 212,
+            "text": "daha fazla indirim olmalı diye düşünüyorum. ürün kalitesinde bir fark yok.",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "p2",
+      "question": "tavsiye edilir mi",
+      "answer": {
+        "question": "tavsiye edilir mi",
+        "product_id": "p2",
+        "search_mode": "hybrid",
+        "candidates_checked": 104,
+        "relevant_count": 100,
+        "positive_count": 100,
+        "negative_count": 0,
+        "unclear_count": 0,
+        "conflict": false,
+        "citations": [
+          {
+            "id": 217,
+            "text": "ürünler güzel tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 205,
+            "text": "uygun fiyata aldım tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 247,
+            "text": "kaliteli herkese tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 250,
+            "text": "çok avantajlı bence ve seve seve kullanıyoruz tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 308,
+            "text": "güzel ürün tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 353,
+            "text": "eşim ve ben memnunuz alacaklara tavsiye ediyorum.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 395,
+            "text": "hızlı ve doğru ve zamanında teslim tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 306,
+            "text": "diğer bezler ile kıyaslanamaz. bizim ufaklıkların vazgeçilmezi. tavsiye olunur...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 240,
+            "text": "ürünü 4 aylık kızım için aldım. memnun kaldık herkese tavsiye ederim teşekkürler hepsiburada",
+            "sentiment": "positive"
+          },
+          {
+            "id": 334,
+            "text": "kesinlikle tereddüt etmeden tavsiye edebilirim bu fiyata çok çok iyi..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 288,
+            "text": "premium care'den sonra aktif bebege devam ettik. oldukça memnunuz. bebeginizin cildine uyumluysa kullanmanızı tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 320,
+            "text": "öncelikle ben hepsiburda.com dan yaptığım alışverişlerde sıkıntı yaşamadım zaman'ında kargo elime ulaştı fiyat olaraktan çok uygun alacak arkadaşlara tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 310,
+            "text": "sürekli hepsi burada dan alıyoruz. tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 388,
+            "text": "i̇nanilmaz kaliteli bir urun. ogluma dogdugundan beri prima kullaniyorum. kesinlikle tavsiye ederim. asla sizdirma yapmiyor. gece 12 saat kuruluk sozunu sonuna kadar tutuyor. hic dusunmeden alin derim. fiyatta cok uygun tesekkurler hepsiburada.com",
+            "sentiment": "positive"
+          },
+          {
+            "id": 367,
+            "text": "en kaliteli bebek bezi biz çok memnunuz tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 345,
+            "text": "çok kaliteli bir ürün, kesinlikle tavsiye ediyorum. teslimat süper, ürün pazar günü elime ulaştı.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 362,
+            "text": "doğduğundan beri prima bebek bezi kullanıyorum. gerçekten çok güzel ve kaliteli herkese tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 398,
+            "text": "i̇lk aylarda premium care tavsiye ederim. 6. aydan sonra aktif bebeke döndük. gayet memnunuz. başka bebek bezlerinde çocuğumun rahatsızlığı olmuştu, aktif bebekle bir sıkıntımız yok. hepsiburadadan siparişimi kargo bedava söyledim hem fiyatı uygundu, hem de evime kadar geldi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 274,
+            "text": "ürünün kutusunun içinde 3 adet ayrı ayrı paketlenmiş halde 42'lik bezler var. kalitesi çok iyi. 1.5 yıldır kullanıyoruz. pişik ve benzeri hiç bir problem yaşamadık. tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 285,
+            "text": "uygun fiyat,hızlı kargo hizmetiyle süper ...tavsiye ediyorum .bebeğim doğduğundan itibaren kullandığım bu ürünü bu fiyata bize ulaştıran hepsi buradaya teşekkürler .",
+            "sentiment": "positive"
+          },
+          {
+            "id": 218,
+            "text": "başarılı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 210,
+            "text": "sıkıntısız çok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 224,
+            "text": "güzel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 312,
+            "text": "bebeğimiz doğduğu günden beri prima kullanıyorum bir kere başka marka bez kullanmıştım bebeğimin altını kızarttı prima kesinlikle ayrıcalıkları olan bir bez. tavsiye ediyorum kesinlikle",
+            "sentiment": "positive"
+          },
+          {
+            "id": 295,
+            "text": "prima en iyisi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 313,
+            "text": "çok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 236,
+            "text": "zamanında teslim ve beklendiği gibi kalite",
+            "sentiment": "positive"
+          },
+          {
+            "id": 358,
+            "text": "ürün gayet güzel başka bez kullanıldığınad pişik olma ihtimali artıyor ancak bu ürünün sızdırmama oranı çok daha fazla. hb.com'da piyasanın en iyi fiyatıyla satılıyor tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 202,
+            "text": "hizli ve sağlam ulaştı elime",
+            "sentiment": "positive"
+          },
+          {
+            "id": 225,
+            "text": "çok iyi..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 286,
+            "text": "çok iyi...??",
+            "sentiment": "positive"
+          },
+          {
+            "id": 206,
+            "text": "biz memnunuz :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 338,
+            "text": "kullanışlı ve hesaplı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 213,
+            "text": "2 ayda bi̇r düzenli̇ aliyorum si̇pari̇ş veri̇yorum ertesi̇ gün eli̇mi̇zde hizli güveni̇li̇r hi̇zmet teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 394,
+            "text": "hizli gönderi. teşekkürler hepsiburada.com",
+            "sentiment": "positive"
+          },
+          {
+            "id": 226,
+            "text": "ürün iyi abi :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 399,
+            "text": "en iyisi bu",
+            "sentiment": "positive"
+          },
+          {
+            "id": 340,
+            "text": "gezmeye gerek yok f/p kesinlikle alın",
+            "sentiment": "positive"
+          },
+          {
+            "id": 363,
+            "text": "uygun fıyat, hızlı teslımat.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 251,
+            "text": "hızlı geldi memnun kaldım teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 280,
+            "text": "çok memnun kaldım",
+            "sentiment": "positive"
+          },
+          {
+            "id": 267,
+            "text": "zamaninda teslimat tesekkurler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 304,
+            "text": "çok iyi bir ürün gönül rahatlığı ile kullanıyoruz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 368,
+            "text": "piyasanın en iyisi. hızlı gönderi için teşekkürler...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 203,
+            "text": "çok iyi ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 204,
+            "text": "i̇yi ürün, ??",
+            "sentiment": "positive"
+          },
+          {
+            "id": 318,
+            "text": "zamanında we güzel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 235,
+            "text": "zamanında hızlı teslim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 374,
+            "text": "her zaman en uygun fiyat ve sorunsuz alışveriş. bezi akşamdan bağlıyoruz sabaha kadar rahat bir uyku. teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 252,
+            "text": "hızlı teslimat ??süpersiniz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 215,
+            "text": "kullandığım bir ürün.hepsi buradanın fiyat avantajlarıda iyi.2 gün içinde elimde olmasıda avantaj.tavsiye ederim........",
+            "sentiment": "positive"
+          },
+          {
+            "id": 392,
+            "text": "kaliteli ucuz hızlı gönderim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 249,
+            "text": "piyasaya göre çok uygun kalitesi tartışılmaz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 237,
+            "text": "hepsi buradaya teşekkürler,ürün çok kaliteli ce hızlı gönderim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 352,
+            "text": "çocuğunuz pişik olsun istemiyorsanız primayı tercih edeceksiniz....",
+            "sentiment": "positive"
+          },
+          {
+            "id": 239,
+            "text": "sorunsuz alışveriş",
+            "sentiment": "positive"
+          },
+          {
+            "id": 293,
+            "text": "eksiksiz ve sorunsuz ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 229,
+            "text": "güzel ve hızlı daha ne olsun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 230,
+            "text": "daha ucuzu bulan varsa söylesin....",
+            "sentiment": "positive"
+          },
+          {
+            "id": 346,
+            "text": "en uygun fiyat teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 253,
+            "text": "gayet güzel. hem kalite hem indirimli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 302,
+            "text": "üründe, gönderimide  beklentilerimi karşıladı. teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 271,
+            "text": "oglum 14 aylik ve dogdugundan beri prima kullaniyorum. cok memnunum. ilk kez int. aldim. bundan sonra da boyle olacak...tesekkurler hepsiburada.com",
+            "sentiment": "positive"
+          },
+          {
+            "id": 321,
+            "text": "ürün fiyat olarak uygun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 303,
+            "text": "güvenilir alışveriş için teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 300,
+            "text": "çok memnunuz teşekkürler hepsiburada ailesi...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 373,
+            "text": "prima kalitesi zaten tartışılmaz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 325,
+            "text": "prima markasından ve hepsiburada.com hizmetindeki rahatlık nedeniyle doğumdan beri tercih ettiğimiz tek yer...çoklu alımlarda yaptığınız kampanyalarda daha çok alım yapmamızı sağlıyor...umarım çoklu alım seçeneğine devam edersiniz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 284,
+            "text": "10 numara",
+            "sentiment": "positive"
+          },
+          {
+            "id": 382,
+            "text": "kaliteli bir ürün. hızlı ve sorunsuz bir şekilde ürün teslim edilmistir. tesekkurler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 287,
+            "text": "kizlarima i̇lk günden beri̇ aliyorum.hem kali̇te ve ucuzluk.teşekkürler hepsi̇burada.com",
+            "sentiment": "positive"
+          },
+          {
+            "id": 381,
+            "text": "fiyatı iyi ama prima heryerde prima :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 299,
+            "text": "ütünün kalitesi tartışılmaz,tavsiyeye gerek yok",
+            "sentiment": "positive"
+          },
+          {
+            "id": 386,
+            "text": "ekstra emici özelliği bezi daha iyi hale getirmiş. gönül rahatlığıyla kullanılabilir.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 330,
+            "text": "i̇lk bebeğimi primayla büyüttüm ikinci de de aynen devam.... hepsiburada fırsatlarıyla prima kalitesine rahatlıkla ulaşabiliyoruz ...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 339,
+            "text": "bezlerden çok memnun kaldım.  ayrica güvenilir bir sitede alışveriş yapmakta keyifli...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 383,
+            "text": "hızlı kargo için güvenirliği için teşekkürler hepsiburada",
+            "sentiment": "positive"
+          },
+          {
+            "id": 268,
+            "text": "ikizlerim için güvenerek aldığım marka. pişiği falan unuttuk. aldığımız zaman 2 koli birden alıyoruz. hb ya hızlı kargo için de teşekkür ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 282,
+            "text": "i̇s guc unutuyorsun. siparisi ver kapiya gelsin. 2 gun icinde (en gec) elinde. kalite zaten belli. geriye ne kaliyor? fiyati ee oda zaten marketlere oranla ucuz. konusmaya dusunmeye gerek bile yok. 3 senedir araliksiz bu siteden siparis veriyorum vaktinde elimde ve ucuz. spot urun,ayipli urun hic gelmedi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 254,
+            "text": "başka bir yerde aramayın. en uygun hepsiburada da.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 244,
+            "text": "prima fazla soze gerek yok",
+            "sentiment": "positive"
+          },
+          {
+            "id": 294,
+            "text": "güzel hızlı ucuz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 269,
+            "text": "çok uygun hızlı hepsi burada teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 211,
+            "text": "sürekli̇ kullandiğim ürün onun marketlerdeki̇ fi̇yatini cok i̇yi̇ bi̇li̇yorum dişariya göre fiyati çok uygun ve 2 i̇ş gününde tesli̇m daha ne olsun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 222,
+            "text": "hızlı gönderi için teşekkür ederim. piyasan aşağı fiyata aldım. bebek için olmazsa olmaz :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 369,
+            "text": "uzun süredir bu ürünü kullanıyoruz çok kaliteli pişik yapmıyor uzun süre beklese dahi sızdırma yapmıyor teşekkürler hepsiburada...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 354,
+            "text": "kızımın tenine uygun tek ürün...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 396,
+            "text": "burada bu urunle tanistigimdan bu tarafa sadece siteden aliyorum. hem ekonomik hem de cok kaliteli...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 400,
+            "text": "primadan çok memnunum pisik yok cis yok dert taşa yok",
+            "sentiment": "positive"
+          },
+          {
+            "id": 315,
+            "text": "prima' yı gönül rahatlığıyla önerebilirim.uygun fiyat, hızlı teslimat. hepsiburada.com ile alışveriş çok keyifli...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 220,
+            "text": "kali̇teli̇, hesapli ve hizli kargo. hepi̇ni̇ze tavsi̇ye ederi̇m. çok tşkr",
+            "sentiment": "positive"
+          },
+          {
+            "id": 314,
+            "text": "prima olunca tereddüt etmeye gerek yok.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 328,
+            "text": "bir anne olarak bebeğimin sağlığı ve huzuru benim için çok önemli. prima bebek bezi hem sızdırmazlık özelliği hem de sıvının tek bölgeye toplanmaması özelliği ile çok iyi bir ürün. bu özellikler hepsiburada.com'un hızlı ve güvenilir özelliği ile birleşince çok daha iyi oluyor. teşekkürler hepsiburada.com",
+            "sentiment": "positive"
+          },
+          {
+            "id": 273,
+            "text": "piyasada ki en iyi fiyat ve hızlı gönderim teşekkürler hepsiburada.com",
+            "sentiment": "positive"
+          },
+          {
+            "id": 292,
+            "text": "üründen çok memnun olduk",
+            "sentiment": "positive"
+          },
+          {
+            "id": 276,
+            "text": "bir kaç defa aldım memnunum. büyük marketlerden bile fiyatı daha uygun teşekkür ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 216,
+            "text": "on numara satıcı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 377,
+            "text": "i̇yi fırsat. i̇ndirimlerintakip edip hb den alıyorum herzaman",
+            "sentiment": "positive"
+          },
+          {
+            "id": 389,
+            "text": "oğlum olduğundan bu yana kullanıyoruz gayet iyi helede kampanyadan indirimli aldınmı değme keyfe",
+            "sentiment": "positive"
+          },
+          {
+            "id": 365,
+            "text": "marka tartisilmaz bence super dahada iyi olani hepsiburada.com bu fiata bu urun baska bir yerde yok kargoda bedava teşekürler hepsiburada.com",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "p3",
+      "question": "ürün dayanıklı mı",
+      "answer": {
+        "question": "ürün dayanıklı mı",
+        "product_id": "p3",
+        "search_mode": "hybrid",
+        "candidates_checked": 108,
+        "relevant_count": 74,
+        "positive_count": 74,
+        "negative_count": 0,
+        "unclear_count": 0,
+        "conflict": false,
+        "citations": [
+          {
+            "id": 425,
+            "text": "kaliteli ürün, hızlı kargo",
+            "sentiment": "positive"
+          },
+          {
+            "id": 484,
+            "text": "ürün güzel paketlenmi̇ş. fi̇yati̇na di̇yecek  bi̇r şey yok. düşünenlere tavsi̇ye ederi̇m. kali̇teli̇ bi̇r ürün zaten",
+            "sentiment": "positive"
+          },
+          {
+            "id": 521,
+            "text": "sızdırma ile ilgili olarak çok yorum yapılmış ben üründen kaynaklı bir sızdırmaya henüz rastlamadım. ürün gayet kaliteli emsallerinin en iyisi diyebilirim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 406,
+            "text": "bu ürünü 2 buçuk yaşındaki kızım için doğduğu günden bu yana sürekli kullanıyoruz.son bir kaç pakette bez kalınlığı eskisine kıyasla daha ince olsa da üründen gayet memnunuz.teslimatta da bugüne kadar hiç sorun yaşamadık teşekkürler hepsiburada..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 557,
+            "text": "kalitesi belli olan bir ürün, sızdırmazlık özelliği çok önemli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 536,
+            "text": "emiciliği, sızdırmazlığı çok iyi bir ürün problem yaşamadan kullanıyoruz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 500,
+            "text": "uygun fiyat kaliteli ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 431,
+            "text": "bu ürünü uzunca bir süredir kızımız için kullanıyoruz. daha önce premium care kullanıyorduk. açıkçası bu ürün hareketli çocuklar için daha uygun. diğerinde bir kaç defa sızdırma yaşadık ancak bu üründe böyle bir sıkıntıyla hiç karşılaşmadık. yerinde durmayan yumurcaklar için tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 466,
+            "text": "kaliteli ürün, uygun fiyat ve hızlı kargo. teşekkürler hepsiburada...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 571,
+            "text": "prima 4 beden 147 adet ürünü aldım. daha önce farklı bir bebek bezi markası kullanıyorduk. kampanyalı ürünü aldığımızda daha önce almadığımız için pişman olduk. gerçekten harika bir ürün. çocuklarına bez kullanan herkese tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 433,
+            "text": "ürünün kalitesini izah etmek yersiz olur sanırım. hepsiburada'nın uygun fiyatı ile tek alınacak adres.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 592,
+            "text": "prima gayet başarılı bir bez üretmiş 12 saate kadar kuru tutuyor hepsi buradadan almakla hem ürün hızlı geliyor hem de ekonomik....",
+            "sentiment": "positive"
+          },
+          {
+            "id": 419,
+            "text": "fiyatına göre süper ürün. teşekkür ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 428,
+            "text": "kaliteli, bebekler ve çocuklar için güzel bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 410,
+            "text": "kaliteli ürün. ikizler var dogumdan itibaren bu ürünü kullanıyoruz. memnunuz. hepsi burada ya da teşekürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 513,
+            "text": "kaliteli ürün en iyi fiyat sonuç memnuniyet",
+            "sentiment": "positive"
+          },
+          {
+            "id": 582,
+            "text": "ürün gerçekten parasının hakkını veriyor farklı markalarda denedik fakat cilde uyum ve uzun süreli kuruluk garanti",
+            "sentiment": "positive"
+          },
+          {
+            "id": 544,
+            "text": "sürekli kullandığım bir ürün, hem kaliteli hem de uygun fiyat.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 444,
+            "text": "ürün mükemmel son derece yararlı ve uygun fiyatlı. kesinlikle kaçırmayın derim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 537,
+            "text": "aslında yoruma bile ğerek yok prima kalite ötesi bi ürün hepsi burada com da olunca işin içinde hem fiyat hem kalite muhteşem",
+            "sentiment": "positive"
+          },
+          {
+            "id": 541,
+            "text": "ürün kaliteli.fiyatı da çok uygun tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 596,
+            "text": "ürün güzel ve kaliteli. fiyat konusunda da hepsiburada ya teşekkürler ...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 417,
+            "text": "bu üründen 4 adet aldım gayet iyi teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 534,
+            "text": "tebrikler  güzel ürün müşteri memnuniyeti mükemmel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 542,
+            "text": "ürün 3 yıldır kullanıyorum arada sıkıntı olsada pisayasa göre en iyi bez ve hepsinden alırken bir sıkıntı da yaşamadım diğer mağzalara qöre",
+            "sentiment": "positive"
+          },
+          {
+            "id": 445,
+            "text": "bebeğim için harika bir ürün.ayrıca hepsiburada'ya hızlı kargolama için teşekkür ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 598,
+            "text": "ürün kaliteli. yeni bezlerde sızdırma sorununu biz de yaşadık. ona rağmen en uygun fiyat ve hızlı teslimat.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 460,
+            "text": "ürünü elime alınca bu benim kızın çişini tutmaz dedim maşallah bez dandik dursada acayip emici ve tüm beze değil idrarın geldiği noktada emilip tutuluyor tavsiye ediyorum",
+            "sentiment": "positive"
+          },
+          {
+            "id": 409,
+            "text": "oldukça kullanışlı bir ürün ve uzun zamandır kullanmama rağmen bir sıkıntı yaşamadım. tavsiye ederim..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 463,
+            "text": "ürün kaliteli fiyat iyi. hepsiburada söz verdiği zaman da getiriyor. almak isteyen herkese tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 407,
+            "text": "ürün gayet güzel teşekkürler hepsi burada",
+            "sentiment": "positive"
+          },
+          {
+            "id": 599,
+            "text": "yıllardır iki çocuğuma da bu ürünü kullanan bir baba olarak prima ya çok teşekkür ediyorum. kalitesi her zaman aynı kalan bir marka...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 408,
+            "text": "çok memnunuz. güzel ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 570,
+            "text": "çok memnun kaldığım bir ürün, herkese de tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 468,
+            "text": "ürünleriniz gayet güzel fiyatlarınızda en güzeli 9 taksitte alıyor olmam",
+            "sentiment": "positive"
+          },
+          {
+            "id": 405,
+            "text": "ürünün kalitesini burada anlatmaya gerek yok, fiyat olarak ise çoğu zaman piyasadaki en iyi fiyati bize sunduğu için hepsiburada.com ailesine teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 483,
+            "text": "üründen çok memnunum piyasadaki en uygun fiyat ve süper hızlı gönderi. prima'nın kaliteside belli.teşekkürler   hepsiburada.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 581,
+            "text": "kaliteli bir ürün, çocuk doğduğunda beri kullanıyoruz, bir şikayetimiz olmadı.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 600,
+            "text": "ürün anlatıldığı gibiydi dışarıya gore fiyatı çok uygundu teşekkürler hepsi burada",
+            "sentiment": "positive"
+          },
+          {
+            "id": 531,
+            "text": "kaliteli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 403,
+            "text": "prima ürünlerini 3 çocuğumda kullandım son ürün daha emici bu kanallı fikri çok iyi tasarlanmış.teşekkürler prima ,teşekkürler hepsiburada anneler indirim kampanyalarınızı merakla bekliyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 414,
+            "text": "harika bir ürün çok hızlı elime ulaştı.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 473,
+            "text": "gayet kaliteli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 418,
+            "text": "çok memnun kaldığım bir ürün bebeğimin doğumundan beri her serisini kullanıyorum hiç sorun yaşamadık, ayrıca hepsiburada yada çok teşekkür ederim. tüm alışverişlerimde hem çok hızlı hemde çok ilgililer çok teşekkürler......",
+            "sentiment": "positive"
+          },
+          {
+            "id": 579,
+            "text": "kalite kampanya daha ne yapsın bu marka",
+            "sentiment": "positive"
+          },
+          {
+            "id": 422,
+            "text": "sızdırmaz ve yüksek emici, kaliteli urun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 426,
+            "text": "benim kızı anca idare ediyor çok iyi bir ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 549,
+            "text": "kalite teseduf degildir.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 432,
+            "text": "3 çocuğumda prima ile büyüdü. tabi bebeklerin ciltleri seçici oluyor. benimkilere en uygunu primaydı. ürünün kalitesini anlatmama gerek yok. bir de uygun fiyatla internetten yakaladığınızda hiç kaçırmayın derim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 551,
+            "text": "prima kalitesi tartışılmaz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 575,
+            "text": "guzel kaliteli cocuklar icin guvenilir",
+            "sentiment": "positive"
+          },
+          {
+            "id": 496,
+            "text": "kaliteli hızlı güvenilir.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 478,
+            "text": "kalite tesadüf değildir.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 477,
+            "text": "üründen ve aldığım fiyattan çok memnunum.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 503,
+            "text": "9 aydır alıyoruz herhangi bir problem yaşamadık. başarılı bir ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 476,
+            "text": "sızdırmamazlık, cildi iyi sarabilme özelliği ve emiciliği ile vazgeçilmez. diğer markaları da denedim ve prima tek geçerim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 514,
+            "text": "piyasadaki en iyi marka",
+            "sentiment": "positive"
+          },
+          {
+            "id": 546,
+            "text": "zamanında teslimat ve uygun fiyat için hepsi burada.com teşkürler .ürünün kalitesi zanten belli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 564,
+            "text": "bu fiyatta, bu kalite",
+            "sentiment": "positive"
+          },
+          {
+            "id": 573,
+            "text": "bebeğimiz için kullandığımız bir ürün. herhangi bir sorunda yaşamadık. çoğu zaman hb dan alıyorum sipariş ve teslimat  çok rahat.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 568,
+            "text": "primayı gönül rahatlığıyla önerebilirim.hem hesaplı hem kaliteli.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 447,
+            "text": "prima sizdirmazlik ozelligiyle mukemmel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 435,
+            "text": "basarili",
+            "sentiment": "positive"
+          },
+          {
+            "id": 480,
+            "text": "uygun fiyatlı ve kaliteli ürünleri her zaman hepsiburadada buluyorum,bu çocuk bezindede geçerli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 475,
+            "text": "kaliteli ve hizli teslimat icin tesekkurler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 482,
+            "text": "zamaninda kargolama ve urunde de her sey normal...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 595,
+            "text": "oğlum doğduğundan beri kullandığım tek marka prima ne pişik ne kızarıklık ne sızdırma hiç sıkıntı yaşamadım teşekkür ederim prima :))",
+            "sentiment": "positive"
+          },
+          {
+            "id": 578,
+            "text": "hizli gonderi kaliteli ve hesapli alisveris.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 474,
+            "text": "1-2 ve numarada \"yeni bebek\" , 3-4-5 numaralarda ise \"aktif bebek\"... 10 numara bez, ekonomik, sızmaz-taşmaz. pişik yapmaz (ekstra krem vs kullanmıyoruz). bezin kendine has bir pudra kokusu var o da hoş. bir de çok önemli, paket içinden neredeyse hiç defolu bez çıkmıyor. bugüne kadar sadece 1 kere yapıştırma bandı bozuk bez denk geldi, başka hiç rastlamadım.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 446,
+            "text": "kaliteli ve uygun. başka beze gerek yok.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 562,
+            "text": "gayet kullanışlı gayet rahat tavsiye ederim marketlerden aldığımızdan  bi farkı yok??",
+            "sentiment": "positive"
+          },
+          {
+            "id": 577,
+            "text": "premium care kadar olmasada gayet güzel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 404,
+            "text": "i̇lk çocuğumda prima kullandım. şimdi ikincide de kullanıyorum.çok emici ve sızdırma yapmıyor. geceleri rahat bir uyku çekiyor bebişler. sabah bezleri şişmiş ama kuru gibi uyanıyorlar. i̇yi bir pişik kremiylede desteklenince sorun olmuyor. çok memnunuz. kampanyalarda olunca süper oluyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 553,
+            "text": "diğer markalara göre bence en iyisi prima, eğer kullanım süresini on iki saatin üzerine çıkarırsak sızdırmaya başlıyor haliyle :)",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "p3",
+      "question": "malzeme kalitesi nasıl",
+      "answer": {
+        "question": "malzeme kalitesi nasıl",
+        "product_id": "p3",
+        "search_mode": "hybrid",
+        "candidates_checked": 100,
+        "relevant_count": 75,
+        "positive_count": 75,
+        "negative_count": 0,
+        "unclear_count": 0,
+        "conflict": false,
+        "citations": [
+          {
+            "id": 557,
+            "text": "kalitesi belli olan bir ürün, sızdırmazlık özelliği çok önemli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 551,
+            "text": "prima kalitesi tartışılmaz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 589,
+            "text": "fiyati ve kalitesi tartisilmaz.kesinlikle tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 421,
+            "text": "birçok bebek bezi denemiş bir anne olarak gerek kalitesi gerekse fiyatı açısından çok iyi olduğunu söylemeliyim. teşekürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 546,
+            "text": "zamanında teslimat ve uygun fiyat için hepsi burada.com teşkürler .ürünün kalitesi zanten belli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 599,
+            "text": "yıllardır iki çocuğuma da bu ürünü kullanan bir baba olarak prima ya çok teşekkür ediyorum. kalitesi her zaman aynı kalan bir marka...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 473,
+            "text": "gayet kaliteli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 531,
+            "text": "kaliteli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 500,
+            "text": "uygun fiyat kaliteli ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 564,
+            "text": "bu fiyatta, bu kalite",
+            "sentiment": "positive"
+          },
+          {
+            "id": 549,
+            "text": "kalite teseduf degildir.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 579,
+            "text": "kalite kampanya daha ne yapsın bu marka",
+            "sentiment": "positive"
+          },
+          {
+            "id": 537,
+            "text": "aslında yoruma bile ğerek yok prima kalite ötesi bi ürün hepsi burada com da olunca işin içinde hem fiyat hem kalite muhteşem",
+            "sentiment": "positive"
+          },
+          {
+            "id": 541,
+            "text": "ürün kaliteli.fiyatı da çok uygun tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 478,
+            "text": "kalite tesadüf değildir.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 425,
+            "text": "kaliteli ürün, hızlı kargo",
+            "sentiment": "positive"
+          },
+          {
+            "id": 513,
+            "text": "kaliteli ürün en iyi fiyat sonuç memnuniyet",
+            "sentiment": "positive"
+          },
+          {
+            "id": 475,
+            "text": "kaliteli ve hizli teslimat icin tesekkurler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 578,
+            "text": "hizli gonderi kaliteli ve hesapli alisveris.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 596,
+            "text": "ürün güzel ve kaliteli. fiyat konusunda da hepsiburada ya teşekkürler ...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 448,
+            "text": "güzel ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 466,
+            "text": "kaliteli ürün, uygun fiyat ve hızlı kargo. teşekkürler hepsiburada...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 536,
+            "text": "emiciliği, sızdırmazlığı çok iyi bir ürün problem yaşamadan kullanıyoruz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 544,
+            "text": "sürekli kullandığım bir ürün, hem kaliteli hem de uygun fiyat.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 433,
+            "text": "ürünün kalitesini izah etmek yersiz olur sanırım. hepsiburada'nın uygun fiyatı ile tek alınacak adres.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 472,
+            "text": "fiyat performans kıyasında en iyi ürün...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 405,
+            "text": "ürünün kalitesini burada anlatmaya gerek yok, fiyat olarak ise çoğu zaman piyasadaki en iyi fiyati bize sunduğu için hepsiburada.com ailesine teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 444,
+            "text": "ürün mükemmel son derece yararlı ve uygun fiyatlı. kesinlikle kaçırmayın derim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 496,
+            "text": "kaliteli hızlı güvenilir.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 458,
+            "text": "bez almak için hepsiburada yı takip ediyorum uygun fiyat ve kalite hepsiburada da",
+            "sentiment": "positive"
+          },
+          {
+            "id": 582,
+            "text": "ürün gerçekten parasının hakkını veriyor farklı markalarda denedik fakat cilde uyum ve uzun süreli kuruluk garanti",
+            "sentiment": "positive"
+          },
+          {
+            "id": 408,
+            "text": "çok memnunuz. güzel ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 568,
+            "text": "primayı gönül rahatlığıyla önerebilirim.hem hesaplı hem kaliteli.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 480,
+            "text": "uygun fiyatlı ve kaliteli ürünleri her zaman hepsiburadada buluyorum,bu çocuk bezindede geçerli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 463,
+            "text": "ürün kaliteli fiyat iyi. hepsiburada söz verdiği zaman da getiriyor. almak isteyen herkese tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 534,
+            "text": "tebrikler  güzel ürün müşteri memnuniyeti mükemmel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 521,
+            "text": "sızdırma ile ilgili olarak çok yorum yapılmış ben üründen kaynaklı bir sızdırmaya henüz rastlamadım. ürün gayet kaliteli emsallerinin en iyisi diyebilirim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 428,
+            "text": "kaliteli, bebekler ve çocuklar için güzel bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 422,
+            "text": "sızdırmaz ve yüksek emici, kaliteli urun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 476,
+            "text": "sızdırmamazlık, cildi iyi sarabilme özelliği ve emiciliği ile vazgeçilmez. diğer markaları da denedim ve prima tek geçerim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 538,
+            "text": "her zaman kullandığımız güzel ve kaliteli bir marka.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 598,
+            "text": "ürün kaliteli. yeni bezlerde sızdırma sorununu biz de yaşadık. ona rağmen en uygun fiyat ve hızlı teslimat.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 467,
+            "text": "her zaman prima kalitesini düşünerek bez aldım çok memnunum",
+            "sentiment": "positive"
+          },
+          {
+            "id": 575,
+            "text": "guzel kaliteli cocuklar icin guvenilir",
+            "sentiment": "positive"
+          },
+          {
+            "id": 406,
+            "text": "bu ürünü 2 buçuk yaşındaki kızım için doğduğu günden bu yana sürekli kullanıyoruz.son bir kaç pakette bez kalınlığı eskisine kıyasla daha ince olsa da üründen gayet memnunuz.teslimatta da bugüne kadar hiç sorun yaşamadık teşekkürler hepsiburada..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 514,
+            "text": "piyasadaki en iyi marka",
+            "sentiment": "positive"
+          },
+          {
+            "id": 419,
+            "text": "fiyatına göre süper ürün. teşekkür ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 581,
+            "text": "kaliteli bir ürün, çocuk doğduğunda beri kullanıyoruz, bir şikayetimiz olmadı.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 483,
+            "text": "üründen çok memnunum piyasadaki en uygun fiyat ve süper hızlı gönderi. prima'nın kaliteside belli.teşekkürler   hepsiburada.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 446,
+            "text": "kaliteli ve uygun. başka beze gerek yok.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 561,
+            "text": "bezler çok kaliteli, hepsiburada ile alışveriş çok keyifli...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 501,
+            "text": "6 aylık ikizlerimizde en çok bu ve komili ürününden memnun kaldık. fiyat/performans iyi. kargo hızı iyi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 432,
+            "text": "3 çocuğumda prima ile büyüdü. tabi bebeklerin ciltleri seçici oluyor. benimkilere en uygunu primaydı. ürünün kalitesini anlatmama gerek yok. bir de uygun fiyatla internetten yakaladığınızda hiç kaçırmayın derim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 517,
+            "text": "en iyi marka bence.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 543,
+            "text": "en iyisi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 468,
+            "text": "ürünleriniz gayet güzel fiyatlarınızda en güzeli 9 taksitte alıyor olmam",
+            "sentiment": "positive"
+          },
+          {
+            "id": 409,
+            "text": "oldukça kullanışlı bir ürün ve uzun zamandır kullanmama rağmen bir sıkıntı yaşamadım. tavsiye ederim..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 471,
+            "text": "biz uzun süre farklı farklı alternatifleri denedikten sonra hepsiburada'nın fiyatıyla prima mega paket almaya karar verdik. ve çok uygun fiyata bebeğimizin cildini garanti altına almış olduk. memnunuz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 592,
+            "text": "prima gayet başarılı bir bez üretmiş 12 saate kadar kuru tutuyor hepsi buradadan almakla hem ürün hızlı geliyor hem de ekonomik....",
+            "sentiment": "positive"
+          },
+          {
+            "id": 457,
+            "text": "cildi hassas bebekleri için ideal, pişik yapmıyor ayrıca diğer bazı bezlerde olduğu gibi kötü bir parfüm kokusu gelmiyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 484,
+            "text": "ürün güzel paketlenmi̇ş. fi̇yati̇na di̇yecek  bi̇r şey yok. düşünenlere tavsi̇ye ederi̇m. kali̇teli̇ bi̇r ürün zaten",
+            "sentiment": "positive"
+          },
+          {
+            "id": 510,
+            "text": "bebeğimin cildine en uygun bez oldu hepsiburadadan hem hızlı teslimat hem ayağıma kadar gelmesi hem de piyasaya göre daha uygun. daha ne olsun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 454,
+            "text": "oğlum için alıyorum, gayet kullanışlı ve oğlumun cildini iyi koruyor",
+            "sentiment": "positive"
+          },
+          {
+            "id": 449,
+            "text": "güzel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 587,
+            "text": "piyasaya göre uygun . pirimanin kalitesini bilen biliyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 550,
+            "text": "fiyati uygun guzel bir bez tafsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 414,
+            "text": "harika bir ürün çok hızlı elime ulaştı.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 542,
+            "text": "ürün 3 yıldır kullanıyorum arada sıkıntı olsada pisayasa göre en iyi bez ve hepsinden alırken bir sıkıntı da yaşamadım diğer mağzalara qöre",
+            "sentiment": "positive"
+          },
+          {
+            "id": 410,
+            "text": "kaliteli ürün. ikizler var dogumdan itibaren bu ürünü kullanıyoruz. memnunuz. hepsi burada ya da teşekürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 595,
+            "text": "oğlum doğduğundan beri kullandığım tek marka prima ne pişik ne kızarıklık ne sızdırma hiç sıkıntı yaşamadım teşekkür ederim prima :))",
+            "sentiment": "positive"
+          },
+          {
+            "id": 445,
+            "text": "bebeğim için harika bir ürün.ayrıca hepsiburada'ya hızlı kargolama için teşekkür ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 576,
+            "text": "prima zaten kendisini piyasaya kabul ettirmiş. çok kaliteli bir marka yıllardır çocuklarım için kullanıyoruz çok memnunuz. teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 590,
+            "text": "begenerek kullandigim prima markasi kanal sistemi getirerek yenilenmesiyle daha da iyi bir hale geldi. ince yapili ve cok emici olması benim tercih nedenim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 571,
+            "text": "prima 4 beden 147 adet ürünü aldım. daha önce farklı bir bebek bezi markası kullanıyorduk. kampanyalı ürünü aldığımızda daha önce almadığımız için pişman olduk. gerçekten harika bir ürün. çocuklarına bez kullanan herkese tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 456,
+            "text": "iki yıldan beri kullanıyoruz kaliteli ve zamanında teslim.",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "p4",
+      "question": "ürün açıklamaya uygun mu",
+      "answer": {
+        "question": "ürün açıklamaya uygun mu",
+        "product_id": "p4",
+        "search_mode": "hybrid",
+        "candidates_checked": 126,
+        "relevant_count": 76,
+        "positive_count": 70,
+        "negative_count": 0,
+        "unclear_count": 6,
+        "conflict": false,
+        "citations": [
+          {
+            "id": 777,
+            "text": "fiyat ve kalite çok iyi markayı zaten söylemeye gerek yok hepsiburada.com ayrıcalığı ile ürün daha avantajlı bir hale geliyor şiddetle öneririm ekonomik bir alıveriş ...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 617,
+            "text": "kaliteli ürün teslimat hızlı.teşekkürler hepsiburada.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 753,
+            "text": "iyi ürün + hepsiburada.com iyi satıcı = mükemmel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 668,
+            "text": "kaliteli ve uygun fiyatlı . tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 709,
+            "text": "kaliteli ürün, 9 aydır kullanıyorum, tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 774,
+            "text": "prima çok başarılı bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 620,
+            "text": "ürün fiyat ve performans olarak çok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 726,
+            "text": "şimdiye kadar hiç sorun yaşamadık, beklentileri karşılayan başarılı bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 779,
+            "text": "2 çocuğumda da neredeyse her markayı denemiş biri olarak soyluyorum ki en iyi bez prima dır. üzerine yoktur. hepsiburada da hızlı teslimat ve uygun fiyat konusunda beni her zaman tatmin etti . teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 684,
+            "text": "çocuğumun bez ihtiyacını her zaman hepsiburada'dan sipariş vererek karşılıyorum. hızlı kargo, uygun fiyat, kaliteli ürün.. teşekkürler hepsiburada",
+            "sentiment": "positive"
+          },
+          {
+            "id": 721,
+            "text": "hepsi burada çok hızlı sipariş verdim çabuk geldi ürün de kaliteli",
+            "sentiment": "positive"
+          },
+          {
+            "id": 790,
+            "text": "güzel ürün devamlı kullanıyorum. yeni gelecek çocuğuma da kullanacağım. teşekkürler prima",
+            "sentiment": "positive"
+          },
+          {
+            "id": 755,
+            "text": "üründen oldukça memnunum. arada sızıntı oluyor ama bizim oğlana özgü bir durum da olabilir. çok su içiyor dolayısıyla da :) fiyat olarak da birçok yere baksam da genel olarak en hesaplı hepsiburada'da oluyor. kargo hızı da oldukça iyi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 751,
+            "text": "ürün kaliteli fiyat da güzel. ilk çocuğumuzda da prima kullandık. bir ara değiştirdik, çocuk rahatsızlandı. şimdi yeni doğan çocuğumuz içinde kullanıyoruz. fazlasıyla memmunuz. primadan şaşmayacaksın..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 798,
+            "text": "market fiyatlarina gore cok daha uygun bir fiyata satiliyor hepsiburada'da. ustelik son derece iyi bir ambalaji var tasima sirasinda deforme olmuyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 613,
+            "text": "önceki yorumlarda yazılan eskileri daha iyiydi konusu doğru. fakat her ürünün eskisi daha kaliteli. bu da öyle. bence şu an için fiyat performansı en iyi bebek bezi. tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 796,
+            "text": "tam zamanında ve uygun fiyat",
+            "sentiment": "positive"
+          },
+          {
+            "id": 632,
+            "text": "piyasaya göre fiyatı uygun hepsiburada da hiç sorun çıkmadı hayırlı alışverişler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 605,
+            "text": "prima, son derece memnun kaldığım bir ürün. özellikle hepsiburadadan temin edildiğinde fiyatı oldukça makul oluyor. 15 aylık ikizlerim doğduğundan beri tüm bebek bezi ihtiyacımızı hepsiburadadan karşılıyorum. çok memnunum.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 714,
+            "text": "surekli kullaniyoruz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 797,
+            "text": "güzel alınabilir",
+            "sentiment": "positive"
+          },
+          {
+            "id": 743,
+            "text": "prima kalitesi kendini belli ediyor",
+            "sentiment": "positive"
+          },
+          {
+            "id": 651,
+            "text": "oğlum doğduğundan beri sadece prima kullandım. genel olarak memnunum. hepsiburada'yı takip ederek en uygun fiyatla alışverişimi yapabiliyorum. tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 757,
+            "text": "prima kalitesi tartışılamaz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 616,
+            "text": "guzel bir urun h tsk",
+            "sentiment": "positive"
+          },
+          {
+            "id": 665,
+            "text": "bebeğimiz doğduğundan beri hep prima kullandık ve çok memnunuz. en uygun fiyatları da hep hepsiburada'da gördük.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 708,
+            "text": "kesinlikle sizdirmayan, bebegimin altini uzun sure kuru tutan bez markasi :))",
+            "sentiment": "positive"
+          },
+          {
+            "id": 670,
+            "text": "devamlı aldığım aylık paketlerden çok memnunum. prima on numara beş yıldız bir bez. herkese tavsiye ediyorum. aylık alırsanız ve uygun kampanyayı yakalarsanız daha da ucuza alırsınız.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 671,
+            "text": "en sevdiğim bebek bezi, kızıma doğumdan itibaren bu markayı hepsiburadan alıyorum, en uygun fiyat burada!",
+            "sentiment": "positive"
+          },
+          {
+            "id": 642,
+            "text": "başarılı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 678,
+            "text": "çocuğum 18 aylık ve doğduğundan beri prima kullanıyorum. en uygun fiyat kesinlikle hepsiburada",
+            "sentiment": "positive"
+          },
+          {
+            "id": 687,
+            "text": "primadan cok memnunuz herzaman en uygun fiyatta hepsiburadada oluyor  tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 701,
+            "text": "prima bebek bezleri oldukça kaliteli ve fiyat olarakta en uygun hepsi burada idi bir gün öncesine kadar ama hepsi burada hem fiyat artırmış hemde kargo ücreti limitini artırmış inşaallah eskiye  geri  döner",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 716,
+            "text": "her ay aylık olarak hepsiburada dan alıyorum. hem bu sayıda piyasada bulmak çok zor hemse çok uygun fiyata geliyor. hiç uğraşmadan hepsiburadan güvenle alıp geçin...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 718,
+            "text": "2 oğluma da kullandığım sorunsuz bez hepsi burada ile uygun fiyatla",
+            "sentiment": "positive"
+          },
+          {
+            "id": 707,
+            "text": "cukk guzel bır bez",
+            "sentiment": "positive"
+          },
+          {
+            "id": 699,
+            "text": "güzel beğendi̇k",
+            "sentiment": "positive"
+          },
+          {
+            "id": 729,
+            "text": "bebeğiniz biraz iri ise geceleri bel ve göbek bandı katlandığı için sızdırma yapabiliyor. o yüzden 5 numara yerine 6 numara tercih edilebilir. bunun dışında gayet iyi bir ürün kesinlikle alerji yapmıyor.",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 750,
+            "text": "hızlı kargo ve piyasadan hesaplı teşekkürler hb",
+            "sentiment": "positive"
+          },
+          {
+            "id": 741,
+            "text": "bu fiyata bu ürün başka bir yerde bulmak imkansız kargo çok hızlı .",
+            "sentiment": "positive"
+          },
+          {
+            "id": 669,
+            "text": "prima zaten kendini kanıtlamış bir marka hepsiburada dan da çok iyi imkanlarla devamlı ulaşabiliyorum tebrikler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 745,
+            "text": "oğlum şu an 14 aylık ve doğduğu andan itibaren prima aktif kullanıyoruz ve çok memnunnuz. herhangi bir sızdırma söz konusu değildir. gönül rahatlığı ile ürünü kullanmaya devam ediyorum.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 733,
+            "text": "prima ve hepsiburada kalitesi...gercekten mükemmel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 623,
+            "text": "bebek bezi markalari icinde kafamiz rahat kullanabildigimiz tek urun...hepsiburada da fiyat avantaji da cabasi.tek kelimeyle benekler mutlu anne-babalar mutlu:)...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 748,
+            "text": "dışarıya göre fiyat uygun. şu ana kadar hiç bir sıkıntı yaşamadım. teşkkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 728,
+            "text": "en iyi fiyat, en iyi kalite",
+            "sentiment": "positive"
+          },
+          {
+            "id": 609,
+            "text": "diger bezlere gore ince olmasi ve kotu kokulari hissettirmemesi artilari",
+            "sentiment": "positive"
+          },
+          {
+            "id": 700,
+            "text": "gayet güzel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 697,
+            "text": "kullanışlı ancak premium care kadar değil. suyu emince çok fazla şişiyor. ama diğer markalardan kat kat kullanışlı",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 756,
+            "text": "kesinlikle  sızıntı yapmıyor , ve uygun fiyat için teşekkürler hepsiburada.com",
+            "sentiment": "positive"
+          },
+          {
+            "id": 762,
+            "text": "çok uygun fiyata aldık en büyük süpermarketlerde bile bu fiyata alamıyoruz. 2 paket alınca kargoda ücretsiz süper tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 766,
+            "text": "i̇nternette veya marketlerde bulabileceğiniz en uygun fiyat",
+            "sentiment": "positive"
+          },
+          {
+            "id": 639,
+            "text": "kesinlikle diğer satıcı mağazaları arasında fark var.kaliteli urun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 634,
+            "text": "çocuklarım için kullandığım tüm bezler içinde prima markasıda dahil olmak üzere en memnun kaldığım bez oldu.çocuklarımı bu bezle büyüttüm büyütmükteyimde...muhakkak denenmeli . aylık plus pakete gelince ekonomik ve ikide bir bez bitti yenisini alalım meşguliyeti yaşanmadan  rahatça kullanıyorsunuz.ekonomik olması ise cabası",
+            "sentiment": "positive"
+          },
+          {
+            "id": 674,
+            "text": "fiyat ve kargo açısından iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 789,
+            "text": "uygun fiyat, hızlı gönderi. teşekkürler hepsiburada.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 618,
+            "text": "primanın kalitesi konusunda tereddüt etmeye zaten gerek yok. hepsiburadaya da ayrıca teşekkürler..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 635,
+            "text": "fiyat super urun cok kaliteli kargoda sikinti yok.her sey icin tesekkurler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 703,
+            "text": "severek kullandığımız bir marka ve fiyat  tesekkur ederiz hepsi burada ailesi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 732,
+            "text": "başka marka kullanmadığım için bildiğim kullandığım en güzel marka bence,",
+            "sentiment": "positive"
+          },
+          {
+            "id": 781,
+            "text": "çok kaliteli ve hızlı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 767,
+            "text": "piyasanın tartışılmaz en iyi markası, bebeğimiz mutlu bizler huzurluyuz. teşekkürler prima",
+            "sentiment": "positive"
+          },
+          {
+            "id": 615,
+            "text": "hizli teslimat ve uygun fiyat her zaman icin. bebegim dogdugu gunden beri bez siparisini hepsiburada. com'dan veriyorum",
+            "sentiment": "positive"
+          },
+          {
+            "id": 702,
+            "text": "prima gerçekten mükemmel oglum doğduğundan beri kullanıyoruz. hepsiburada hem hızlı hem ekonomik",
+            "sentiment": "positive"
+          },
+          {
+            "id": 776,
+            "text": "prima, denediğimiz diğer tüm bezler içerisinde 18 aylık bebeğimizi bugüne kadar en çok rahat ettiren ve sızdırmazlık için en fazla güven verebilen bez markası oldu.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 624,
+            "text": "kampanyaları takip ederek çok uygun bir fiyata almış olduk",
+            "sentiment": "positive"
+          },
+          {
+            "id": 690,
+            "text": "bir iki defa bantlarda kopma yaşadım onun dışında kalitesi güzel. .",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 636,
+            "text": "ürünün tesliminde herhangi bir sıkıntı yaşamadım prima herzaman tercihim olmuştur.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 637,
+            "text": "kapasite çok iyi. 10-12 saate kadar sızıntı yapmıyor. fiyat biraz daha uygun tutulabilir.",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 640,
+            "text": "gercekten guzel bir urun ve hepsiburada.com fiyati ve hizli kargosuyla takdiri hakediyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 631,
+            "text": "eski bezler daha kaliteli ve daha kullanisliydi. yeni bezler biraz malzeme kalitesi düşük ve bant yerleri sert çekince kopuyor. onun harici bir sorunu yok ama doğruya doğru prima kalitesini düşürdü. ama şu an için prima dan iyisi yok",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 740,
+            "text": "prima kalitesini anlatmaya gerek yok birde hepsi burada güvencesi ile netten hızlı ve kolay alış veriş",
+            "sentiment": "positive"
+          },
+          {
+            "id": 731,
+            "text": "bez bebeğim için üretilmiş resmen hepsi burada farkıyla ve fiyatıyla olağan üstü bi alışveriş oldu teşekkürler hepsiburada :))",
+            "sentiment": "positive"
+          },
+          {
+            "id": 626,
+            "text": "ikizlerime prima kullanıyorum cok memnunum tavsiye ederim hepsiburadan da alisveris cok iyi kargo hemen teslim...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 680,
+            "text": "harika",
+            "sentiment": "positive"
+          },
+          {
+            "id": 606,
+            "text": "çok güzel",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "p4",
+      "question": "sorun yaşayan var mı",
+      "answer": {
+        "question": "sorun yaşayan var mı",
+        "product_id": "p4",
+        "search_mode": "hybrid",
+        "candidates_checked": 102,
+        "relevant_count": 28,
+        "positive_count": 24,
+        "negative_count": 1,
+        "unclear_count": 3,
+        "conflict": true,
+        "citations": [
+          {
+            "id": 638,
+            "text": "denedigimiz diğer bezlerde hep pişik sorunu yaşadık. primaya geçince gerçekten çok rahatladık. kalite olarak tartışılmaz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 603,
+            "text": "eski primalar çocuğumda kaşıntı ve kabarıklık meydana getiriyordu. bu yüzden uzunca bir süre premium care kullandık. ama yenilenen primayı bir kez daha denediğimizde bu sorun çözülmüştü. sanırım kullanılan malzemeyi değiştirmişler. sızdırmazlık ile ilgili de 12 saate kadar kuruluk sağladığı doğru. ama nadiren de olsa bir kaç kez biz de sorun yaşadık.",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 662,
+            "text": "oğlumuza doğduğundan beri kullanılıyoruz, şu ana kadar herhangi bir sorunla karşılaşmadık. herkese tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 760,
+            "text": "bezlerin sizdirma gibi bi sorunu yok gayet güzel 4 beden almistik yeni bi kampanya bekliyorum 5 beden de alıcam.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 663,
+            "text": "kızım doğduğundan itibaren kullanıyoruz pişik vs hiç bi sorunla karsilasmadik öneririm gönül rahatlığıyla kullanabilirsiniz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 631,
+            "text": "eski bezler daha kaliteli ve daha kullanisliydi. yeni bezler biraz malzeme kalitesi düşük ve bant yerleri sert çekince kopuyor. onun harici bir sorunu yok ama doğruya doğru prima kalitesini düşürdü. ama şu an için prima dan iyisi yok",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 786,
+            "text": "çok kullanışlı 3 çocuğum var nesilden nesile kullandım tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 726,
+            "text": "şimdiye kadar hiç sorun yaşamadık, beklentileri karşılayan başarılı bir ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 735,
+            "text": "hep memnun kaldım teşekürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 716,
+            "text": "her ay aylık olarak hepsiburada dan alıyorum. hem bu sayıda piyasada bulmak çok zor hemse çok uygun fiyata geliyor. hiç uğraşmadan hepsiburadan güvenle alıp geçin...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 611,
+            "text": "bebegimiz dogdugundan beri prima kullaniyoruz. hep ayni kurulukta kalmasi ve bebegimizin rahat etmesi sebebiyle ilk tercihimiz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 757,
+            "text": "prima kalitesi tartışılamaz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 667,
+            "text": "bebeğimize ilk günden beri kullandığımız tek sorunsuz ve sıkıntısız harika memnun olduğumuz bir bez teşekkürler hepsiburada ????",
+            "sentiment": "positive"
+          },
+          {
+            "id": 769,
+            "text": "2 çocuk büyüttüm ikisinde de kesinlikle ne bir pişik nede sızıntı olmadı. kesinlikle tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 686,
+            "text": "denediklerimden en iyi ve en memnun kaldığım bez tavsiye ederim kesinlikle ??",
+            "sentiment": "positive"
+          },
+          {
+            "id": 775,
+            "text": "her zamanki kalite. şimdiye kadar bi sıkıntı yaşamadık.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 752,
+            "text": "bir bezin taşıyabileceği tüm sorumlulukları yerine getiriyor. sızdırmıyor, patlamıyor, muşamba - amerikan bezi ile büyümüş bir baba olarak memnunum...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 710,
+            "text": "gercekten sızdırmazlık konusunda memnun oldugumuz bir ürün , herkese tavsiye ederiz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 615,
+            "text": "hizli teslimat ve uygun fiyat her zaman icin. bebegim dogdugu gunden beri bez siparisini hepsiburada. com'dan veriyorum",
+            "sentiment": "positive"
+          },
+          {
+            "id": 626,
+            "text": "ikizlerime prima kullanıyorum cok memnunum tavsiye ederim hepsiburadan da alisveris cok iyi kargo hemen teslim...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 748,
+            "text": "dışarıya göre fiyat uygun. şu ana kadar hiç bir sıkıntı yaşamadım. teşkkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 770,
+            "text": "hızlı kargo+iyi fiyat+eksiksiz ürün+sorunsuz alış veriş= hepsiburada",
+            "sentiment": "positive"
+          },
+          {
+            "id": 608,
+            "text": "bebeğimiz bu ay 1 yaşına girecek. uzun süredir 4 numara bez kullanıyoruz. daha önce premium care kullanıyorduk fakat aktif bebek daha uzun süre dayanıyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 729,
+            "text": "bebeğiniz biraz iri ise geceleri bel ve göbek bandı katlandığı için sızdırma yapabiliyor. o yüzden 5 numara yerine 6 numara tercih edilebilir. bunun dışında gayet iyi bir ürün kesinlikle alerji yapmıyor.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 629,
+            "text": "marketten çok daha ekonomik bir şekilde hepsiburadadan alıyorum. ancak primanın yeni 3 kanal teknolojisine geçtiği bezleri çok kötü eskisinden çok daha memnundum.",
+            "sentiment": "negative"
+          },
+          {
+            "id": 697,
+            "text": "kullanışlı ancak premium care kadar değil. suyu emince çok fazla şişiyor. ama diğer markalardan kat kat kullanışlı",
+            "sentiment": "unclear"
+          },
+          {
+            "id": 618,
+            "text": "primanın kalitesi konusunda tereddüt etmeye zaten gerek yok. hepsiburadaya da ayrıca teşekkürler..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 713,
+            "text": "hep tek tercihimiz oldu. hiç başka markayı düşümedik.",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "p5",
+      "question": "ürün işe yarıyor mu",
+      "answer": {
+        "question": "ürün işe yarıyor mu",
+        "product_id": "p5",
+        "search_mode": "hybrid",
+        "candidates_checked": 107,
+        "relevant_count": 90,
+        "positive_count": 88,
+        "negative_count": 2,
+        "unclear_count": 0,
+        "conflict": true,
+        "citations": [
+          {
+            "id": 824,
+            "text": "kaliteli ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 828,
+            "text": "sürekli ihtiyaç duyulan ürün. iyi fiyat hızlı gönderi...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 833,
+            "text": "güzel bir ürün hiç bir sorun yaratmadı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 812,
+            "text": "ürün çok iyi kargo bıraz geç samsun için",
+            "sentiment": "positive"
+          },
+          {
+            "id": 912,
+            "text": "ürün çok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 846,
+            "text": "ürün çok gzel trslimat zamanında ve sorunsuz yapıldı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 915,
+            "text": "ürün anlatıldığı giib",
+            "sentiment": "positive"
+          },
+          {
+            "id": 898,
+            "text": "prima işte fazla söze gerek yok uzun süre kuruluk için çok güzel bir ürün. tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 943,
+            "text": "ürünün kalitesini knusmaya gerek yok",
+            "sentiment": "positive"
+          },
+          {
+            "id": 894,
+            "text": "i̇yi iş",
+            "sentiment": "positive"
+          },
+          {
+            "id": 893,
+            "text": "i̇ki çocuğumda da başka ürün kullanmadım, gayet başarılı.fiyatı çok iyi, hızlı teslim edildi. teşekkürler,",
+            "sentiment": "positive"
+          },
+          {
+            "id": 945,
+            "text": "mükemmel ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 960,
+            "text": "zamanında doğru ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 939,
+            "text": "mükemmel bi̇r ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 927,
+            "text": "ürün güzel kalite tartışılmaz hızlı kargo",
+            "sentiment": "positive"
+          },
+          {
+            "id": 970,
+            "text": "ürün gayet iyi geldi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 946,
+            "text": "ürünü sakat kedim için almıştım diğer ürünlere oranla daha güzel daha temiz tutuyor ıslak bırakmıyor",
+            "sentiment": "positive"
+          },
+          {
+            "id": 858,
+            "text": "hızlı teslimat. mükemmel ürün",
+            "sentiment": "positive"
+          },
+          {
+            "id": 844,
+            "text": "güzel bir ürün  oldukça kaliteli ve ucuz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 926,
+            "text": "i̇stediğim ürün zamanında ve düzenli bir şekilde geldi gayet güzel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 880,
+            "text": "teşekkürler zamanında teslim kaliteli ürün karlı alışveriş",
+            "sentiment": "positive"
+          },
+          {
+            "id": 853,
+            "text": "ürün kaliteli fiyat da güzel. hepsiburada söz verdiği zaman da getiriyor. almak isteyen herkese tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 968,
+            "text": "kaliteli ürün hızlı teslimat",
+            "sentiment": "positive"
+          },
+          {
+            "id": 848,
+            "text": "kargo zamaninda geldi. fiyata göre uygun bir ürün. tercih edilebilir bu paket.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 935,
+            "text": "ürün marketlerde satılanlar ile aynı performansta. sorun yaşayanları okuyunca biraz çekinmiştim ancak sorunsuz bir kullanımımız oldu. fiyat/performans çok iyi. kargolama ve ulaşma hızı olması gerektiği gibi. çok iyi. sonuç: çok iyi! :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 989,
+            "text": "ürün ve kargo hizmeti mükemmel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 951,
+            "text": "resimdeki ürünün birebir tutması çok önemli bir özellik haline geldi günümüzde. birebir uyumlu, sağlam bir teslimattı sadece kargonun daha hızlı olmasını beklerdim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 975,
+            "text": "i̇kici çocuğumuz da primadan ayrılamıyor. ürün bir çok bezden çok daha kaliteli ; teslimat hızlı gönderi olduğu için hepsibura daya çok teşekkürler...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 971,
+            "text": "hızlı kargo kaliteli ürün teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 888,
+            "text": "hızlı teslimat kaliteli ürün. olumsuz yorumlara bakarak bezi değiştirmiştik ama pişman olup tekrar prima aldık.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 908,
+            "text": "üründen çok memnunuz. sık sık kampanya yapılır inşallah.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 954,
+            "text": "ürün biraz geç geldi ama iyiydi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 932,
+            "text": "teşekkürler hepsiburada.ürün orjinal ve koliler sağlam...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 941,
+            "text": "cuma kampanyasindan aldim çok avantajlı bir alışveriş oldu hızlı kargo sorunsuz ürün hersey yolunda ve güzel nice ekonomik ürünlere :)",
+            "sentiment": "positive"
+          },
+          {
+            "id": 978,
+            "text": "hızlı teslimat ve eksiksiz orjinal ürün için teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 987,
+            "text": "ürünlerin kalitesi tartışılmaz.. bebeğim dünyaya geldiğinden beri kullandığım tek marka.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 801,
+            "text": "kızım için en iyi koruma ve en az çiş kacıran ürün.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 994,
+            "text": "harika bir ürün çok memnunum en uygun fiyattı da burada",
+            "sentiment": "positive"
+          },
+          {
+            "id": 857,
+            "text": "piyasada şuan en uygun yalnız son alışımda sanırım rus ya da bulgaristanda satılması planlanan ürün geldi, kiril alfabesi vardı üzerinde birde deseni farklıydı kalite aynı ama.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 890,
+            "text": "ürünü önceden de almıştım ancak eski olan daha iyi ve kaliteli idi ayrıca boyut olarak bu daha küçük bilginiz olsun iki kutu almıştım birini iade etmem gerekti tabi bunun hepsiburada ile bir alakası yok",
+            "sentiment": "negative"
+          },
+          {
+            "id": 966,
+            "text": "gayet iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 900,
+            "text": "adamlar işini güzel yapıyor.helal olsun 2 günde geldi.gayet güzel hemde ekonomik",
+            "sentiment": "positive"
+          },
+          {
+            "id": 864,
+            "text": "gayet iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 981,
+            "text": "prima kalitesi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 918,
+            "text": "normal beş işte. al çöpe at.",
+            "sentiment": "negative"
+          },
+          {
+            "id": 924,
+            "text": "ürün mükemmel. fakat kargo şirketi sağolsun 10 güne falan ancak getirdi.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 990,
+            "text": "gayet güsel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 916,
+            "text": "kullanilabilecek en kaliteli urun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 814,
+            "text": "her zamanki gibi kaliteli iki cocugum icinde vazgecilmrz markamiz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 863,
+            "text": "güzel paket hesaplı",
+            "sentiment": "positive"
+          },
+          {
+            "id": 988,
+            "text": "guzel urun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 815,
+            "text": "3.5 yıldır kızlarım için prima kullanıyorum ve gayet memnunum. kalitesi tartışılmaz. ayrıca hepsiburada'ya da teşekkür ederim..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 940,
+            "text": "prima kalites,i tartışılmaz",
+            "sentiment": "positive"
+          },
+          {
+            "id": 921,
+            "text": "kaliteli ve uygun fiyat daha ne olsun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 829,
+            "text": "problemsiz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 929,
+            "text": "kalitesi de , fiyatı da çok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 930,
+            "text": "mükemmel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 969,
+            "text": "kaliteli ve uygun fiyat.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 856,
+            "text": "olması gerektigi gibi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 865,
+            "text": "çok iyi",
+            "sentiment": "positive"
+          },
+          {
+            "id": 854,
+            "text": "prima kalitesi zaten belli fiyatta uygun daha ne olsun teşekkürler hepsiburada ??",
+            "sentiment": "positive"
+          },
+          {
+            "id": 816,
+            "text": "urun guzel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 919,
+            "text": "uygun fiyat ve prima",
+            "sentiment": "positive"
+          },
+          {
+            "id": 934,
+            "text": "1 senedir bu siteden prima marka bezleri kullanıyorum hiç bir şekilde bezin kalitesinden ve hepsiburada dan bir problem yaşamadım sorunsuz ve kısa sürede teslimat için hepsiburada ya çok teşekkürler..",
+            "sentiment": "positive"
+          },
+          {
+            "id": 885,
+            "text": "prima kalitesi on numara alışveriş",
+            "sentiment": "positive"
+          },
+          {
+            "id": 809,
+            "text": "başarılı ekonomik",
+            "sentiment": "positive"
+          },
+          {
+            "id": 957,
+            "text": "urun guzel ve kulanisli.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 991,
+            "text": "yeni prima sızdırmıyor",
+            "sentiment": "positive"
+          },
+          {
+            "id": 817,
+            "text": "prima kalitesi fazla söze gerek var mı?",
+            "sentiment": "positive"
+          },
+          {
+            "id": 873,
+            "text": "2.5 yıldır kızım için prima kullanıyorum ve gayet memnunum. kalitesi tartışılmaz. ayrıca hepsiburada'ya da  teşekkür ederim. güvenilir rahat alışveriş imkanınız ve sıparişlerinizi belirtiğiniz tarihler de teslim ettiğiniz için.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 904,
+            "text": "yaklaşık 2 senedir oğluma bu bezi kullanıyoruz. kalitesi zaten prima söze gerek yok. hepsiburadaya en kötü ihtimal ile 3 gün kala siparişi verdiğimde evimde. teşekkürler.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 866,
+            "text": "kizim doğduğundan hu yana hep bu markayı kullandık ve cok memnun kaldık. uygun fiyatlar ile hepsiburada kampanyalari ile surekli aylik paket aliyorum. kesinlikle tavsiye ederim.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 937,
+            "text": "güzellll",
+            "sentiment": "positive"
+          },
+          {
+            "id": 956,
+            "text": "çok beğenerek kullanıyorum.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 964,
+            "text": "1 senedir kullanıyoruz, gerek kalitesi ve gerekse yumuşaklığından çok memnunuz...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 962,
+            "text": "gayet başarılı ve ekonomik",
+            "sentiment": "positive"
+          },
+          {
+            "id": 953,
+            "text": "gayet güzel.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 974,
+            "text": "özellikle hassas ciltler için çok uygun",
+            "sentiment": "positive"
+          },
+          {
+            "id": 867,
+            "text": "gayet güzel !",
+            "sentiment": "positive"
+          },
+          {
+            "id": 911,
+            "text": "her zaman kullandığımız bez sıkıntı yok artı hızlı kargo",
+            "sentiment": "positive"
+          },
+          {
+            "id": 992,
+            "text": "yurtdışına satılan ürünler sanırım üzerinde rusça falan yazıyor ama kalite olarak bir fark göremedim tavsiye ederim. 3 numara alacak olanlar fazla stok yapmasını tavsiye etmem ara beden çabucak 4'e geçiliyor. 4'ü uygun bulunca stok yapın uzun bir süre bu aralıkta kalacak bebeğiniz.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 920,
+            "text": "yenilenen prima hem kaliteli hem de hepsiburada ayrıcalığı ile uygun fiyata.",
+            "sentiment": "positive"
+          },
+          {
+            "id": 887,
+            "text": "çok kali̇teli̇ ve hesapli...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 923,
+            "text": "bildiğiniz prima kalitesi ve hızlı kargo için teşekkürler",
+            "sentiment": "positive"
+          },
+          {
+            "id": 959,
+            "text": "bu fiyata bu urun cok cok iyi...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 878,
+            "text": "mukemmel",
+            "sentiment": "positive"
+          },
+          {
+            "id": 948,
+            "text": "tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 862,
+            "text": "yeni seri bez ve hızlı gönderi . sürekli kullandığım bez tavsiye ederim",
+            "sentiment": "positive"
+          },
+          {
+            "id": 834,
+            "text": "ürünler ve fiyatlar çok güzel, ama kargoda sorun oldu... yine de her zaman hepsiburada'ya teşekkür ederim...",
+            "sentiment": "positive"
+          },
+          {
+            "id": 947,
+            "text": "i̇yi",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    },
+    {
+      "product_id": "p5",
+      "question": "geri iade eden var mı",
+      "answer": {
+        "question": "geri iade eden var mı",
+        "product_id": "p5",
+        "search_mode": "hybrid",
+        "candidates_checked": 107,
+        "relevant_count": 1,
+        "positive_count": 1,
+        "negative_count": 0,
+        "unclear_count": 0,
+        "conflict": false,
+        "citations": [
+          {
+            "id": 890,
+            "text": "ürünü önceden de almıştım ancak eski olan daha iyi ve kaliteli idi ayrıca boyut olarak bu daha küçük bilginiz olsun iki kutu almıştım birini iade etmem gerekti tabi bunun hepsiburada ile bir alakası yok",
+            "sentiment": "positive"
+          }
+        ]
+      }
+    }
+  ]
+}
