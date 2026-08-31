@@ -415,17 +415,21 @@ function render(d) {
   }
 
   const cites = d.citations || [];
+  const STEP = 8;
   if (cites.length) {
-    html += `<div class="cites-head">Kaynak yorumlar${d.citations_truncated ? ` (ilk ${cites.length})` : ` (${cites.length})`}</div>`;
+    const head = d.citations_truncated
+      ? `Kaynak yorumlar (ilk ${cites.length})`
+      : `Kaynak yorumlar (${cites.length})`;
+    html += `<div class="cites-head">${head}</div>`;
     html += `<div id="cite-list">`;
     cites.forEach((c, i) => {
       const label = c.sentiment === "positive" ? "OLUMLU" : c.sentiment === "negative" ? "OLUMSUZ" : "BELİRSİZ";
-      const hidden = i >= 6 ? ' style="display:none"' : "";
+      const hidden = i >= STEP ? ' style="display:none"' : "";
       html += `<div class="cite" data-i="${i}"${hidden}><span class="tag ${c.sentiment}">${label}</span>${esc(c.text)}</div>`;
     });
     html += `</div>`;
-    if (cites.length > 6) {
-      html += `<button class="more-btn" id="more">+ ${cites.length - 6} yorum daha göster</button>`;
+    if (cites.length > STEP) {
+      html += `<button class="more-btn" id="more"></button>`;
     }
   }
 
@@ -434,9 +438,21 @@ function render(d) {
 
   const more = document.getElementById("more");
   if (more) {
+    let shown = STEP;
+    const total = cites.length;
+    const update = () => {
+      const remaining = total - shown;
+      more.textContent = remaining > STEP
+        ? `+ ${STEP} yorum daha göster (${remaining} kaldı)`
+        : `+ son ${remaining} yorumu göster`;
+    };
+    update();
     more.addEventListener("click", () => {
-      resultsEl.querySelectorAll(".cite[style]").forEach(el => el.style.display = "");
-      more.remove();
+      const items = resultsEl.querySelectorAll("#cite-list .cite");
+      for (let i = shown; i < shown + STEP && i < total; i++) items[i].style.display = "";
+      shown = Math.min(shown + STEP, total);
+      if (shown >= total) more.remove();
+      else update();
     });
   }
 }

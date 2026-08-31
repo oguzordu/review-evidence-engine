@@ -31,7 +31,9 @@ except Exception as exc:  # model yok / indirilemedi -> arama keyword-only calis
 
 _demo_qa = demo.load_demo_qa()
 
-MAX_CITATIONS = 40
+# Ilgili yorum sayisi urun basina en fazla ~200; bu cap pratikte hepsini birakir,
+# yalnizca asiri bir sorguda yaniti sinirlar.
+MAX_CITATIONS = 250
 
 
 def get_conn() -> Iterator[psycopg.Connection]:

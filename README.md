@@ -63,14 +63,23 @@ raporluyor; sayım yöntemi aynı sette hatasız sayıyor. Ölçümü tekrar ür
 
 **<https://review-evidence.duckdns.org>**
 
-Oracle Cloud Always Free ARM VM'de, Docker + Caddy (otomatik HTTPS) ile canlı;
-`main`'e her push GitHub Actions ile otomatik deploy edilir. Kurulum: [docs/deploy.md](docs/deploy.md).
+Oracle Cloud Always Free ARM VM'de, Docker Compose + Caddy (otomatik HTTPS,
+sslip.io/DuckDNS) ile canlı. Kurulum runbook'u: [docs/deploy.md](docs/deploy.md).
+
+**CI/CD:** `main`'e her push → GitHub Actions Ubuntu + PostgreSQL container'ında
+56 testi koşar → yeşilse ayrı bir workflow VM'e SSH ile bağlanıp `git pull` +
+`docker compose up -d --build` + şema kontrolü yapar. Sırlar GitHub Secrets'ta.
+Dependabot pip/Actions/Docker bağımlılıklarını haftalık tarar.
 
 Canlıda **demo modu** açık: 5 ürün için önceden hesaplanmış soru-cevaplar anında
 gösterilir (sıfır API maliyeti). Serbest sorular canlı çalışır ama Gemini ücretsiz
-kotası (~20/gün) için günde ~15 çağrı + IP başına 2 ile sınırlıdır; kota dolunca
-o ürün için hazır bir örnek gösterilir. Sınıflandırma hattının bütünü CI'daki
-48 testle doğrulanır.
+kotası için günde ~15 çağrı + IP başına 2 ile sınırlıdır; kota dolunca o ürün için
+hazır bir örnek gösterilir.
+
+**Production'a giden yolda eksikler** (bilinçli, portfolyo kapsamı dışı):
+izleme/alarm (Uptime Robot minimum), staging ortamı, otomatik rollback ve
+sıfır-kesinti deploy, versiyonlu DB migration aracı, DB yedeği. Tek VM, tek
+instance.
 
 ### Veri kaynağı ve dürüst bir not
 
@@ -236,14 +245,22 @@ set. To reproduce: `python scripts/run_benchmark.py`.
 
 **<https://review-evidence.duckdns.org>**
 
-Runs live on an Oracle Cloud Always Free ARM VM with Docker + Caddy (automatic
-HTTPS); every push to `main` auto-deploys via GitHub Actions. Setup: [docs/deploy.md](docs/deploy.md).
+Runs live on an Oracle Cloud Always Free ARM VM with Docker Compose + Caddy
+(automatic HTTPS). Deploy runbook: [docs/deploy.md](docs/deploy.md).
+
+**CI/CD:** every push to `main` runs the 56-test suite on a GitHub Actions
+Ubuntu + PostgreSQL container; if green, a second workflow SSHes into the VM and
+does `git pull` + `docker compose up -d --build` + a schema check. Secrets live in
+GitHub Secrets. Dependabot scans pip/Actions/Docker deps weekly.
 
 **Demo mode** is on in production: precomputed Q&A for 5 products is served
 instantly (zero API cost). Free-form questions run live but are capped at ~15
-calls/day plus 2 per IP to fit the Gemini free tier (~20/day); when the cap is
-hit, a precomputed sample for that product is shown. The full classification
-pipeline is exercised by the 48-test CI suite.
+calls/day plus 2 per IP for the Gemini free tier; over the cap, a precomputed
+sample is shown.
+
+**Gaps before this is real production** (deliberate, out of portfolio scope):
+monitoring/alerting, a staging environment, automated rollback and zero-downtime
+deploys, a versioned DB migration tool, DB backups. Single VM, single instance.
 
 ### Data source — an honest note
 
