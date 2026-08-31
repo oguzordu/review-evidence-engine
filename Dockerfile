@@ -4,11 +4,12 @@ WORKDIR /app
 
 COPY pyproject.toml ./
 COPY src/ ./src/
+
+RUN pip install --no-cache-dir -e .
+
 COPY static/ ./static/
 COPY scripts/ ./scripts/
 COPY data/ ./data/
-
-RUN pip install --no-cache-dir -e .
 
 EXPOSE 8000
 
