@@ -3,7 +3,7 @@
 from typing import Iterator
 
 import psycopg
-from fastapi import Depends, FastAPI, HTTPException, Request
+from fastapi import Depends, FastAPI, HTTPException, Path, Query, Request
 from fastapi.responses import FileResponse
 from google import genai
 
@@ -31,6 +31,8 @@ except Exception as exc:  # model yok / indirilemedi -> arama keyword-only calis
 
 _demo_qa = demo.load_demo_qa()
 
+MAX_CITATIONS = 40
+
 
 def get_conn() -> Iterator[psycopg.Connection]:
     """Her istek icin bir veritabani baglantisi acar ve sonunda kapatir."""
@@ -55,8 +57,8 @@ def health() -> dict[str, str]:
 
 @app.get("/products/{product_id}/reviews")
 def list_reviews(
-    product_id: str,
-    limit: int = 50,
+    product_id: str = Path(max_length=64),
+    limit: int = Query(default=50, ge=1, le=200),
     conn: psycopg.Connection = Depends(get_conn),
 ) -> dict:
     """Bir urune ait yorumlari listeler."""
@@ -77,9 +79,9 @@ def list_reviews(
 
 @app.get("/products/{product_id}/ask")
 def ask(
-    product_id: str,
-    question: str,
     request: Request,
+    product_id: str = Path(max_length=64),
+    question: str = Query(min_length=1, max_length=300),
     conn: psycopg.Connection = Depends(get_conn),
 ) -> dict:
     """Bir urun hakkinda soru sorar; ilgili yorumlarin tamamini sayarak cevaplar.
@@ -89,12 +91,21 @@ def ask(
     davranis degismez -- her soru canli calisir.
     """
 
+    def _trim(payload: dict, source: str) -> dict:
+        # sayilar (relevant_count vb.) korunur; yalnizca ornek citation sayisi kirpilir
+        out = {**payload, "source": source}
+        cites = out.get("citations")
+        if isinstance(cites, list) and len(cites) > MAX_CITATIONS:
+            out["citations"] = cites[:MAX_CITATIONS]
+            out["citations_truncated"] = True
+        return out
+
     def live() -> dict:
         classify_batch = gemini_batch_classifier(_client)
         result = build_consensus(
             conn, product_id, question, classify_batch, encode=_encode
         )
-        return {**result, "source": "live"}
+        return _trim(result, "live")
 
     if not DEMO_MODE:
         if _client is None:
@@ -103,11 +114,11 @@ def ask(
 
     hit = demo.lookup(_demo_qa, product_id, question)
     if hit is not None:
-        return {**hit, "source": "precomputed"}
+        return _trim(hit, "precomputed")
 
     sample = demo.any_for_product(_demo_qa, product_id) or {}
     if _client is None:
-        return {**sample, "source": "no_api_key"}
+        return _trim(sample, "no_api_key")
 
     client_ip = (
         (request.headers.get("x-forwarded-for") or (request.client and request.client.host) or "?")
@@ -118,6 +129,6 @@ def ask(
         conn, client_ip, daily_budget=DAILY_LIVE_BUDGET, per_ip_limit=PER_IP_LIMIT
     )
     if verdict != "ok":
-        return {**sample, "source": verdict}
+        return _trim(sample, verdict)
 
     return live()
