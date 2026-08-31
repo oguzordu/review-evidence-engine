@@ -35,7 +35,7 @@ def db_conn():
     conn = connect(TEST_DATABASE_URL)
     init_schema(conn)
     with conn.cursor() as cur:
-        cur.execute("TRUNCATE TABLE reviews RESTART IDENTITY")
+        cur.execute("TRUNCATE TABLE reviews, usage_log RESTART IDENTITY")
     conn.commit()
     yield conn
     conn.close()
