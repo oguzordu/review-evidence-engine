@@ -61,7 +61,7 @@ raporluyor; sayım yöntemi aynı sette hatasız sayıyor. Ölçümü tekrar ür
 
 ### Canlı
 
-**<https://92-4-163-43.sslip.io>**
+**<https://review-evidence.duckdns.org>**
 
 Oracle Cloud Always Free ARM VM'de, Docker + Caddy (otomatik HTTPS) ile canlı;
 `main`'e her push GitHub Actions ile otomatik deploy edilir. Kurulum: [docs/deploy.md](docs/deploy.md).
@@ -86,10 +86,11 @@ metniyle göstermek için.
 
 ```
 [fetch_dataset.py] -> [data/sample_reviews.json] -> [ingest.load_reviews]
+                                                     (metin + embedding)
                                                           |
-                                                 [PostgreSQL + turkish FTS]
+                                            [PostgreSQL + pgvector]
                                                           |
-                              [search.keyword_search] -> aday yorumlar
+              [search.hybrid_search]  ts_rank (FTS) + cosine (embedding), RRF
                                                           |
                     [consensus.gemini_batch_classifier] -> toplu, paralel siniflandirma
                                                           |
@@ -98,13 +99,15 @@ metniyle göstermek için.
 
 ### Kullanılan teknolojiler
 
-Python, FastAPI, PostgreSQL (yerleşik `turkish` tam metin arama), Google Gemini API
+Python 3.12, FastAPI, PostgreSQL + `pgvector` (Türkçe FTS + vektör arama), lokal
+`sentence-transformers` embedding modeli, Google Gemini API
 (`gemini-flash-lite-latest`, ücretsiz katman), `ThreadPoolExecutor` ile paralel
-toplu sınıflandırma.
+toplu sınıflandırma. Deploy: Docker Compose + Caddy (otomatik HTTPS), GitHub
+Actions CI/CD.
 
 ### Nasıl çalıştırılır
 
-**En hızlısı — canlı demo:** yukarıdaki <https://92-4-163-43.sslip.io> linkine
+**En hızlısı — canlı demo:** yukarıdaki <https://review-evidence.duckdns.org> linkine
 git. "Hazır sorular" çipleri anında yanıt verir (önceden hesaplanmış, kota
 harcamaz). Serbest soru da yazabilirsin — canlı çalışır, günlük ~15 çağrıyla
 sınırlı.
@@ -231,7 +234,7 @@ set. To reproduce: `python scripts/run_benchmark.py`.
 
 ### Live
 
-**<https://92-4-163-43.sslip.io>**
+**<https://review-evidence.duckdns.org>**
 
 Runs live on an Oracle Cloud Always Free ARM VM with Docker + Caddy (automatic
 HTTPS); every push to `main` auto-deploys via GitHub Actions. Setup: [docs/deploy.md](docs/deploy.md).
@@ -256,10 +259,11 @@ real, large-scale Turkish review text.
 
 ```
 [fetch_dataset.py] -> [data/sample_reviews.json] -> [ingest.load_reviews]
+                                                     (text + embedding)
                                                           |
-                                                 [PostgreSQL + turkish FTS]
+                                             [PostgreSQL + pgvector]
                                                           |
-                              [search.keyword_search] -> candidate reviews
+              [search.hybrid_search]  ts_rank (FTS) + cosine (embedding), RRF
                                                           |
                     [consensus.gemini_batch_classifier] -> parallel batch classification
                                                           |
@@ -268,13 +272,15 @@ real, large-scale Turkish review text.
 
 ### Tech stack
 
-Python, FastAPI, PostgreSQL (built-in `turkish` full-text search
-configuration), Google Gemini API (`gemini-flash-lite-latest`, free tier),
-`ThreadPoolExecutor` for parallel batch classification, Docker Compose.
+Python 3.12, FastAPI, PostgreSQL + `pgvector` (Turkish FTS + vector search),
+a local `sentence-transformers` embedding model, Google Gemini API
+(`gemini-flash-lite-latest`, free tier), `ThreadPoolExecutor` for parallel batch
+classification. Deployment: Docker Compose + Caddy (automatic HTTPS), GitHub
+Actions CI/CD.
 
 ### How to run it
 
-**Fastest — the live demo:** open <https://92-4-163-43.sslip.io> above. The
+**Fastest — the live demo:** open <https://review-evidence.duckdns.org> above. The
 preset question chips answer instantly (precomputed, no quota cost). Free-form
 questions run live, capped at ~15 calls/day.
 
