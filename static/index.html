@@ -120,6 +120,27 @@
   }
   @keyframes spin { to { transform: rotate(360deg); } }
   .empty { color: var(--muted); font-size: 13px; text-align: center; padding: 20px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 14px; }
+  .chip {
+    background: #0d0f13;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 6px 12px;
+    font-size: 13px;
+    color: var(--text);
+    cursor: pointer;
+    width: auto;
+  }
+  .chip:hover { border-color: var(--accent); }
+  .source-banner {
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 12px;
+    margin-bottom: 14px;
+  }
+  .source-banner.precomputed { background: rgba(139,147,163,0.12); color: var(--muted); border: 1px solid var(--border); }
+  .source-banner.live { background: rgba(47,191,113,0.12); color: #7fe3ac; border: 1px solid rgba(47,191,113,0.4); }
+  .source-banner.limited { background: rgba(255,193,7,0.12); color: #ffd479; border: 1px solid rgba(255,193,7,0.4); }
 </style>
 </head>
 <body>
@@ -136,10 +157,15 @@
       <option value="p4">p4</option>
       <option value="p5">p5</option>
     </select>
+    <label>Hazır sorular</label>
+    <div class="chips" id="chips"></div>
     <label for="question">Soru</label>
     <input id="question" type="text" placeholder="örn: kargo hızlı mıydı" value="ürün kaliteli mi">
     <button id="ask">Sor</button>
     <div class="status" id="status"></div>
+    <div class="status" id="budget-note" style="font-size:12px">
+      Canlı sorgu günde ~15 çağrıyla sınırlı (Gemini ücretsiz kota). Hazır sorular anında yanıtlanır, kota harcamaz.
+    </div>
   </div>
 
   <div id="results"></div>
@@ -149,6 +175,33 @@
 const askBtn = document.getElementById("ask");
 const statusEl = document.getElementById("status");
 const resultsEl = document.getElementById("results");
+const productEl = document.getElementById("product");
+const questionEl = document.getElementById("question");
+const chipsEl = document.getElementById("chips");
+
+// build_demo_qa.py'deki QUESTIONS ile ayni tutulmali
+const DEMO_QUESTIONS = {
+  p1: ["ürün kaliteli mi", "kargo hızlı geldi mi"],
+  p2: ["ürün beklentiyi karşılıyor mu", "tavsiye edilir mi"],
+  p3: ["ürün dayanıklı mı", "malzeme kalitesi nasıl"],
+  p4: ["ürün açıklamaya uygun mu", "sorun yaşayan var mı"],
+  p5: ["ürün işe yarıyor mu", "geri iade eden var mı"],
+};
+
+function renderChips() {
+  const qs = DEMO_QUESTIONS[productEl.value] || [];
+  chipsEl.innerHTML = "";
+  for (const q of qs) {
+    const b = document.createElement("button");
+    b.className = "chip";
+    b.type = "button";
+    b.textContent = q;
+    b.addEventListener("click", () => { questionEl.value = q; askBtn.click(); });
+    chipsEl.appendChild(b);
+  }
+}
+productEl.addEventListener("change", renderChips);
+renderChips();
 
 askBtn.addEventListener("click", async () => {
   const product = document.getElementById("product").value;
@@ -184,6 +237,22 @@ askBtn.addEventListener("click", async () => {
 
 function renderResults(data) {
   let html = "";
+
+  if (data.source === "precomputed") {
+    html += `<div class="source-banner precomputed">Hazır sonuç — önceden hesaplandı, kota harcamadı.</div>`;
+  } else if (data.source === "live") {
+    html += `<div class="source-banner live">Canlı — az önce Gemini ile hesaplandı.</div>`;
+  } else if (data.source === "budget_exhausted" || data.source === "ip_limit") {
+    html += `<div class="source-banner limited">Günlük canlı kota doldu — bu ürün için hazır bir örnek gösteriliyor.</div>`;
+  } else if (data.source === "no_api_key") {
+    html += `<div class="source-banner limited">Canlı sorgu şu an kapalı — hazır bir örnek gösteriliyor.</div>`;
+  }
+
+  if (data.candidates_checked === undefined) {
+    html += `<div class="empty">Bu ürün için hazır sonuç bulunamadı. Yukarıdaki hazır sorulardan birini dene.</div>`;
+    resultsEl.innerHTML = html;
+    return;
+  }
 
   html += `<div class="stats-row">
     <div class="stat"><div class="n">${data.candidates_checked}</div><div class="l">aday tarandı</div></div>
