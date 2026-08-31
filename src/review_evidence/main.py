@@ -45,8 +45,13 @@ def get_conn() -> Iterator[psycopg.Connection]:
 
 @app.get("/", include_in_schema=False)
 def index() -> FileResponse:
-    """Basit web arayuzunu servis eder."""
-    return FileResponse("static/index.html")
+    """Basit web arayuzunu servis eder. no-cache: tarayici her acilista dogrulama
+    yapsin, eski surumu (ornekleri kacirmis hazir soru listesi vb.) kullanmasin."""
+    return FileResponse(
+        "static/index.html",
+        media_type="text/html; charset=utf-8",
+        headers={"Cache-Control": "no-cache"},
+    )
 
 
 @app.get("/health")
