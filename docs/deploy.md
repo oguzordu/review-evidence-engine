@@ -270,6 +270,20 @@ Bundan sonra her `main` push'u otomatik canlıya gider.
 | Deploy workflow "missing server host" | `DEPLOY_HOST` secret'ı eksik veya `DEPLOY_ENABLED` variable'ı `true` değil |
 | `/ask`'e serbest soru → hep "budget_exhausted" | Gemini günlük kota dolmuş; ertesi gün sıfırlanır. Hazır sorular çalışmaya devam eder |
 
+## Güvenlik (opsiyonel sağlamlaştırma)
+
+VM'de SSH (port 22) internete açık. Oracle Ubuntu image'ı zaten **sadece SSH
+key** ile giriş yapıyor (parola girişi kapalı), bu yeterli. İstersen ekstra:
+
+```bash
+# brute-force denemelerini otomatik banla
+sudo apt-get install -y fail2ban
+sudo systemctl enable --now fail2ban
+```
+
+Ya da Oracle Security List'te port 22 kuralının **Source CIDR**'ini
+`0.0.0.0/0` yerine kendi ev IP'ne (`x.x.x.x/32`) daralt.
+
 ## Bakım
 
 - Logları izle: `docker compose -f docker-compose.prod.yml logs -f app`

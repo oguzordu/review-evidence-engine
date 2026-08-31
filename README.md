@@ -102,56 +102,54 @@ Python, FastAPI, PostgreSQL (yerleşik `turkish` tam metin arama), Google Gemini
 (`gemini-flash-lite-latest`, ücretsiz katman), `ThreadPoolExecutor` ile paralel
 toplu sınıflandırma.
 
-### Kurulum
+### Nasıl çalıştırılır
+
+**En hızlısı — canlı demo:** yukarıdaki <https://92-4-163-43.sslip.io> linkine
+git. "Hazır sorular" çipleri anında yanıt verir (önceden hesaplanmış, kota
+harcamaz). Serbest soru da yazabilirsin — canlı çalışır, günlük ~15 çağrıyla
+sınırlı.
+
+**Lokalde çalıştırmak için** (Python 3.12+ ve Docker gerekir):
 
 ```powershell
+# 1. bağımlılıklar
 py -m venv .venv
 .venv\Scripts\python.exe -m pip install -e ".[dev]"
-```
 
-`GEMINI_API_KEY` gerekiyor — [aistudio.google.com/apikey](https://aistudio.google.com/apikey)
-adresinden ücretsiz alınabilir. `.env.example` dosyasını `.env` olarak
-kopyalayıp anahtarını gir.
+# 2. Gemini API anahtarı (aistudio.google.com/apikey — ücretsiz)
+copy .env.example .env
+notepad .env                # GEMINI_API_KEY= satırını doldur, kaydet
 
-Veritabanı olarak **PostgreSQL** kullanılıyor (Türkçe tam metin arama için
-yerleşik `turkish` dil yapılandırmasıyla). Yerel geliştirme için Docker
-Compose ile ayağa kaldırılır:
-
-```powershell
+# 3. veritabanı (pgvector'lü PostgreSQL, Docker konteyneri)
 docker compose up -d db
-```
 
-### Docker ile tamamı (uygulama + veritabanı)
-
-```powershell
-docker compose up -d --build
-```
-
-Sonra `http://localhost:8000` adresinden erişilebilir.
-
-İlk çalıştırmada embedding modeli (~120 MB) indirilir ve önbelleğe alınır.
-pgvector sonradan eklendiği için, zaten yüklü yorumlara embedding üretmek
-gerekirse:
-
-```powershell
-python scripts/backfill_embeddings.py
-```
-
-### Veri yükleme
-
-```powershell
+# 4. veri setini indir + yükle (1000 Türkçe yorum + embedding — ilk sefer ~5 dk)
 .venv\Scripts\python.exe scripts\fetch_dataset.py
-.venv\Scripts\python.exe -c "from pathlib import Path; from review_evidence.db import connect, init_schema; from review_evidence.ingest import load_reviews; from review_evidence.config import DATABASE_URL; conn = connect(DATABASE_URL); init_schema(conn); print(load_reviews(conn, Path('data/sample_reviews.json')))"
-```
+.venv\Scripts\python.exe -c "from pathlib import Path; from review_evidence.db import connect, init_schema; from review_evidence.ingest import load_reviews; from review_evidence.config import DATABASE_URL; c = connect(DATABASE_URL); init_schema(c); print(load_reviews(c, Path('data/sample_reviews.json')))"
 
-### Çalıştırma (Docker'sız, sadece veritabanı konteynerle)
-
-```powershell
-docker compose up -d db
+# 5. uygulamayı başlat
 .venv\Scripts\python.exe -m uvicorn review_evidence.main:app --reload
 ```
 
-API dokümanı: http://127.0.0.1:8000/docs
+Sonra tarayıcıda:
+
+| Ne | Adres |
+|---|---|
+| Web arayüzü | <http://127.0.0.1:8000> |
+| API dokümanı (Swagger) | <http://127.0.0.1:8000/docs> |
+| Örnek sorgu | `http://127.0.0.1:8000/products/p1/ask?question=ürün kaliteli mi` |
+
+İlk `/ask` çağrısında embedding modeli (~120 MB) iner. Lokalde `DEMO_MODE`
+kapalıdır — her soru canlı Gemini ile çalışır (ücretsiz kota ~15-20/gün).
+Ürünler `p1`–`p5`.
+
+**Alternatif — her şeyi tek komutla Docker'da** (uygulama + DB birlikte):
+
+```powershell
+copy .env.example .env      # anahtarı doldur
+docker compose up -d --build
+```
+→ <http://localhost:8000> (veriyi yine yukarıdaki 4. adımla yüklemen gerekir).
 
 ### Test
 
@@ -164,10 +162,10 @@ docker compose up -d db
 sahte encoder'la çalışır (gerçek API çağrısı ve model indirmesi gerektirmez),
 veritabanı testleri ise **ayrı bir test veritabanına** karşı çalışır (Docker'ın
 ayakta olması gerekir; testler çalışan uygulamanın verisine dokunmaz).
-`pytest -m slow` gerçek embedding modelini yükleyen 3 testi de çalıştırır. Bilinçli bir
-tercih: SQLite ile test edip production'da PostgreSQL kullanmak, ikisi
-arasındaki sözdizimi farklarını (örn. `?` vs `%s`, FTS5 vs `tsvector`)
-gizleyip yanlış güven verirdi.
+`pytest -m slow` gerçek embedding modelini yükleyen 3 testi de çalıştırır.
+Bilinçli bir tercih: SQLite ile test edip production'da PostgreSQL kullanmak,
+tam metin arama ve `pgvector` gibi Postgres'e özgü davranışları gizleyip
+yanlış güven verirdi.
 
 ### Gelecek geliştirmeler
 
@@ -274,47 +272,53 @@ Python, FastAPI, PostgreSQL (built-in `turkish` full-text search
 configuration), Google Gemini API (`gemini-flash-lite-latest`, free tier),
 `ThreadPoolExecutor` for parallel batch classification, Docker Compose.
 
-### Setup
+### How to run it
+
+**Fastest — the live demo:** open <https://92-4-163-43.sslip.io> above. The
+preset question chips answer instantly (precomputed, no quota cost). Free-form
+questions run live, capped at ~15 calls/day.
+
+**To run locally** (needs Python 3.12+ and Docker):
 
 ```powershell
+# 1. dependencies
 py -m venv .venv
 .venv\Scripts\python.exe -m pip install -e ".[dev]"
-```
 
-Requires `GEMINI_API_KEY` — get one free at
-[aistudio.google.com/apikey](https://aistudio.google.com/apikey). Copy
-`.env.example` to `.env` and add your key.
+# 2. Gemini API key (aistudio.google.com/apikey — free)
+copy .env.example .env
+notepad .env                # fill in GEMINI_API_KEY=, save
 
-Uses **PostgreSQL** (with the built-in `turkish` text search config). Start
-it locally with Docker Compose:
-
-```powershell
+# 3. database (PostgreSQL with pgvector, Docker container)
 docker compose up -d db
-```
 
-### Full stack with Docker
-
-```powershell
-docker compose up -d --build
-```
-
-Then it's available at `http://localhost:8000`.
-
-### Loading data
-
-```powershell
+# 4. fetch + load the dataset (1000 Turkish reviews + embeddings — ~5 min first time)
 .venv\Scripts\python.exe scripts\fetch_dataset.py
-.venv\Scripts\python.exe -c "from pathlib import Path; from review_evidence.db import connect, init_schema; from review_evidence.ingest import load_reviews; from review_evidence.config import DATABASE_URL; conn = connect(DATABASE_URL); init_schema(conn); print(load_reviews(conn, Path('data/sample_reviews.json')))"
-```
+.venv\Scripts\python.exe -c "from pathlib import Path; from review_evidence.db import connect, init_schema; from review_evidence.ingest import load_reviews; from review_evidence.config import DATABASE_URL; c = connect(DATABASE_URL); init_schema(c); print(load_reviews(c, Path('data/sample_reviews.json')))"
 
-### Run (without Docker, just the DB container)
-
-```powershell
-docker compose up -d db
+# 5. start the app
 .venv\Scripts\python.exe -m uvicorn review_evidence.main:app --reload
 ```
 
-API docs: http://127.0.0.1:8000/docs
+Then in the browser:
+
+| What | URL |
+|---|---|
+| Web UI | <http://127.0.0.1:8000> |
+| API docs (Swagger) | <http://127.0.0.1:8000/docs> |
+| Example query | `http://127.0.0.1:8000/products/p1/ask?question=ürün kaliteli mi` |
+
+The first `/ask` call downloads the embedding model (~120 MB). Locally
+`DEMO_MODE` is off — every question runs live against Gemini (free tier
+~15-20/day). Products are `p1`–`p5`.
+
+**Alternative — everything in Docker** (app + DB in one command):
+
+```powershell
+copy .env.example .env      # fill in the key
+docker compose up -d --build
+```
+→ <http://localhost:8000> (still load the data via step 4 above).
 
 ### Test
 
@@ -327,9 +331,9 @@ docker compose up -d db
 fake encoder (no live API calls or model downloads needed), database tests run
 against a **separate test database** (requires Docker running; tests never touch
 the running app's data). `pytest -m slow` also runs the 3 tests that load the
-real embedding model. Deliberate choice: testing against
-SQLite while running PostgreSQL in production would hide real syntax
-differences (e.g. `?` vs `%s`, FTS5 vs `tsvector`) behind false confidence.
+real embedding model. Deliberate choice: testing against SQLite while running
+PostgreSQL in production would hide Postgres-specific behavior (full-text search,
+`pgvector`) behind false confidence.
 
 ### Future work
 
