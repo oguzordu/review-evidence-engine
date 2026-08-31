@@ -59,6 +59,17 @@ yorumların çoğunu hiç görmediği için olumsuz sayısını sistematik olara
 raporluyor; sayım yöntemi aynı sette hatasız sayıyor. Ölçümü tekrar üretmek için:
 `python scripts/run_benchmark.py`.
 
+### Canlı
+
+Oracle Cloud Always Free ARM VM'de, Docker + Caddy (otomatik HTTPS) ile canlı;
+`main`'e her push GitHub Actions ile otomatik deploy edilir. Kurulum: [docs/deploy.md](docs/deploy.md).
+
+Canlıda **demo modu** açık: 5 ürün için önceden hesaplanmış soru-cevaplar anında
+gösterilir (sıfır API maliyeti). Serbest sorular canlı çalışır ama Gemini ücretsiz
+kotası (~20/gün) için günde ~15 çağrı + IP başına 2 ile sınırlıdır; kota dolunca
+o ürün için hazır bir örnek gösterilir. Sınıflandırma hattının bütünü CI'daki
+48 testle doğrulanır.
+
 ### Veri kaynağı ve dürüst bir not
 
 Kullanılan veri seti (`fthbrmnby/turkish_product_reviews`, HuggingFace,
@@ -217,6 +228,17 @@ with a known sentiment distribution, classic RAG (K=8, single LLM summary) never
 sees most of the relevant reviews and so systematically under-reports the
 negative count; the counting method gets the counts exactly right on the same
 set. To reproduce: `python scripts/run_benchmark.py`.
+
+### Live
+
+Runs live on an Oracle Cloud Always Free ARM VM with Docker + Caddy (automatic
+HTTPS); every push to `main` auto-deploys via GitHub Actions. Setup: [docs/deploy.md](docs/deploy.md).
+
+**Demo mode** is on in production: precomputed Q&A for 5 products is served
+instantly (zero API cost). Free-form questions run live but are capped at ~15
+calls/day plus 2 per IP to fit the Gemini free tier (~20/day); when the cap is
+hit, a precomputed sample for that product is shown. The full classification
+pipeline is exercised by the 48-test CI suite.
 
 ### Data source — an honest note
 
