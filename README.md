@@ -170,7 +170,7 @@ docker compose up -d db
 .venv\Scripts\python.exe -m pytest -v
 ```
 
-48 test — metin/mantık testleri sahte (mock/injectable) bir sınıflandırıcı ve
+56 test (varsayılan koşu; `slow` işaretli 3 testle toplam 59). Metin/mantık testleri sahte (mock/injectable) bir sınıflandırıcı ve
 sahte encoder'la çalışır (gerçek API çağrısı ve model indirmesi gerektirmez),
 veritabanı testleri ise **ayrı bir test veritabanına** karşı çalışır (Docker'ın
 ayakta olması gerekir; testler çalışan uygulamanın verisine dokunmaz).
@@ -350,7 +350,7 @@ docker compose up -d db
 .venv\Scripts\python.exe -m pytest -v
 ```
 
-48 tests — text/logic tests run against an injectable fake classifier and a
+56 tests in the default run (59 including the 3 `slow` ones). Text/logic tests run against an injectable fake classifier and a
 fake encoder (no live API calls or model downloads needed), database tests run
 against a **separate test database** (requires Docker running; tests never touch
 the running app's data). `pytest -m slow` also runs the 3 tests that load the
