@@ -1,7 +1,22 @@
 # Review Evidence Engine
 
 [![CI](https://github.com/oguzordu/review-evidence-engine/actions/workflows/ci.yml/badge.svg)](https://github.com/oguzordu/review-evidence-engine/actions/workflows/ci.yml)
+[![Canlı Demo](https://img.shields.io/badge/demo-review--evidence.duckdns.org-157a5c?logo=googlechrome&logoColor=white)](https://review-evidence.duckdns.org)
 
+![Python](https://img.shields.io/badge/Python_3.12-3776AB?logo=python&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-009688?logo=fastapi&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![pgvector](https://img.shields.io/badge/pgvector-4169E1?logo=postgresql&logoColor=white)
+![Gemini](https://img.shields.io/badge/Gemini_API-8E75B2?logo=googlegemini&logoColor=white)
+![sentence-transformers](https://img.shields.io/badge/sentence--transformers-FFD21E?logo=huggingface&logoColor=black)
+![pytest](https://img.shields.io/badge/pytest-0A9EDC?logo=pytest&logoColor=white)
+
+![Docker](https://img.shields.io/badge/Docker_Compose-2496ED?logo=docker&logoColor=white)
+![Caddy](https://img.shields.io/badge/Caddy-1F88C0?logo=caddy&logoColor=white)
+![GitHub Actions](https://img.shields.io/badge/GitHub_Actions-2088FF?logo=githubactions&logoColor=white)
+![Dependabot](https://img.shields.io/badge/Dependabot-025E8C?logo=dependabot&logoColor=white)
+![Oracle Cloud](https://img.shields.io/badge/Oracle_Cloud-F80000?logo=oracle&logoColor=white)
+![Ubuntu](https://img.shields.io/badge/Ubuntu_22.04-E95420?logo=ubuntu&logoColor=white)
 ## Türkçe
 
 Ürün yorumları üzerinde **örnekleme değil sayım** yapan, her cevabını
